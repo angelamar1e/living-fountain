@@ -15,7 +15,8 @@ function select($cols, $table){
         $select .= $col;
     }
     $query = "$select
-    FROM $table";
+    FROM $table
+    ORDER BY $cols[0]";
     $result = mysqli_query($conn, $query);
     return $result;
 }
@@ -35,6 +36,15 @@ function select_where($cols, $table, $condition){
     $query = "$select
     FROM $table
     WHERE $condition";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function select_distinct($col, $table){
+    global $conn;
+    $query = "SELECT DISTINCT $col
+    FROM $table
+    ORDER BY $col ASC";
     $result = mysqli_query($conn, $query);
     return $result;
 }
