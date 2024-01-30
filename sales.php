@@ -13,13 +13,13 @@
         <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     </head>
     <body>
-        <form>
+        <form action="add-order.php" method="post">
             <h3>Customer</h3>
             <label for="blk">Block</label>
             <label for="lot"> Lot</label>
             <label for="ph"> Phase</label><br>
-            <input type="text" list="blk">
-            <datalist id="blk" name="block" required>
+            <input type="text" list="blk" required>
+            <datalist id="blk" name="block">
                 <!-- default option, hints no selection -->
                 <option value="" selected disabled hidden>Select</option>
                 <!-- fetching each prop type to be set as options, value is code but text displayed is the desc -->
@@ -34,8 +34,8 @@
                     endwhile;
                 ?>
             </datalist>
-            <input type="text" list="lot">
-            <datalist id="lot" name="lot" required>
+            <input type="text" list="lot" required>
+            <datalist id="lot" name="lot">
                 <!-- default option, hints no selection -->
                 <option value="" selected disabled hidden>Select</option>
                 <!-- fetching each prop type to be set as options, value is code but text displayed is the desc -->
@@ -50,8 +50,8 @@
                     endwhile;
                 ?>
             </datalist>
-            <input type="text" list="ph">
-            <datalist id="ph" name="phase" required>
+            <input type="text" list="ph" required>
+            <datalist id="ph" name="phase">
                 <!-- default option, hints no selection -->
                 <option value="" selected disabled hidden>Select</option>
                 <!-- fetching each prop type to be set as options, value is code but text displayed is the desc -->
@@ -85,7 +85,7 @@
                     endwhile;
                 ?>
             </select>
-            <input type="text" id="qty" name="qty">
+            <input type="text" id="qty" name="qty" required>
             <select id="deliverer" name="deliverer" required>
                 <!-- default option, hints no selection -->
                 <option value="" selected disabled hidden>Select</option>
@@ -100,6 +100,7 @@
                     endwhile;
                 ?>
             </select>
+            <input type="submit" id="submit" name="submit">
         </form>
         <script>
             $(document).ready(function () {

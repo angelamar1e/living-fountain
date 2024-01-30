@@ -49,4 +49,19 @@ function select_distinct($col, $table){
     return $result;
 }
 
+function is_existing($blk, $lot, $ph){
+    global $conn;
+    $query = "SELECT COUNT(*)
+    FROM customers
+    WHERE block = $blk AND lot = $lot AND phase = $ph";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function add_new_customer($blk, $lot, $ph){
+    global $conn;
+    $query = "INSERT INTO customers (block, lot, phase) VALUES ($blk, $lot, $ph)";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
 ?>
