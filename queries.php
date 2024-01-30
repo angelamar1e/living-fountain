@@ -51,11 +51,12 @@ function select_distinct($col, $table){
 
 function is_existing($blk, $lot, $ph){
     global $conn;
-    $query = "SELECT COUNT(*)
+    $query = "SELECT COUNT(*) as 'count'
     FROM customers
     WHERE block = $blk AND lot = $lot AND phase = $ph";
     $result = mysqli_query($conn, $query);
-    return $result;
+    $count = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    return $count['count'];
 }
 
 function add_new_customer($blk, $lot, $ph){
@@ -64,4 +65,24 @@ function add_new_customer($blk, $lot, $ph){
     $result = mysqli_query($conn, $query);
     return $result;
 }
+
+function add_order($blk, $lot, $ph, $type, $qty, $deliverer){
+    global $conn;
+    $date = date("Y-m-d");
+    $query = "INSERT INTO orders (block, lot, phase, date, product_code, quantity, deliverer_id) 
+    VALUES ($blk, $lot, $ph, '$date','$type', $qty, $deliverer)";
+    $result = mysqli_query($conn, $query);
+    compute_price();
+    return $result;
+}
+
+function compute_price(){
+    global $conn;
+    $query = "UPDATE orders o
+    JOIN products p ON o.product_code = p.code
+    SET o.price = quantity * p.price";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 ?>
