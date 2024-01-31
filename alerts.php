@@ -6,6 +6,12 @@ function alert_redirect($message,$path){
         </script>';
 }
 
+function refresh(){
+    echo '<script>
+            window.location.href = window.location.href;
+        </script>';
+}
+
 function reset_url(){
     echo '<script>
             history.pushState(null, "", window.location.pathname);

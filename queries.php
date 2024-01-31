@@ -85,12 +85,21 @@ function compute_price(){
 
 function all_orders($date){
     global $conn;
-    $query = "SELECT block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.status_desc as 'status'
+    $query = "SELECT o.id, block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
                 FROM orders o
                 LEFT JOIN products p ON o.product_code = p.code
                 LEFT JOIN employees e ON o.deliverer_id = e.id
                 LEFT JOIN order_status s ON o.status = s.code
                 WHERE date = '$date'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function update_status($code, $id){
+    global $conn;
+    $query = "UPDATE orders
+            SET status = '$code'
+            WHERE id = $id";
     $result = mysqli_query($conn, $query);
     return $result;
 }

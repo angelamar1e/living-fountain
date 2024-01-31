@@ -24,13 +24,18 @@
         if(isset($_REQUEST['date'])){
             $date = $_REQUEST['date'];
             $all_records = all_orders($date);
-            reset_url();
+            // reset_url();
         }
         else{
             $date = date("Y-m-d");
             $all_records = all_orders($date);
         }
-    ?>
+        if(isset($_REQUEST['order_id']) and isset($_REQUEST['status'])){
+            $status = $_REQUEST['status'];
+            $id = $_REQUEST['order_id'];
+            update_status($status,$id);
+            refresh();
+        } ?>
 
     <span><h3>Date: <?php echo $date;?></h3></span>
 
@@ -57,7 +62,28 @@
                         <td><?php echo $record['quantity']; ?> </td>
                         <td><?php echo $record['price']; ?> </td>
                         <td><?php echo $record['deliverer']; ?> </td>
-                        <td><?php echo $record['status']; ?> </td>
+                        <td>
+                        <form method="post" action="" class="status_select" id="status_select" name="status_select">
+                            <input type="text" value="<?php echo $record['id']; ?>" id="order_id" name="order_id" style="display:none">
+                            <select class="status" id="status" name="status">
+                                <!-- reflects the status saved in the database -->
+                                <option value="<?php echo $record['code'];?>" selected disabled hidden><?php echo $record['status']; ?></option>
+                                <!-- fetching each status to be set as options, value is code but text displayed is the desc -->
+                                <?php
+                                    $all_status = select(array("code","status_desc"),"order_status");
+                                    while($status = mysqli_fetch_array($all_status,MYSQLI_ASSOC)):;
+                                ?> 
+                                    <option value="<?php echo $status['code'];?>">
+                                        <?php echo $status['status_desc']; ?>
+                                    </option>
+                                <?php
+                                    endwhile;
+                                ?>
+                            </select>
+                            <input type="submit" style="display:none">
+                    </form>
+
+                        </td>
                     <tr>
         <?php
                 }
@@ -67,7 +93,8 @@
                     <td colspan="8">No records found</td>
                 </tr>
             <?php 
-            } ?>
+            } 
+            ?>
     </table>
     <script src="helper-functions.js"></script>
 </body>
