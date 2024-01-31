@@ -6,7 +6,7 @@ function alert_redirect($message,$path){
         </script>';
 }
 
-function redirect(){
+function reset_url(){
     echo '<script>
             history.pushState(null, "", window.location.pathname);
         </script>';

@@ -12,3 +12,8 @@ function sendData() {
             ph: ph}
     });
 }
+
+document.getElementById('date').addEventListener('change', function() {
+    // Trigger form submission when input value changes
+    document.getElementById('dateForm').submit();
+});

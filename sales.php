@@ -17,20 +17,22 @@
         <label for="date">Select Date:</label>
         <input type="date" id="date" name="date">
         <!-- Add a hidden submit button to trigger form submission -->
-        <input type="submit">
+        <input type="submit" style="display:none">
     </form>
 
     <?php
         if(isset($_REQUEST['date'])){
             $date = $_REQUEST['date'];
             $all_records = all_orders($date);
-            redirect();
+            reset_url();
         }
         else{
             $date = date("Y-m-d");
             $all_records = all_orders($date);
         }
     ?>
+
+    <span><h3>Date: <?php echo $date;?></h3></span>
 
     <div id="table_container">
     <table id=all_records>
@@ -67,5 +69,6 @@
             <?php 
             } ?>
     </table>
+    <script src="helper-functions.js"></script>
 </body>
 </html>
