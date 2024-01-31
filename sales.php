@@ -1,68 +1,71 @@
 <?php
-    include("connection.php");
-    include("queries.php");
-    $all_products = select(array("code","product_desc"), "products");
-    $all_deliverers = select_where(array("id","employee_name"),"employees","emp_type_code = 'D'");
+    include("order-form.php");
+    include('alerts.php');
 ?>
 
 <!DOCTYPE html>
-<html lang=en>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-        <script src="helper-functions.js"></script>
-    </head>
-    <body>
-        <form action="add-order.php" method="post">
-            <h3>Customer</h3>
-            <label for="blk">Block</label>
-            <label for="lot"> Lot</label>
-            <label for="ph"> Phase</label><br>
-            <input type="text" id="blk" name="blk" required>
-            <input type="text" id="lot" name="lot" required>
-            <input type="text" id="ph" name="ph" required>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="helper-functions.js"></script>
+</head>
+<body>
+    <form id="dateForm" method="get" action="sales.php">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date">
+        <!-- Add a hidden submit button to trigger form submission -->
+        <input type="submit">
+    </form>
 
-            <h3>Order</h3>
-            <label for="type">Type</label>
-            <label for="qty"> Quantity</label>
-            <label for="deliverer"> Deliverer</label><br>
-            <select id="prod_type" name="prod_type" required>
-                <!-- default option, hints no selection -->
-                <option value="" selected disabled hidden>Select</option>
-                <!-- fetching each prop type to be set as options, value is code but text displayed is the desc -->
-                <?php 
-                    while($product = mysqli_fetch_array($all_products,MYSQLI_ASSOC)):;
-                ?> 
-                    <option value="<?php echo $product['code'];?>">
-                        <?php echo $product['product_desc']; ?>
-                    </option>
-                <?php
-                    endwhile;
-                ?>
-            </select>
-            <input type="text" id="qty" name="qty" required>
-            <select id="deliverer" name="deliverer" required>
-                <!-- default option, hints no selection -->
-                <option value="" selected disabled hidden>Select</option>
-                <!-- fetching each deliverer to be set as options, value is id but text displayed is the desc -->
-                <?php 
-                    while($deliverer = mysqli_fetch_array($all_deliverers,MYSQLI_ASSOC)):;
-                ?> 
-                    <option value="<?php echo $deliverer['id'];?>">
-                        <?php echo $deliverer['employee_name']; ?>
-                    </option>
-                <?php
-                    endwhile;
-                ?>
-            </select>
-            <input type="submit" id="submit" name="submit">
-        </form>
-        <script>
-            $(document).ready(function () {
-                //change selectboxes to selectize mode to be searchable
-                $("select").select2();
-            });
-        </script>
-    </body>
+    <?php
+        if(isset($_REQUEST['date'])){
+            $date = $_REQUEST['date'];
+            $all_records = all_orders($date);
+            redirect();
+        }
+        else{
+            $date = date("Y-m-d");
+            $all_records = all_orders($date);
+        }
+    ?>
+
+    <div id="table_container">
+    <table id=all_records>
+        <tr>
+            <th>Block</th>
+            <th>Lot</th>
+            <th>Phase</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Deliverer</th>
+            <th>Status</th>
+        </tr>
+        <?php
+            if (mysqli_num_rows($all_records) > 0) {
+                while($record = mysqli_fetch_assoc($all_records)) { ?>
+                    <tr>
+                        <td><?php echo $record['block']; ?> </td>
+                        <td><?php echo $record['lot']; ?> </td>
+                        <td><?php echo $record['phase']; ?> </td>
+                        <td><?php echo $record['product']; ?> </td>
+                        <td><?php echo $record['quantity']; ?> </td>
+                        <td><?php echo $record['price']; ?> </td>
+                        <td><?php echo $record['deliverer']; ?> </td>
+                        <td><?php echo $record['status']; ?> </td>
+                    <tr>
+        <?php
+                }
+            }
+            else { ?>
+                <tr>
+                    <td colspan="8">No records found</td>
+                </tr>
+            <?php 
+            } ?>
+    </table>
+</body>
 </html>

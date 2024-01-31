@@ -15,8 +15,7 @@ function select($cols, $table){
         $select .= $col;
     }
     $query = "$select
-    FROM $table
-    ORDER BY $cols[0]";
+    FROM $table";
     $result = mysqli_query($conn, $query);
     return $result;
 }
@@ -43,8 +42,7 @@ function select_where($cols, $table, $condition){
 function select_distinct($col, $table){
     global $conn;
     $query = "SELECT DISTINCT $col
-    FROM $table
-    ORDER BY $col ASC";
+    FROM $table";
     $result = mysqli_query($conn, $query);
     return $result;
 }
@@ -81,6 +79,18 @@ function compute_price(){
     $query = "UPDATE orders o
     JOIN products p ON o.product_code = p.code
     SET o.price = quantity * p.price";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function all_orders($date){
+    global $conn;
+    $query = "SELECT block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE date = '$date'";
     $result = mysqli_query($conn, $query);
     return $result;
 }
