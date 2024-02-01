@@ -20,4 +20,20 @@ function reset_url(){
             history.pushState(null, "", window.location.pathname);
         </script>';
 }
+
+// handles alert for deletion of order, depending on result
+function delete_alerts($result){
+    if ($result){
+        echo '<script>
+                    alert("Transaction deleted successfully.");
+                    window.location.replace("sales.php");
+                </script>';
+    }
+    else{
+        echo '<script>
+                    alert("Error: '.mysqli_error($conn).'");
+                    window.location.replace("sales.php");
+                </script>';
+    }
+}
 ?>

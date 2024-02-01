@@ -40,6 +40,13 @@
             update_status($status,$id);
             refresh();
         } 
+
+        // determines if delete process is started
+        if(isset($_GET['delete'])){
+            $id = $_GET['id'];
+            $delete_result = delete_order($id);
+            delete_alerts($delete_result);
+        }
     ?>
 
     <!-- date display -->
@@ -96,7 +103,7 @@
                         <td>
                             <!-- edit button leads to a url with the id of the specific order -->
                             <button id="edit" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
-                            <button id="delete">Delete</button>
+                            <button id="delete" onclick="confirm_delete_order(<?php echo $record['id']; ?>)">Delete</button>
                         </td>
                     <tr>
         <?php

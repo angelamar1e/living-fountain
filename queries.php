@@ -137,4 +137,13 @@ function update_order($id, $blk, $lot, $ph, $type, $qty, $deliverer){
     return $result;
 }
 
+// deletes order
+function delete_order($id){
+    global $conn;
+    $query = "DELETE FROM orders
+            WHERE id = $id";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 ?>

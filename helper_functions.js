@@ -32,6 +32,12 @@ selects.forEach(function(select) {
     });
 });
 
-
-
+// handles confirmation of delete actions and encodes the url with primary key value of the record to be deleted
+function confirm_delete_order(id){
+    if(confirm('Are you sure you want to delete this order?')){
+        bool = true;
+        var order = '' + id;
+        window.location.href='sales.php?id='+order+'&delete='+bool;
+    }
+}
 
