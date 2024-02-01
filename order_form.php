@@ -13,7 +13,7 @@
         <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     </head>
     <body>
-        <form action="add-order.php" method="post">
+        <form action="add_order.php" method="post">
             <h3>Customer</h3>
             <label for="blk">Block</label>
             <label for="lot"> Lot</label>

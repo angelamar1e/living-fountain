@@ -4,7 +4,7 @@ function sendData() {
     var ph = document.getElementById("ph").value;
 
     $.ajax({
-        url: "add-order.php",
+        url: "add_order.php",
         type: "POST",
         data: { 
             blk: blk,
