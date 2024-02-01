@@ -9,10 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="helper_functions.js"></script>
 </head>
 <body>
+
+<!-- form to filter orders to be displayed by date -->
     <form id="dateForm" method="get" action="sales.php">
         <label for="date">Select Date:</label>
         <input type="date" id="date" name="date">
@@ -20,15 +21,19 @@
         <input type="submit" style="display:none">
     </form>
 
+    <!-- if the dateForm is changed, records for the date is queried -->
     <?php
         if(isset($_REQUEST['date'])){
             $date = $_REQUEST['date'];
             $all_records = all_orders($date);
         }
-        else{
+        // default is orders of the current day 
+        else{ 
             $date = date("Y-m-d");
             $all_records = all_orders($date);
         }
+
+        // to retrieve updated status
         if(isset($_REQUEST['order_id']) and isset($_REQUEST['status'])){
             $status = $_REQUEST['status'];
             $id = $_REQUEST['order_id'];
@@ -37,6 +42,7 @@
         } 
     ?>
 
+    <!-- date display -->
     <span><h3>Date: <?php echo $date;?></h3></span>
 
     <div id="table_container">
@@ -52,6 +58,7 @@
             <th>Status</th>
         </tr>
         <?php
+            // loops through the query result to display into a table
             if (mysqli_num_rows($all_records) > 0) {
                 while($record = mysqli_fetch_assoc($all_records)) { ?>
                     <tr>
@@ -85,7 +92,9 @@
                                 <input type="submit" style="display:none">
                             </form>
                         </td>
+                        <!-- action buttons -->
                         <td>
+                            <!-- edit button leads to a url with the id of the specific order -->
                             <button id="edit" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
                             <button id="delete">Delete</button>
                         </td>
@@ -101,6 +110,7 @@
             } 
             ?>
     </table>
+    <!-- call to script, triggers automatic form submission -->
     <script src="helper_functions.js"></script>
 </body>
 </html>

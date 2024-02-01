@@ -5,6 +5,8 @@ include('alerts.php');
 
 // gets the id of the transaction to be edited from the url
 $id = $_REQUEST['id'];
+
+// fetching records from the database using query functions
 $record = get_order($id);
 $all_products = select(array("code","product_desc"), "products");
 $all_deliverers = select_where(array("id","employee_name"),"employees","emp_type_code = 'D'");
@@ -15,6 +17,7 @@ if (mysqli_num_rows($record) > 0) {
     }
 }
 
+// fetching the submitted data from edit form, queries to update order info
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $blk = trim($_REQUEST['blk']);
     $lot = trim($_REQUEST['lot']);
@@ -52,14 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Order #<?php echo $id?></title>
 </head>
 <body>
-    
+    <!-- form is processed in the same page -->
     <form action="<?php echo $_SERVER['PHP_SELF']?>?id=<?php echo $id ?>" method="post">
         <!-- customer info -->
         <h3>Customer</h3>
         <label for="blk">Block</label>
         <label for="lot"> Lot</label>
         <label for="ph"> Phase</label><br>
-        <!-- inputs for blk, lot, phase -->
+        <!-- inputs for block, lot, phase -->
         <input type="text" id="blk" name="blk" value="<?php echo $order_info['block'];?>" required>
         <input type="text" id="lot" name="lot" value="<?php echo $order_info['lot'];?>" required>
         <input type="text" id="ph" name="ph" value="<?php echo $order_info['phase'];?>" required>

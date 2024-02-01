@@ -2,6 +2,7 @@
 
 include('connection.php');
 
+// forms simple select query (SELECT cols FROM table)
 function select($cols, $table){
     global $conn;
     $select = "SELECT ";
@@ -20,6 +21,7 @@ function select($cols, $table){
     return $result;
 }
 
+// forms select query with where clause (SELECT cols FROM table WHERE condition)
 function select_where($cols, $table, $condition){
     global $conn;
     $select = "SELECT ";
@@ -39,6 +41,7 @@ function select_where($cols, $table, $condition){
     return $result;
 }
 
+// select unique records using 1 col
 function select_distinct($col, $table){
     global $conn;
     $query = "SELECT DISTINCT $col
@@ -47,6 +50,7 @@ function select_distinct($col, $table){
     return $result;
 }
 
+// finds out if a record exists in the customer table, by counting matching records 
 function is_existing($blk, $lot, $ph){
     global $conn;
     $query = "SELECT COUNT(*) as 'count'
@@ -57,6 +61,7 @@ function is_existing($blk, $lot, $ph){
     return $count['count'];
 }
 
+// query to add new customer
 function add_new_customer($blk, $lot, $ph){
     global $conn;
     $query = "INSERT INTO customers (block, lot, phase) VALUES ($blk, $lot, $ph)";
@@ -64,16 +69,18 @@ function add_new_customer($blk, $lot, $ph){
     return $result;
 }
 
+// query to add new order
 function add_order($blk, $lot, $ph, $type, $qty, $deliverer){
     global $conn;
     $date = date("Y-m-d");
     $query = "INSERT INTO orders (block, lot, phase, date, product_code, quantity, deliverer_id) 
     VALUES ($blk, $lot, $ph, '$date','$type', $qty, $deliverer)";
     $result = mysqli_query($conn, $query);
-    compute_price();
+    compute_price(); 
     return $result;
 }
 
+// query to compute price, and update records with price not set (used everytime an order is added or updated)
 function compute_price(){
     global $conn;
     $query = "UPDATE orders o
@@ -83,6 +90,7 @@ function compute_price(){
     return $result;
 }
 
+// query to retrieve orders on a particular date
 function all_orders($date){
     global $conn;
     $query = "SELECT o.id, block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
@@ -95,6 +103,7 @@ function all_orders($date){
     return $result;
 }
 
+// updates status of an order
 function update_status($code, $id){
     global $conn;
     $query = "UPDATE orders
@@ -104,6 +113,7 @@ function update_status($code, $id){
     return $result;
 }
 
+// retrieves a specific order (used to display initial values of order to be updated)
 function get_order($id){
     global $conn;
     $query = "SELECT block, lot, phase, p.code as 'prod_code', product_desc as 'product', quantity, o.price, deliverer_id, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
@@ -116,6 +126,7 @@ function get_order($id){
     return $result;
 }
 
+// updates the order
 function update_order($id, $blk, $lot, $ph, $type, $qty, $deliverer){
     global $conn;
     $query = "UPDATE orders
