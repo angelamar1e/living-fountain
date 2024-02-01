@@ -104,4 +104,26 @@ function update_status($code, $id){
     return $result;
 }
 
+function get_order($id){
+    global $conn;
+    $query = "SELECT block, lot, phase, p.code as 'prod_code', product_desc as 'product', quantity, o.price, deliverer_id, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE o.id = $id";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function update_order($id, $blk, $lot, $ph, $type, $qty, $deliverer){
+    global $conn;
+    $query = "UPDATE orders
+            SET block = $blk, lot = $lot, phase = $ph, product_code = '$type', quantity = $qty, deliverer_id = $deliverer
+            WHERE id = $id";
+    $result = mysqli_query($conn, $query);
+    compute_price();
+    return $result;
+}
+
 ?>

@@ -86,7 +86,7 @@
                             </form>
                         </td>
                         <td>
-                            <button id="edit" onclick="document.location='edit_transaction.php'">Edit</button>
+                            <button id="edit" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
                             <button id="delete">Delete</button>
                         </td>
                     <tr>
