@@ -146,4 +146,19 @@ function delete_order($id){
     return $result;
 }
 
+// retrieve unpaid records based on the date
+function get_unpaid_records($date) {
+    global $conn;
+    $query = "SELECT * FROM orders WHERE date = '$date' AND status = 'DELIVERED' AND payment_status = 'UNPAID'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// mark delivery as paid
+function mark_paid($order_id) {
+    global $conn;
+    $query = "UPDATE orders SET payment_status = 'PAID' WHERE id = $order_id";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
 ?>
