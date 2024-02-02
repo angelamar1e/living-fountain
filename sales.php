@@ -47,6 +47,14 @@
             $delete_result = delete_order($id);
             delete_alerts($delete_result);
         }
+
+        $revenue = select_where(array("SUM(price) as 'revenue'"),"orders","date = '$date'");
+
+        if (mysqli_num_rows($revenue) > 0) {
+            while($record = mysqli_fetch_assoc($revenue)) { 
+                $current_revenue = $record['revenue'];
+            }
+        }
     ?>
 
     <!-- date display -->
@@ -117,6 +125,10 @@
             } 
             ?>
     </table>
+    <div id="revenue_section" class="revenue_section">
+        <h3 id="revenue_label" class="revenue_label">Revenue</h3>
+        <h3 id="revenue_amt" class="revenue_amt"><?php echo $current_revenue;?></h3>
+    </div>
     <!-- call to script, triggers automatic form submission -->
     <script src="helper_functions.js"></script>
 </body>
