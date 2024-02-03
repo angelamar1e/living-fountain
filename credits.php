@@ -59,3 +59,41 @@ if (isset($_REQUEST['date'])) {
                 <th>Deliverer</th>
                 <th>Action</th>
             </tr>
+            <?php
+                if(mysqli_num_rows($credit_records) > 0) {
+                    while($record = mysqli_fetch_assoc($credit_records)) {
+            ?>
+
+                        <tr>
+                            <td><?php echo $record['block'];?></td>
+                            <td><?php echo $record['lot'];?></td>
+                            <td><?php echo $record['phase'];?></td>
+                            <td><?php echo $record['product'];?></td>
+                            <td><?php echo $record['quantity'];?></td>
+                            <td><?php echo $record['price'];?></td>
+                            <td><?php echo $record['deliverer'];?></td>
+                            <td>
+                                <!-- form to mark as paid or deliverd -->
+                                <form method = "post" action = "">
+                                    <input type = "text" value = "<?php echo $record['id'];?>" name = "order_id" style = "display:none">
+                                    <button type="submit" name = "mark_delivered"> Mark as Delivered</button>
+                                </form>
+                            </td>
+                        </tr>
+            <?php
+                    }
+                } else {
+            ?>
+                <tr>
+                    <td colspan="8">No credit records found</td>
+                </tr>
+            <?php
+                }
+            ?>
+        </table>
+    </div>
+    <!-- Call to script, triggers automatic form submission -->
+    <script src="helper_functions.js"></script>
+</body>
+</html>
+                      
