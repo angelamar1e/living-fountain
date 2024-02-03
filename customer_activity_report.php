@@ -41,7 +41,6 @@ if ($all_records->num_rows > 0) {
         <td><?php echo $record['block']; ?></td>
         <td><?php echo $record['lot']; ?></td>
         <td><?php echo $record['phase']; ?></td>
-        <td><?php echo $record['date']; ?></td>
         <td><?php echo $record['last_order']; ?></td>
     </tr>
 <?php
