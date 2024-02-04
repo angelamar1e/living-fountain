@@ -1,6 +1,7 @@
 <?php
- 
+ include('alerts.php');
  include('connection.php');
+ include('queries.php');
 
 ?>
 
@@ -16,22 +17,59 @@
 <body>
 <table >
         <tr>
-            <th>ID</th>
+            
             <th>Block</th>
             <th>Lot</th>
             <th>Phase</th>
             <th>Date</th>
+            <th>product</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>deliverer</th>
             
         </tr>
 
 <?php
  global $conn;
  
- //query to display recent orders descending 
- $query = "SELECT id,block, lot, phase, MAX(date) AS last_order
-            FROM orders
-            GROUP BY id,block, lot, phase
-            ORDER BY last_order DESC;";
+ //query to display recent orders of unique customers descending 
+ $query = "WITH ranked_orders AS (
+    SELECT
+        o.id,
+        o.block,
+        o.lot,
+        o.phase,
+        o.date,
+        o.product_code,
+        o.quantity,
+        o.price,
+        o.deliverer_id,
+        p.product_desc,
+        e.employee_name,
+        ROW_NUMBER() OVER (PARTITION BY o.block, o.lot, o.phase ORDER BY o.date DESC) AS rn
+    FROM
+        orders o
+    JOIN
+        products p ON o.product_code = p.code
+    LEFT JOIN
+        employees e ON o.deliverer_id = e.id
+)
+SELECT
+    block,
+    lot,
+    phase,
+    MAX(date) AS last_order,
+    product_desc AS product,
+    quantity,
+    price,
+    employee_name AS deliverer
+FROM
+    ranked_orders
+WHERE
+    rn = 1
+GROUP BY
+    block, lot, phase;
+";
 
 $all_records = $conn->query($query);
 
@@ -40,11 +78,15 @@ if ($all_records->num_rows > 0) {
 ?>
 <!-- dispaly the query -->
     <tr>
-        <td><?php echo $record['id']; ?></td>
         <td><?php echo $record['block']; ?></td>
         <td><?php echo $record['lot']; ?></td>
         <td><?php echo $record['phase']; ?></td>
         <td><?php echo $record['last_order']; ?></td>
+        <td><?php echo $record['product']; ?></td>
+        <td><?php echo $record['quantity']; ?></td>
+        <td><?php echo $record['price']; ?></td>
+        <td><?php echo $record['deliverer']; ?></td>
+        
     </tr>
 <?php
     }
