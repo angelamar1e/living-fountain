@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revenue Page</title>
-    <script src="helper_function.js"></script>
+    <script src="helper_functions.js"></script>
 </head>
 <body>
 
