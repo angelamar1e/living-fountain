@@ -149,7 +149,12 @@ function delete_order($id){
 // function to get unpaid records
 function get_unpaid_records($date) {
     global $conn;
-    $query = "SELECT * FROM orders WHERE date = '$date' AND status = 'D'";
+    $query = "SELECT o.id, block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE date = '$date' AND o.status = 'D'";
     $result = mysqli_query($conn, $query);
     return $result;
 }

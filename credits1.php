@@ -1,30 +1,18 @@
 <?php
 include("connection.php");
 include("queries.php");
+include("alerts.php");
 
-// Marking delivered or paid and delivered
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_status'])) {
-    $order_id = $_POST['order_id'];
-    $status = $_POST['status'];
-
-    if ($status == 'Paid and Delivered') {
-        pd_Del($order_id);
-    } elseif ($status == 'Delivered') {
-        del($order_id);
-    }
-
+// to retrieve updated status
+if(isset($_REQUEST['order_id']) and isset($_REQUEST['status'])){
+    $status = $_REQUEST['status'];
+    $id = $_REQUEST['order_id'];
+    update_status($status,$id);
     refresh();
 }
 
-// Fetch credit records for delivered but unpaid based on the displayed date
-if (isset($_REQUEST['date'])) {
-    $date = $_REQUEST['date'];
-} else {
-    $date = date('Y-m-d');
-}
+$dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'");
 
-// Get delivered but unpaid records for the selected or default date
-$unpaid_records = get_unpaid_records($date);
 ?>
 
 <!DOCTYPE html>
@@ -36,69 +24,74 @@ $unpaid_records = get_unpaid_records($date);
     <script src="helper_functions.js"></script>
 </head>
 <body>
-
-    <!-- Form to filter credit records by date -->
-    <form id="dateForm" method="get" action="credits1.php">
-        <label for="date">Select Date: </label>
-        <input type="date" id="date" name="date" value="<?php echo $date; ?>">
-        <input type="submit" style="display:none">
-    </form>
-
-    <!-- Display selected or default date -->
-    <span><h3>Date: <?php echo $date; ?></h3></span>
-
-    <div id="table_container">
-        <table id="credit_records">
-            <tr>
-                <th>Block</th>
-                <th>Lot</th>
-                <th>Phase</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Deliverer</th>
-                <th>Action</th>
-            </tr>
-            <?php
-            if (is_object($unpaid_records)) {
-                if (mysqli_num_rows($unpaid_records) > 0) {
-                    // Records found
-                    while ($record = mysqli_fetch_assoc($delivered_unpaid_records)) {
-                        ?>
+    <h1 id="credits_page_label">Credits</h1>
+     <?php
+        if (mysqli_num_rows($dates_with_credit) > 0) {
+            while ($record = mysqli_fetch_assoc($dates_with_credit)) { 
+                $date = $record['date']; ?>
+                <!-- displaying each date -->
+                <h1 id="date_display" class="date_display"><?php echo $date; ?></h1>
+                <!-- displaying a table for credits per date -->
+                <div id="table_container">
+                    <table id="credit_records">
                         <tr>
-                            <td><?php echo $record['block']; ?></td>
-                            <td><?php echo $record['lot']; ?></td>
-                            <td><?php echo $record['phase']; ?></td>
-                            <td><?php echo $record['product_code']; ?></td>
-                            <td><?php echo $record['quantity']; ?></td>
-                            <td><?php echo $record['price']; ?></td>
-                            <td><?php echo $record['deliverer_id']; ?></td>
-                            <td>
-                                <!-- Form to mark as delivered or paid and delivered -->
-                                <form method="post" action="credits.php">
-                                    <input type="text" value="<?php echo $record['id']; ?>" name="order_id" style="display:none">
-                                    <!-- Dropdown for status -->
-                                    <select name="status">
-                                        <option value="Delivered">Delivered</option>
-                                        <option value="Paid and Delivered">Paid and Delivered</option>
-                                    </select>
-                                    <button type="submit" name="update_status">Update Status</button>
-                                </form>
-                            </td>
+                            <th>Block</th>
+                            <th>Lot</th>
+                            <th>Phase</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Deliverer</th>
+                            <th>Action</th>
                         </tr>
-                        <?php
-                    }
+                    <?php
+                    // Get delivered but unpaid records for the dates retrieved
+                    $unpaid_records = get_unpaid_records($date);
+                    if (mysqli_num_rows($unpaid_records) > 0) {
+                    // Records found
+                        while ($record = mysqli_fetch_assoc($unpaid_records)) { ?>
+                            <tr>
+                                <td><?php echo $record['block']; ?></td>
+                                <td><?php echo $record['lot']; ?></td>
+                                <td><?php echo $record['phase']; ?></td>
+                                <td><?php echo $record['product']; ?></td>
+                                <td><?php echo $record['quantity']; ?></td>
+                                <td><?php echo $record['price']; ?></td>
+                                <td><?php echo $record['deliverer']; ?></td>
+                                <td>
+                                <form method="post" action="" class="status_select" id="status_select" name="status_select">
+                                    <input type="text" value="<?php echo $record['id']; ?>" id="order_id" name="order_id" style="display:none">
+                                    <select class="status" id="status" name="status">
+                                        <!-- reflects the status saved in the database -->
+                                        <option value="<?php echo $record['code'];?>" selected disabled hidden><?php echo $record['status']; ?></option>
+                                        <!-- fetching each status to be set as options, value stored in db is code but text displayed is the desc -->
+                                        <?php
+                                            $all_status = select_where(array("code","status_desc"),"order_status","code = 'D' OR code = 'PD'");
+                                            while($status = mysqli_fetch_array($all_status,MYSQLI_ASSOC)):;
+                                        ?> 
+                                            <option value="<?php echo $status['code'];?>">
+                                                <?php echo $status['status_desc']; ?>
+                                            </option>
+                                        <?php
+                                            endwhile;
+                                        ?>
+                                    </select>
+                                    <!-- hidden submit button to trigger form submission using js -->
+                                    <input type="submit" style="display:none">
+                                </form>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                            <?php
+                        }
                 } else {
                     // No records found
                     echo "<tr><td colspan='8'>No credit records found</td></tr>";
                 }
-            } else {
-                // $delivered_unpaid_records is not a valid mysqli_result object
-                echo "Error: Query did not return a valid result set.";
             }
-            ?>
-        </table>
-    </div>
+        }
+    ?>
     <!-- Call to script, triggers automatic form submission -->
     <script src="helper_functions.js"></script>
 </body>
