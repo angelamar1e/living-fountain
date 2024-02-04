@@ -154,4 +154,12 @@ function get_weekly_revenue($start_date, $end_date) {
     return $result;
 }
 
+// Add this function to get monthly revenue
+function get_monthly_revenue($month, $year) {
+    global $conn;
+    $query = "SELECT SUM(price) as monthly_revenue FROM orders WHERE MONTH(date) = $month AND YEAR(date) = $year AND payment_status = 'PAID'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 ?>
