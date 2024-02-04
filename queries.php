@@ -162,7 +162,7 @@ function get_unpaid_records($date) {
 // function to get weekly revenue
 function get_weekly_revenue($start_date, $end_date) {
     global $conn;
-    $query = "SELECT YEAR(date) AS year, WEEK(date) AS week, MIN(date) AS start_date, MAX(date) AS end_date,  SUM(price) AS weekly_revenue
+    $query = "SELECT YEAR(date) AS year, MIN(date) AS start_date, MAX(date) AS end_date,  SUM(price) AS weekly_revenue
     FROM orders
     GROUP BY YEAR(date), WEEK(date)
     ORDER BY YEAR(date), WEEK(date);";
