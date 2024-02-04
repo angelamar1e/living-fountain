@@ -347,8 +347,20 @@
 }
 .block-lot-phase2 {
   position: absolute;
+  word-spacing: 50px;
   top: 321px;
   left: 489px;
+  font-size: var(--font-size-base);
+  white-space: pre-wrap;
+  display: inline-block;
+  width: 629px;
+  height: 21px;
+}
+.block-lot-phase4 {
+  position: absolute;
+  word-spacing: 78px;
+  top: 321px;
+  left: 800px;
   font-size: var(--font-size-base);
   white-space: pre-wrap;
   display: inline-block;
@@ -365,12 +377,24 @@
 }
 .block-lot-phase3 {
   position: absolute;
-  top: 525px;
-  left: 460px;
+  word-spacing: 55px;
+  top: 555px;
+  left: 480px;
   font-size: var(--font-size-smi);
   white-space: pre-wrap;
   display: inline-block;
-  width: 767px;
+  width: 900px;
+  height: 21px;
+}
+.block-lot-phase5 {
+  position: absolute;
+  word-spacing: 30px;
+  top: 555px;
+  left: 978px;
+  font-size: var(--font-size-smi);
+  white-space: pre-wrap;
+  display: inline-block;
+  width: 900px;
   height: 21px;
 }
 .group-child67 {
