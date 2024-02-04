@@ -147,3 +147,49 @@ function delete_order($id){
 }
 
 ?>
+<?php
+
+include('connection.php');
+
+// Function to search for customers based on block, lot, and phase
+function searchCustomers($blk, $lot, $ph) {
+    global $conn;
+
+    // Validate input values
+    $blk = mysqli_real_escape_string($conn, $blk);
+    $lot = mysqli_real_escape_string($conn, $lot);
+    $ph = mysqli_real_escape_string($conn, $ph);
+
+    // Perform the search query
+    $query = "SELECT * FROM customers WHERE block = '$blk' AND lot = '$lot' AND phase = '$ph'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// Function to get customer transactions based on block, lot, and phase
+function getCustomerTransactions($block, $lot, $phase) {
+    global $conn;
+
+    // Validate input values
+    $block = mysqli_real_escape_string($conn, $block);
+    $lot = mysqli_real_escape_string($conn, $lot);
+    $phase = mysqli_real_escape_string($conn, $phase);
+
+    // Get the customer ID based on block, lot, and phase
+    $customerQuery = "SELECT id FROM customers WHERE block = '$block' AND lot = '$lot' AND phase = '$phase'";
+    $customerResult = mysqli_query($conn, $customerQuery);
+
+    if ($customerResult && $customer = mysqli_fetch_assoc($customerResult)) {
+        $customerId = $customer['id'];
+
+        // Perform the transactions query
+        $transactionsQuery = "SELECT * FROM transactions WHERE customer_id = $customerId";
+        $transactionsResult = mysqli_query($conn, $transactionsQuery);
+        
+        return $transactionsResult;
+    } else {
+        // Handle customer not found
+        return false;
+    }
+}
+
