@@ -1,20 +1,20 @@
 <?php
     include ("connection.php");
     include("queries.php");
-    include("alerts");
+    include("alerts.php");
 
     //marking deliveries as paid or delivered
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['mark_paid'])) {
-            $order_id = $POST['order_id'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_status'])) {
+        $order_id = $_POST['order_id'];
+        $status = $_POST['status'];
+    
+        if ($status == 'Delivered' || $status == 'Paid and Delivered') {
             mark_paid($order_id);
-            refresh();
-    } else if (isset($_POST['mark_delivered'])) {
-        $order_id = $POST['order_id'];
-        mark_paid($order_id);
+        }
+    
         refresh();
     }
-}
+    
 
 // fetch credit records for displayed date
 if (isset($_REQUEST['date'])) {
@@ -75,9 +75,16 @@ if (isset($_REQUEST['date'])) {
                             <td><?php echo $record['deliverer'];?></td>
                             <td>
                                 <!-- form to mark as paid or deliverd -->
-                                <form method = "post" action = "">
-                                    <input type = "text" value = "<?php echo $record['id'];?>" name = "order_id" style = "display:none">
-                                    <button type="submit" name = "mark_delivered"> Mark as Delivered</button>
+                                <form method="post" action="credits.php">
+                                    <input type="text" value="<?php echo $record['id']; ?>" name="order_id" style="display:none">
+
+                                    <!-- Dropdown for status -->
+                                    <select name="status">
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Paid and Delivered">Paid and Delivered</option>
+                                    </select>
+
+                                    <button type="submit" name="update_status">Update Status</button>
                                 </form>
                             </td>
                         </tr>
