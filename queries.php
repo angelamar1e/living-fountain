@@ -157,7 +157,12 @@ function get_unpaid_records($date) {
 // function to get weekly revenue
 function get_weekly_revenue($start_date, $end_date) {
     global $conn;
-    $query = "SELECT SUM(price) as weekly_revenue FROM orders WHERE date BETWEEN '$start_date' AND '$end_date' AND status = 'PD'";
+    $query = "SELECT SUM(price) as weekly_revenue
+    FROM orders
+    WHERE date >= CURDATE() - INTERVAL WEEKDAY(CURDATE()) DAY
+    AND date < CURDATE() - INTERVAL WEEKDAY(CURDATE()) - 6 DAY
+    AND 'payment' = 'PD'";
+    
     $result = mysqli_query($conn, $query);
     return $result;
 }
@@ -165,7 +170,11 @@ function get_weekly_revenue($start_date, $end_date) {
 // function to get monthly revenue
 function get_monthly_revenue($month, $year) {
     global $conn;
-    $query = "SELECT SUM(price) as monthly_revenue FROM orders WHERE MONTH(date) = $month AND YEAR(date) = $year AND payment = 'PD'";
+    $query = "SELECT YEAR(date) as year, MONTH(date) as month, SUM(price) as monthly_revenue
+    FROM orders
+    WHERE YEAR(date) = YEAR(CURDATE()) AND 'payment' = 'PD'
+    GROUP BY YEAR(date), MONTH(date)";
+
     $result = mysqli_query($conn, $query);
     return $result;
 }
