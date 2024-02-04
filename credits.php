@@ -26,6 +26,7 @@ if (isset($_REQUEST['date'])) {
 }
 
 ?>
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,3 +98,5 @@ if (isset($_REQUEST['date'])) {
 </body>
 </html>
                       
+=======
+>>>>>>> parent of 47aeab1 (HTML Form to filter records by date)
