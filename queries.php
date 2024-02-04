@@ -217,4 +217,19 @@ function get_additional(){
     return $amount;
 }
 
+// get the total amount of orders from a given customer
+function compute_total($block, $lot, $phase){
+    global $conn;
+    $query = "SELECT SUM(price) as 'amount'
+            FROM orders
+            WHERE block = $block AND lot = $lot AND phase = $phase";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($total = mysqli_fetch_assoc($result)) {
+            $amount = $total['amount'];
+        }
+    } 
+    return $amount;
+}
+
 ?>
