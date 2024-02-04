@@ -3,22 +3,21 @@
     include("queries.php");
     include("alerts.php");
     
-// handling dateForm submission and processing orders
+// Fetch the result from the mysqli_result object for weekly revenue
+$total_weekly_revenue = 0;
+if (isset($weekly_revenue)) {
+    $weekly_row = mysqli_fetch_assoc($weekly_revenue);
+    $total_weekly_revenue = $weekly_row ? $weekly_row['weekly_revenue'] : 0;
+}
 
-    if (isset($_REQUEST['weekly_tab'])) {
-        // Display Weekly Revenue
-        $start_date = date('Y-m-d', strtotime('last Monday'));
-        $end_date = date('Y-m-d', strtotime('this Sunday'));
-        $weekly_revenue = get_weekly_revenue($start_date, $end_date);
-    } elseif (isset($_REQUEST['monthly_tab'])) {
-        // Display Monthly Revenue
-        $month = date('m');
-        $year = date('Y');
-        $monthly_revenue = get_monthly_revenue($month, $year);
+// Fetch the result from the mysqli_result object for monthly revenue
+$monthly_rows = array();
+if (isset($monthly_revenue)) {
+    while ($row = mysqli_fetch_assoc($monthly_revenue)) {
+        $monthly_rows[] = $row;
     }
-
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,7 @@
        <?php if (isset($weekly_revenue)): ?>
         <div id="weekly_revenue">
             <h2>Weekly Revenue</h2>
-            <p>Total Weekly Revenue: $<?php echo $weekly_revenue; ?></p>
+            <p>Total Weekly Revenue: $<?php echo $total_weekly_revenue; ?></p>
             <!-- Weekly revenue report content -->
         </div>
     <?php endif; ?>
