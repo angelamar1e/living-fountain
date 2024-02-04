@@ -19,6 +19,7 @@
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +36,11 @@
         <li><a href="?monthly_tab">Monthly Revenue</a></li>
     </ul>
 
-    <!-- Display Weekly Revenue -->
-    <?php if (isset($weekly_revenue)): ?>
+       <!-- Display Weekly Revenue -->
+       <?php if (isset($weekly_revenue)): ?>
         <div id="weekly_revenue">
+            <h2>Weekly Revenue</h2>
+            <p>Total Weekly Revenue: $<?php echo $weekly_revenue; ?></p>
             <!-- Weekly revenue report content -->
         </div>
     <?php endif; ?>
@@ -45,6 +48,21 @@
     <!-- Display Monthly Revenue -->
     <?php if (isset($monthly_revenue)): ?>
         <div id="monthly_revenue">
+        <h2>Monthly Revenue</h2>
+            <table border="1">
+                <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Total Monthly Revenue</th>
+                </tr>
+                <?php while ($row = mysqli_fetch_assoc($monthly_revenue)): ?>
+                    <tr>
+                        <td><?php echo $row['year']; ?></td>
+                        <td><?php echo $row['month']; ?></td>
+                        <td>$<?php echo $row['monthly_revenue']; ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
             <!-- Monthly revenue report content -->
         </div>
     <?php endif; ?>
