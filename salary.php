@@ -8,6 +8,28 @@ $washers = get_employee_info("W");
 $refillers = get_employee_info("R");
 
 $date = date("Y-m-d");
+
+// sum up the qty ordered for the current day
+$qty_count = select_where(array("SUM(quantity) as 'qty_sold'"),"orders","date = '$date'");
+if (mysqli_num_rows($qty_count) > 0) {
+    while($count = mysqli_fetch_assoc($qty_count)) { 
+        $qty_sold = $count['qty_sold'];
+    }
+}
+
+// to change salary according to qty sold
+if ($qty_sold > 50 and $qty_sold < 100){
+    $deliverer_base_salary = 350;
+}
+else if ($qty_sold > 100){
+    $deliverer_base_salary = 450;
+    $others_salary = 500;
+}
+else{
+    $deliverer_base_salary = 250;
+    $others_salary = 350;
+}
+
 ?>
 
 <!DOCTYPE html>
