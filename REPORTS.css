@@ -1,0 +1,465 @@
+.image-27-icon2 {
+  position: absolute;
+  top: 0;
+  left: -18px;
+  width: 1458px;
+  height: 1024px;
+  object-fit: cover;
+}
+.salary-serrano-inner {
+  position: absolute;
+  top: -2px;
+  left: 96px;
+  width: 1344px;
+  height: 1024px;
+}
+.frame-child1,
+.rectangle-icon {
+  position: absolute;
+  top: 50px;
+  border-radius: var(--br-xl) var(--br-xl) 0 1;
+  left: 0;
+  width: 868px;
+  height: 323px;
+}
+.frame-child1 {
+  top: 0;
+  border-radius: var(--br-xl) var(--br-xl) 0 0;
+  background-color: var(--color-darkslategray-100);
+  height: 73px;
+  cursor: pointer;
+}
+.logo-removebg-preview-8-icon1 {
+  position: absolute;
+  top: 84px;
+  left: 164px;
+  width: 510px;
+  height: 259px;
+  object-fit: cover;
+}
+.frame-child2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  width: 868px;
+  height: 57.5px;
+}
+.pie-chart-report2 {
+  position: absolute;
+  top: 15px;
+  left: 32px;
+  width: 36px;
+  height: 41px;
+  object-fit: cover;
+}
+.reports3 {
+  position: absolute;
+  top: 16px;
+  left: 78px;
+  font-weight: 500;
+  display: inline-block;
+  width: 164px;
+  height: 31px;
+}
+.vector-group {
+  position: absolute;
+  top: 349px;
+  left: 397px;
+  width: 868px;
+  height: 343px;
+}
+.add1,
+.choose-from-the {
+  position: absolute;
+  top: 788px;
+  left: 981px;
+  width: 64px;
+  height: 60px;
+}
+.choose-from-the {
+  top: 489px;
+  left: 503px;
+  font-size: var(--font-size-17xl);
+  line-height: 24px;
+  font-family: var(--font-baloo-tammudu);
+  color: var(--color-darkslategray-100);
+  display: flex;
+  align-items: center;
+  width: 678px;
+  height: 41px;
+}
+.group-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray-400);
+  width: 245px;
+  height: 51px;
+}
+.customer-activity {
+  position: absolute;
+  top: 11px;
+  left: 8px;
+  font-size: 23px;
+  font-weight: 600;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  width: 245px;
+  height: 30px;
+}
+.rectangle-container {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 563px;
+  left: 878px;
+  width: 253px;
+  height: 51px;
+}
+.group-child2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray-500);
+  width: 245px;
+  height: 51px;
+}
+.revenue {
+  position: absolute;
+  top: 4px;
+  left: 48px;
+  font-size: var(--font-size-13xl);
+  font-weight: 600;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  width: 156px;
+  height: 30px;
+}
+.group-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 563px;
+  left: 540px;
+  width: 245px;
+  height: 51px;
+}
+.home-page-icon1,
+.navigation-in-item {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.navigation-in-item {
+  width: 81.07%;
+  right: 18.93%;
+  background-color: var(--color-gray-100);
+}
+.home-page-icon1 {
+  width: 24.03%;
+  right: 75.97%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.home1 {
+  position: absolute;
+  height: 86.84%;
+  width: 67.53%;
+  top: 10.53%;
+  left: 32.47%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.home-page-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.71%;
+  width: 63.37%;
+  top: 20.02%;
+  right: 25.51%;
+  bottom: 76.27%;
+  left: 11.11%;
+}
+.welcome2 {
+  margin: 0;
+}
+.credit2,
+.welcome-admin1 {
+  position: absolute;
+  height: 3.22%;
+  width: 62.96%;
+  top: 9.77%;
+  left: 37.04%;
+  font-weight: 500;
+  display: inline-block;
+}
+.credit2 {
+  height: 80.49%;
+  width: 69.94%;
+  top: 9.76%;
+  left: 30.06%;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+}
+.credit-card-contactless2 {
+  position: absolute;
+  height: 100%;
+  width: 22.54%;
+  top: 0;
+  right: 77.46%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.credit-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 71.19%;
+  top: 31.35%;
+  right: 18.52%;
+  bottom: 64.65%;
+  left: 10.29%;
+}
+.salary2 {
+  position: absolute;
+  height: 84.62%;
+  width: 68.75%;
+  top: 7.69%;
+  left: 31.25%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.hand-holding-dollar2 {
+  position: absolute;
+  height: 100%;
+  width: 26.7%;
+  top: 0;
+  right: 73.3%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.salary-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.81%;
+  width: 72.43%;
+  top: 37.3%;
+  right: 18.52%;
+  bottom: 58.89%;
+  left: 9.05%;
+}
+.image-36-icon1,
+.menu-icon1,
+.pie-chart-report3 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.image-36-icon1 {
+  height: 5.57%;
+  width: 23.46%;
+  top: 8.59%;
+  right: 68.72%;
+  bottom: 85.84%;
+  left: 7.82%;
+  border-radius: var(--br-141xl);
+}
+.menu-icon1,
+.pie-chart-report3 {
+  height: 4.3%;
+  width: 20.16%;
+  top: 1.46%;
+  right: 70.78%;
+  bottom: 94.24%;
+  left: 9.05%;
+}
+.pie-chart-report3 {
+  height: 100%;
+  width: 18.46%;
+  top: 0;
+  right: 81.54%;
+  bottom: 0;
+  left: 0;
+}
+.reports4 {
+  position: absolute;
+  height: 80.49%;
+  width: 74.36%;
+  top: 9.76%;
+  left: 25.64%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.pie-chart-report-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 80.25%;
+  top: 43.16%;
+  right: 8.64%;
+  bottom: 52.83%;
+  left: 11.11%;
+}
+.customer-icon2 {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  right: 80%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sign-out3 {
+  position: absolute;
+  height: 89.19%;
+  width: 74.63%;
+  top: 8.11%;
+  left: 25.37%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.customer-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 84.36%;
+  top: 49.12%;
+  right: 5.35%;
+  bottom: 47.27%;
+  left: 10.29%;
+}
+.stocks-growth-icon1 {
+  position: absolute;
+  height: 100%;
+  width: 23.13%;
+  top: 0;
+  right: 76.88%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sales2 {
+  position: absolute;
+  height: 89.19%;
+  width: 65%;
+  top: 2.7%;
+  left: 35%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.stocks-growth-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 65.84%;
+  top: 25.88%;
+  right: 23.87%;
+  bottom: 70.51%;
+  left: 10.29%;
+}
+.navigation-in1 {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 243px;
+  height: 1024px;
+  font-size: var(--font-size-base);
+}
+.salary-serrano-child1 {
+  position: absolute;
+  top: 435px;
+  left: 1px;
+  width: 197px;
+  height: 60px;
+  mix-blend-mode: overlay;
+}
+.salary-serrano1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 1440px;
+  height: 1024px;
+  overflow: hidden;
+}
+.reports2 {
+  width: 100%;
+  position: relative;
+  height: 1024px;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--color-white);
+  font-family: var(--font-outfit);
+}

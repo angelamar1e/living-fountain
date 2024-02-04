@@ -1,0 +1,706 @@
+.image-1 {
+  position: absolute;
+  top: -909px;
+  left: -69px;
+  width: 1689px;
+  height: 1993px;
+}
+.image-6,
+.image-7 {
+  position: absolute;
+  top: 612px;
+  left: -18px;
+  width: 1458px;
+  height: 556px;
+}
+.image-7 {
+  top: 0;
+  left: 0;
+  height: 1024px;
+}
+.home-page-serrano-child {
+  position: absolute;
+  top: 88px;
+  left: 78px;
+  background-color: var(--color-white);
+  width: 100px;
+  height: 94px;
+}
+.credit,
+.reports,
+.salary,
+.sales {
+  position: absolute;
+  top: 122px;
+  left: 771px;
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+  text-align: left;
+  display: inline-block;
+  width: 54px;
+  height: 25px;
+}
+.credit,
+.reports,
+.salary {
+  left: 873px;
+  width: 61px;
+}
+.reports,
+.salary {
+  left: 982px;
+}
+.reports {
+  left: 1091px;
+  width: 75px;
+}
+.home-page-serrano-item {
+  position: absolute;
+  top: 159px;
+  left: 663px;
+  border-top: 4px solid var(--color-white);
+  box-sizing: border-box;
+  width: 69px;
+  height: 4px;
+}
+.home-page-serrano-inner {
+  position: absolute;
+  height: 2.73%;
+  width: 12.08%;
+  top: 11.82%;
+  right: 6.74%;
+  bottom: 85.45%;
+  left: 81.18%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.image-27-icon {
+  position: absolute;
+  top: 0;
+  left: -18px;
+  width: 1458px;
+  height: 1024px;
+  object-fit: cover;
+}
+.rectangle-div {
+  position: absolute;
+  top: 224px;
+  left: 41px;
+  width: 524px;
+  height: 288px;
+}
+.to-living-fountain,
+.welcome {
+  position: absolute;
+  top: 117px;
+  left: 129px;
+  font-size: var(--font-size-61xl);
+  font-weight: 500;
+  color: var(--color-darkslategray-100);
+  display: inline-block;
+  width: 613px;
+  height: 184px;
+}
+.to-living-fountain {
+  top: 207px;
+  font-weight: 100;
+  width: 1002px;
+}
+.home-page-serrano-child1,
+.home-page-serrano-child2 {
+  position: absolute;
+  top: 483px;
+  left: 206px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-darkslateblue-200);
+  width: 271px;
+  height: 166px;
+}
+.home-page-serrano-child2 {
+  top: 393px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue-300);
+  height: 70px;
+}
+.s-a-l {
+  position: absolute;
+  top: 402px;
+  left: 257px;
+  font-size: var(--font-size-17xl);
+  display: inline-block;
+  width: 168px;
+  height: 36px;
+}
+.blank-line {
+  margin: 0;
+}
+.customer-orders {
+  margin: 0;
+  font-weight: 200;
+}
+.manage-customer-orders-container {
+  position: absolute;
+  top: 487px;
+  left: 225px;
+  white-space: normal;
+  display: inline-block;
+  width: 230px;
+  height: 150px;
+}
+.home-page-serrano-child3,
+.home-page-serrano-child4 {
+  position: absolute;
+  top: 481px;
+  left: 518px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-darkslateblue-200);
+  width: 271px;
+  height: 168px;
+}
+.home-page-serrano-child4 {
+  top: 391px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue-300);
+  height: 70px;
+}
+.c-r-e {
+  position: absolute;
+  top: 402px;
+  left: 557px;
+  font-size: var(--font-size-17xl);
+  display: inline-block;
+  width: 191px;
+  height: 36px;
+}
+.handle-transactions-and-container {
+  position: absolute;
+  top: 487px;
+  left: 549px;
+  display: inline-block;
+  width: 214px;
+  height: 150px;
+}
+.home-page-serrano-child5,
+.home-page-serrano-child6,
+.home-page-serrano-child7,
+.home-page-serrano-child8 {
+  position: absolute;
+  top: 483px;
+  left: 829px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-darkslateblue-200);
+  width: 271px;
+  height: 166px;
+}
+.home-page-serrano-child6,
+.home-page-serrano-child7,
+.home-page-serrano-child8 {
+  top: 487px;
+  left: 1140px;
+}
+.home-page-serrano-child7,
+.home-page-serrano-child8 {
+  top: 677px;
+  left: 1141px;
+}
+.home-page-serrano-child8 {
+  top: 393px;
+  left: 829px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue-300);
+  height: 70px;
+}
+.keep-track-of-container,
+.s-a-l1 {
+  position: absolute;
+  display: inline-block;
+}
+.s-a-l1 {
+  top: 402px;
+  left: 870px;
+  font-size: var(--font-size-17xl);
+  width: 191px;
+  height: 36px;
+}
+.keep-track-of-container {
+  top: 491px;
+  left: 858px;
+  width: 214px;
+  height: 150px;
+}
+.home-page-serrano-child9 {
+  position: absolute;
+  top: 393px;
+  left: 1141px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue-300);
+  width: 271px;
+  height: 70px;
+}
+.r-e-p {
+  position: absolute;
+  top: 402px;
+  left: 1156px;
+  font-size: var(--font-size-17xl);
+  display: inline-block;
+  width: 240px;
+  height: 26px;
+}
+.discover-insights-about-container {
+  position: absolute;
+  top: 490px;
+  left: 1163px;
+  white-space: normal;
+  display: inline-block;
+  width: 239px;
+  height: 154px;
+}
+.analyze-weekly-and-container {
+  position: absolute;
+  top: 653px;
+  left: 1158px;
+  display: inline-block;
+  width: 239px;
+  height: 152px;
+}
+.home-page-serrano {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 1440px;
+  height: 1024px;
+  overflow: hidden;
+}
+.group-child {
+  position: absolute;
+  top: 62px;
+  left: 1137px;
+  width: 245px;
+  height: 223px;
+  object-fit: cover;
+}
+.homepage-inner,
+.navigation-out-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1024px;
+}
+.navigation-out-child {
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-gray-700);
+}
+.credit-card-contactless,
+.customer,
+.hand-holding-dollar,
+.home-page,
+.pie-chart-report,
+.stocks-growth {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 38.54%;
+  top: 25.88%;
+  right: 35.42%;
+  bottom: 70.51%;
+  left: 26.04%;
+  background-image: url(./public/stocks-growth@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.credit-card-contactless,
+.customer,
+.hand-holding-dollar,
+.home-page,
+.pie-chart-report {
+  height: 3.71%;
+  top: 20.02%;
+  right: 33.33%;
+  bottom: 76.27%;
+  left: 28.13%;
+  background-image: url(./public/home-page@3x.png);
+}
+.credit-card-contactless,
+.customer,
+.hand-holding-dollar,
+.pie-chart-report {
+  height: 4%;
+  width: 40.63%;
+  top: 31.35%;
+  bottom: 64.65%;
+  left: 26.04%;
+  background-image: url(./public/credit-card-contactless@3x.png);
+}
+.customer,
+.hand-holding-dollar,
+.pie-chart-report {
+  height: 3.81%;
+  width: 48.96%;
+  top: 37.3%;
+  right: 28.13%;
+  bottom: 58.89%;
+  left: 22.92%;
+  background-image: url(./public/hand-holding-dollar@3x.png);
+}
+.customer,
+.pie-chart-report {
+  height: 4%;
+  width: 37.5%;
+  top: 43.16%;
+  right: 34.38%;
+  bottom: 52.83%;
+  left: 28.13%;
+  background-image: url(./public/pie-chart-report@3x.png);
+}
+.customer {
+  height: 3.61%;
+  width: 42.71%;
+  top: 49.12%;
+  right: 31.25%;
+  bottom: 47.27%;
+  left: 26.04%;
+  background-image: url(./public/customer@3x.png);
+}
+.image-37-icon {
+  position: absolute;
+  height: 5.57%;
+  width: 59.38%;
+  top: 8.59%;
+  right: 20.83%;
+  bottom: 85.84%;
+  left: 19.79%;
+  border-radius: var(--br-141xl);
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.menu {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4.3%;
+  width: 51.04%;
+  top: 1.46%;
+  right: 26.04%;
+  bottom: 94.24%;
+  left: 22.92%;
+  background-image: url(./public/menu@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.navigation-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 1024px;
+}
+.homepage {
+  width: 100%;
+  position: relative;
+  height: 1024px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-outfit);
+}
+.home-page-icon9,
+.navigation-in-child7 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.navigation-in-child7 {
+  width: 81.07%;
+  right: 18.93%;
+  background-color: var(--color-gray-100);
+}
+.home-page-icon9 {
+  width: 24.03%;
+  right: 75.97%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.home9 {
+  position: absolute;
+  height: 86.84%;
+  width: 67.53%;
+  top: 10.53%;
+  left: 32.47%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.home-page-parent7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.71%;
+  width: 63.37%;
+  top: 20.02%;
+  right: 25.51%;
+  bottom: 76.27%;
+  left: 11.11%;
+}
+.welcome10 {
+  margin: 0;
+}
+.credit12,
+.welcome-admin9 {
+  position: absolute;
+  height: 3.22%;
+  width: 62.96%;
+  top: 9.77%;
+  left: 37.04%;
+  font-weight: 500;
+  display: inline-block;
+}
+.credit12 {
+  height: 80.49%;
+  width: 69.94%;
+  top: 9.76%;
+  left: 30.06%;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+}
+.credit-card-contactless12 {
+  position: absolute;
+  height: 100%;
+  width: 22.54%;
+  top: 0;
+  right: 77.46%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.credit-parent7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 71.19%;
+  top: 31.35%;
+  right: 18.52%;
+  bottom: 64.65%;
+  left: 10.29%;
+}
+.salary16 {
+  position: absolute;
+  height: 84.62%;
+  width: 68.75%;
+  top: 7.69%;
+  left: 31.25%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.hand-holding-dollar12 {
+  position: absolute;
+  height: 100%;
+  width: 26.7%;
+  top: 0;
+  right: 73.3%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.salary-parent7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.81%;
+  width: 72.43%;
+  top: 37.3%;
+  right: 18.52%;
+  bottom: 58.89%;
+  left: 9.05%;
+}
+.image-36-icon9,
+.menu-icon13,
+.pie-chart-report17 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.image-36-icon9 {
+  height: 5.57%;
+  width: 23.46%;
+  top: 8.59%;
+  right: 68.72%;
+  bottom: 85.84%;
+  left: 7.82%;
+  border-radius: var(--br-141xl);
+}
+.menu-icon13,
+.pie-chart-report17 {
+  height: 4.3%;
+  width: 20.16%;
+  top: 1.46%;
+  right: 70.78%;
+  bottom: 94.24%;
+  left: 9.05%;
+}
+.pie-chart-report17 {
+  height: 100%;
+  width: 18.46%;
+  top: 0;
+  right: 81.54%;
+  bottom: 0;
+  left: 0;
+}
+.reports17 {
+  position: absolute;
+  height: 80.49%;
+  width: 74.36%;
+  top: 9.76%;
+  left: 25.64%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.pie-chart-report-parent7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 80.25%;
+  top: 43.16%;
+  right: 8.64%;
+  bottom: 52.83%;
+  left: 11.11%;
+}
+.customer-icon10 {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  right: 80%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sign-out11 {
+  position: absolute;
+  height: 89.19%;
+  width: 74.63%;
+  top: 8.11%;
+  left: 25.37%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.customer-parent7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 84.36%;
+  top: 49.12%;
+  right: 5.35%;
+  bottom: 47.27%;
+  left: 10.29%;
+}
+.stocks-growth-icon12 {
+  position: absolute;
+  height: 100%;
+  width: 23.13%;
+  top: 0;
+  right: 76.88%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sales12 {
+  position: absolute;
+  height: 89.19%;
+  width: 65%;
+  top: 2.7%;
+  left: 35%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.stocks-growth-parent7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 65.84%;
+  top: 25.88%;
+  right: 23.87%;
+  bottom: 70.51%;
+  left: 10.29%;
+}
+.navigation-in9 {
+  width: 243px;
+  position: relative;
+  height: 1024px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-outfit);
+}

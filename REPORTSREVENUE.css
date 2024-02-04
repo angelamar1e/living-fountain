@@ -1,0 +1,487 @@
+.image-27-icon6 {
+  position: absolute;
+  top: 0;
+  left: -18px;
+  width: 1458px;
+  height: 1024px;
+  object-fit: cover;
+}
+.reports-revenue-child {
+  position: absolute;
+  top: 6px;
+  left: 96px;
+  width: 1344px;
+  height: 1024px;
+}
+.group-child47
+{
+  width: 868px;
+  height: 501px;
+  left: 397px;
+  top: 272px;
+  
+  background: #F7F7F7;
+  border-radius: var(--br-xl);
+}
+.group-child48 
+{
+  position: absolute;
+  border-radius: var(--br-xl) var(--br-xl) 0 0;
+  background-color: var(--color-darkslategray-100);
+  width: 868px;
+  height: 73px;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+.logo-removebg-preview-8-icon5,
+.pie-chart-report9 {
+  position: absolute;
+  top: 89.7px;
+  left: 163px;
+  width: 510px;
+  height: 428.3px;
+  object-fit: cover;
+}
+.pie-chart-report9 {
+  top: 18px;
+  left: 41px;
+  width: 36px;
+  height: 41px;
+}
+.revenue1 {
+  position: absolute;
+  top: 157px;
+  left: 57px;
+  line-height: 24px;
+  font-family: var(--font-baloo-tammudu);
+  color: var(--color-darkslategray-100);
+  display: flex;
+  align-items: center;
+  width: 283px;
+  height: 42.4px;
+}
+.menu-icon8 {
+  position: absolute;
+  top: 199.2px;
+  left: 841px;
+  width: 23px;
+  height: 44.3px;
+  object-fit: cover;
+}
+.reports10 {
+  position: absolute;
+  top: 19px;
+  left: 87px;
+  font-size: var(--font-size-13xl);
+  font-weight: 500;
+  display: inline-block;
+  width: 164px;
+  height: 31px;
+}
+.group-child49 {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  border-radius: var(--br-3xs);
+  width: 336px;
+  height: 33px;
+}
+.date-dddd3 {
+  position: absolute;
+  top: 105px;
+  left: 98px;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+.revenue-reports {
+  margin: 0;
+}
+.choose-from-the-container1 {
+  width: 100%;
+}
+.choose-from-the-container {
+  position: absolute;
+  top: 243px;
+  left: 20px;
+  line-height: 24px;
+  font-family: var(--font-baloo-tammudu);
+  color: #58657f;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 829px;
+  height: 41px;
+}
+.group-child50,
+.weekly {
+  position: absolute;
+  width: 245px;
+}
+.group-child50 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray-400);
+  height: 51px;
+}
+.weekly {
+  top: 6px;
+  left: 5px;
+  font-size: var(--font-size-13xl);
+  font-weight: 600;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  height: 30px;
+}
+.rectangle-parent9 {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 321px;
+  left: 477px;
+  width: 250px;
+  height: 51px;
+}
+.group-child51,
+.monthly,
+.rectangle-parent9 {
+  position: absolute;
+  cursor: pointer;
+}
+.group-child51 {
+  top: 321px;
+  left: 139px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray-500);
+  width: 245px;
+  height: 51px;
+}
+.monthly {
+  top: 325px;
+  left: 187px;
+  font-size: var(--font-size-13xl);
+  font-weight: 600;
+  display: inline-block;
+  width: 156px;
+  height: 30px;
+}
+.vector-parent5 {
+  position: absolute;
+  top: 255px;
+  left: 397px;
+  width: 868px;
+  height: 518px;
+  font-size: var(--font-size-17xl);
+}
+.name4,
+.name5 {
+  position: absolute;
+  top: 560px;
+  left: 464px;
+  font-weight: 600;
+  color: var(--color-gray-400);
+  display: inline-block;
+  width: 73px;
+  height: 23px;
+}
+.name5 {
+  left: 860px;
+}
+.home-page-icon5,
+.navigation-in-child3 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.navigation-in-child3 {
+  width: 81.07%;
+  right: 18.93%;
+  background-color: var(--color-gray-100);
+}
+.home-page-icon5 {
+  width: 24.03%;
+  right: 75.97%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.home5 {
+  position: absolute;
+  height: 86.84%;
+  width: 67.53%;
+  top: 10.53%;
+  left: 32.47%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.home-page-parent3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.71%;
+  width: 63.37%;
+  top: 20.02%;
+  right: 25.51%;
+  bottom: 76.27%;
+  left: 11.11%;
+}
+.credit6,
+.welcome-admin5 {
+  position: absolute;
+  height: 3.22%;
+  width: 62.96%;
+  top: 9.77%;
+  left: 37.04%;
+  font-weight: 500;
+  display: inline-block;
+}
+.credit6 {
+  height: 80.49%;
+  width: 69.94%;
+  top: 9.76%;
+  left: 30.06%;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+}
+.credit-card-contactless6 {
+  position: absolute;
+  height: 100%;
+  width: 22.54%;
+  top: 0;
+  right: 77.46%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.credit-parent3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 71.19%;
+  top: 31.35%;
+  right: 18.52%;
+  bottom: 64.65%;
+  left: 10.29%;
+}
+.salary12 {
+  position: absolute;
+  height: 84.62%;
+  width: 68.75%;
+  top: 7.69%;
+  left: 31.25%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.hand-holding-dollar7 {
+  position: absolute;
+  height: 100%;
+  width: 26.7%;
+  top: 0;
+  right: 73.3%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.salary-parent3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.81%;
+  width: 72.43%;
+  top: 37.3%;
+  right: 18.52%;
+  bottom: 58.89%;
+  left: 9.05%;
+}
+.image-36-icon5,
+.menu-icon9,
+.pie-chart-report10 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.image-36-icon5 {
+  height: 5.57%;
+  width: 23.46%;
+  top: 8.59%;
+  right: 68.72%;
+  bottom: 85.84%;
+  left: 7.82%;
+  border-radius: var(--br-141xl);
+}
+.menu-icon9,
+.pie-chart-report10 {
+  height: 4.3%;
+  width: 20.16%;
+  top: 1.46%;
+  right: 70.78%;
+  bottom: 94.24%;
+  left: 9.05%;
+}
+.pie-chart-report10 {
+  height: 100%;
+  width: 18.46%;
+  top: 0;
+  right: 81.54%;
+  bottom: 0;
+  left: 0;
+}
+.reports11 {
+  position: absolute;
+  height: 80.49%;
+  width: 74.36%;
+  top: 9.76%;
+  left: 25.64%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.pie-chart-report-parent3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 80.25%;
+  top: 43.16%;
+  right: 8.64%;
+  bottom: 52.83%;
+  left: 11.11%;
+}
+.customer-icon6 {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  right: 80%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sign-out7 {
+  position: absolute;
+  height: 89.19%;
+  width: 74.63%;
+  top: 8.11%;
+  left: 25.37%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.customer-parent3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 84.36%;
+  top: 49.12%;
+  right: 5.35%;
+  bottom: 47.27%;
+  left: 10.29%;
+}
+.stocks-growth-icon8 {
+  position: absolute;
+  height: 100%;
+  width: 23.13%;
+  top: 0;
+  right: 76.88%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sales8 {
+  position: absolute;
+  height: 89.19%;
+  width: 65%;
+  top: 2.7%;
+  left: 35%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.stocks-growth-parent3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 65.84%;
+  top: 25.88%;
+  right: 23.87%;
+  bottom: 70.51%;
+  left: 10.29%;
+}
+.navigation-in5,
+.reports-revenue-item {
+  position: absolute;
+  top: 7px;
+  left: -18px;
+  width: 243px;
+  height: 1024px;
+}
+.reports-revenue-item {
+  top: 436px;
+  width: 197px;
+  height: 60px;
+  mix-blend-mode: overlay;
+}
+.reports-revenue {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1024px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-outfit);
+}

@@ -1,0 +1,616 @@
+.image-27-icon7 {
+  position: absolute;
+  top: 0;
+  left: -18px;
+  width: 1458px;
+  height: 1024px;
+  object-fit: cover;
+}
+.group-child52,
+.reports-revenue-monthly-child {
+  position: absolute;
+  top: 3px;
+  left: 96px;
+  width: 1344px;
+  height: 1024px;
+}
+.group-child52 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  width: 868px;
+  height: 746px;
+}
+.logo-removebg-preview-9-icon2 {
+  position: absolute;
+  top: 75px;
+  left: 25px;
+  width: 818px;
+  height: 600px;
+  object-fit: cover;
+}
+.total-revenue {
+  position: absolute;
+  top: 557px;
+  left: 283px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-black);
+  display: inline-block;
+  width: 771px;
+  height: 21px;
+}
+.monthly1 {
+  top: 224px;
+  left: 57px;
+  font-size: var(--font-size-13xl);
+}
+.month,
+.monthly1,
+.revenue-activity-report,
+.week-1 {
+  position: absolute;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  width: 502px;
+  height: 45px;
+}
+.month {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-baloo-tammudu);
+  font-size: var(--font-size-13xl);
+  background-color: transparent;
+  top: 224px;
+  left: 232px;
+  color: var(--color-slategray-100);
+  text-align: left;
+}
+.revenue-activity-report,
+.week-1 {
+  top: 273px;
+  left: 167px;
+}
+.revenue-activity-report {
+  top: 164px;
+  left: 54px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslategray-100);
+}
+.group-child53 {
+  position: absolute;
+  top: 93px;
+  left: 50px;
+  border-radius: var(--br-3xs);
+  width: 336px;
+  height: 33px;
+}
+.date-dddd4 {
+  position: absolute;
+  top: 98px;
+  left: 98px;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+}
+.group-child54 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-100);
+  width: 322px;
+  height: 27px;
+}
+.total-orders-made {
+  position: absolute;
+  top: 0;
+  left: 12.7px;
+  white-space: pre-wrap;
+  display: inline-block;
+  width: 277.5px;
+  height: 17px;
+}
+.group-wrapper,
+.rectangle-parent10 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 322px;
+  height: 27px;
+}
+.group-wrapper {
+  top: 306px;
+  left: 57px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.textarea7,
+.textarea8 {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-lightgray-200);
+  outline: 0;
+  position: absolute;
+  top: 330.5px;
+  left: 56.5px;
+  box-sizing: border-box;
+  width: 179px;
+  height: 33px;
+  overflow: hidden;
+}
+.textarea8 {
+  left: 234.5px;
+  width: 145px;
+}
+.week-2 {
+  position: absolute;
+  top: 273px;
+  left: 576px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  width: 502px;
+  height: 45px;
+}
+.group-frame {
+  position: absolute;
+  top: 306px;
+  left: 466px;
+  width: 322px;
+  height: 27px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.textarea10,
+.textarea9 {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-lightgray-200);
+  outline: 0;
+  position: absolute;
+  top: 330.5px;
+  left: 465.5px;
+  box-sizing: border-box;
+  width: 179px;
+  height: 33px;
+  overflow: hidden;
+}
+.textarea10 {
+  left: 643.5px;
+  width: 145px;
+}
+.week-3 {
+  position: absolute;
+  top: 415px;
+  left: 167px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  width: 502px;
+  height: 45px;
+}
+.group-wrapper1 {
+  position: absolute;
+  top: 448px;
+  left: 57px;
+  width: 322px;
+  height: 27px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.textarea11,
+.textarea12 {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-lightgray-200);
+  outline: 0;
+  position: absolute;
+  top: 472.5px;
+  left: 56.5px;
+  box-sizing: border-box;
+  width: 179px;
+  height: 33px;
+  overflow: hidden;
+}
+.textarea12 {
+  left: 234.5px;
+  width: 145px;
+}
+.week-4 {
+  position: absolute;
+  top: 415px;
+  left: 576px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  width: 502px;
+  height: 45px;
+}
+.group-wrapper2 {
+  position: absolute;
+  top: 448px;
+  left: 466px;
+  width: 322px;
+  height: 27px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.textarea13,
+.textarea14 {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-lightgray-200);
+  outline: 0;
+  position: absolute;
+  top: 472.5px;
+  left: 465.5px;
+  box-sizing: border-box;
+  width: 179px;
+  height: 33px;
+  overflow: hidden;
+}
+.textarea14 {
+  left: 643.5px;
+  width: 145px;
+}
+.group-child58,
+.group-child59 {
+  position: absolute;
+  top: 256.5px;
+  left: 215.5px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 148px;
+  height: 1px;
+}
+.group-child59 {
+  top: 240.5px;
+  left: 200.5px;
+  width: 12px;
+}
+.group-child60 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl) var(--br-xl) 0 0;
+  background-color: var(--color-darkslategray-100);
+  width: 868px;
+  height: 73px;
+  cursor: pointer;
+}
+.vector-parent6 {
+  position: absolute;
+  top: 152px;
+  left: 395px;
+  width: 1078px;
+  height: 746px;
+  color: var(--color-slategray-100);
+  font-family: var(--font-baloo-tammudu);
+}
+.pie-chart-report11 {
+  position: absolute;
+  top: 168px;
+  left: 434px;
+  width: 36px;
+  height: 41px;
+  object-fit: cover;
+}
+.reports12 {
+  position: absolute;
+  top: 169px;
+  left: 480px;
+  font-size: var(--font-size-13xl);
+  font-weight: 500;
+  display: inline-block;
+  width: 164px;
+  height: 31px;
+}
+.textarea15 {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-lightgray-200);
+  outline: 0;
+  position: absolute;
+  top: 758.5px;
+  left: 713.5px;
+  box-sizing: border-box;
+  width: 199px;
+  height: 45px;
+  overflow: hidden;
+}
+.home-page-icon6,
+.navigation-in-child4 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.navigation-in-child4 {
+  width: 81.07%;
+  right: 18.93%;
+  background-color: var(--color-gray-100);
+}
+.home-page-icon6 {
+  width: 24.03%;
+  right: 75.97%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.home6 {
+  position: absolute;
+  height: 86.84%;
+  width: 67.53%;
+  top: 10.53%;
+  left: 32.47%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.home-page-parent4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.71%;
+  width: 63.37%;
+  top: 20.02%;
+  right: 25.51%;
+  bottom: 76.27%;
+  left: 11.11%;
+}
+.welcome7 {
+  margin: 0;
+}
+.credit7,
+.welcome-admin6 {
+  position: absolute;
+  height: 3.22%;
+  width: 62.96%;
+  top: 9.77%;
+  left: 37.04%;
+  font-weight: 500;
+  display: inline-block;
+}
+.credit7 {
+  height: 80.49%;
+  width: 69.94%;
+  top: 9.76%;
+  left: 30.06%;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+}
+.credit-card-contactless7 {
+  position: absolute;
+  height: 100%;
+  width: 22.54%;
+  top: 0;
+  right: 77.46%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.credit-parent4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 71.19%;
+  top: 31.35%;
+  right: 18.52%;
+  bottom: 64.65%;
+  left: 10.29%;
+}
+.salary13 {
+  position: absolute;
+  height: 84.62%;
+  width: 68.75%;
+  top: 7.69%;
+  left: 31.25%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.hand-holding-dollar8 {
+  position: absolute;
+  height: 100%;
+  width: 26.7%;
+  top: 0;
+  right: 73.3%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.salary-parent4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.81%;
+  width: 72.43%;
+  top: 37.3%;
+  right: 18.52%;
+  bottom: 58.89%;
+  left: 9.05%;
+}
+.image-36-icon6,
+.menu-icon10,
+.pie-chart-report12 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.image-36-icon6 {
+  height: 5.57%;
+  width: 23.46%;
+  top: 8.59%;
+  right: 68.72%;
+  bottom: 85.84%;
+  left: 7.82%;
+  border-radius: var(--br-141xl);
+}
+.menu-icon10,
+.pie-chart-report12 {
+  height: 4.3%;
+  width: 20.16%;
+  top: 1.46%;
+  right: 70.78%;
+  bottom: 94.24%;
+  left: 9.05%;
+}
+.pie-chart-report12 {
+  height: 100%;
+  width: 18.46%;
+  top: 0;
+  right: 81.54%;
+  bottom: 0;
+  left: 0;
+}
+.reports13 {
+  position: absolute;
+  height: 80.49%;
+  width: 74.36%;
+  top: 9.76%;
+  left: 25.64%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.pie-chart-report-parent4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 4%;
+  width: 80.25%;
+  top: 43.16%;
+  right: 8.64%;
+  bottom: 52.83%;
+  left: 11.11%;
+}
+.customer-icon7 {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  right: 80%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sign-out8 {
+  position: absolute;
+  height: 89.19%;
+  width: 74.63%;
+  top: 8.11%;
+  left: 25.37%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.customer-parent4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 84.36%;
+  top: 49.12%;
+  right: 5.35%;
+  bottom: 47.27%;
+  left: 10.29%;
+}
+.stocks-growth-icon9 {
+  position: absolute;
+  height: 100%;
+  width: 23.13%;
+  top: 0;
+  right: 76.88%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.sales9 {
+  position: absolute;
+  height: 89.19%;
+  width: 65%;
+  top: 2.7%;
+  left: 35%;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-outfit);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.stocks-growth-parent4 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 3.61%;
+  width: 65.84%;
+  top: 25.88%;
+  right: 23.87%;
+  bottom: 70.51%;
+  left: 10.29%;
+}
+.navigation-in6 {
+  position: absolute;
+  top: 3px;
+  left: -18px;
+  width: 243px;
+  height: 1024px;
+  font-size: var(--font-size-base);
+}
+.reports-revenue-monthly-item {
+  position: absolute;
+  top: 435px;
+  left: -18px;
+  width: 197px;
+  height: 60px;
+  mix-blend-mode: overlay;
+}
+.reports-revenue-monthly {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1024px;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-outfit);
+}
