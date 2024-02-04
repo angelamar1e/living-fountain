@@ -154,6 +154,13 @@ function get_unpaid_records($date) {
     return $result;
 }
 
+// function to mark a delivery as paid
+function mark_paid($order_id) {
+    global $conn;
+    $query = "UPDATE orders SET payment_status = 'PAID' WHERE id = $order_id";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
 
 // function to get weekly revenue
 function get_weekly_revenue($start_date, $end_date) {
