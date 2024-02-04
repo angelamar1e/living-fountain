@@ -1,5 +1,4 @@
-
-<!-- ends a popup alert and redirects to a page -->
+<!-- sends a popup alert and redirects to a page -->
 <?php
 function alert_redirect($message,$path){
     echo '<script>
