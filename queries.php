@@ -157,7 +157,23 @@ function get_employee_info($code){
     return $result;
 }
 
-function get_qty_delivered($id, $date){
+// to sum up the qty ordered for the current day 
+function sum_qty($date){
+    global $conn;
+    $query = "SELECT SUM(quantity) as 'qty'
+            FROM orders
+            WHERE date = '$date'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($qty = mysqli_fetch_assoc($result)) {
+            $qty_sum = $qty['qty'];
+        }
+    } 
+    return $qty_sum;
+}
+
+// to count qty delivered by each deliverer 
+function count_qty_delivered($id, $date){
     global $conn;
     $query = "SELECT COUNT(*) as 'qty'
             FROM orders
@@ -170,4 +186,35 @@ function get_qty_delivered($id, $date){
     } 
     return $qty_delivered;
 }
+
+// to count regular gallons delivered by each deliverer
+function count_reg_gallon($id, $date){
+    global $conn;
+    $query = "SELECT SUM(quantity) as 'qty'
+            FROM orders
+            WHERE deliverer_id = '$id' AND date = '$date' AND product_code = 'R'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($qty = mysqli_fetch_assoc($result)) {
+            $qty_delivered = $qty['qty'];
+        }
+    } 
+    return $qty_delivered;
+}
+
+// get the amount additional for every reg gallon delivered
+function get_additional(){
+    global $conn;
+    $query = "SELECT amount
+            FROM salary_types
+            WHERE id = 4";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($additional = mysqli_fetch_assoc($result)) {
+            $amount = $additional['amount'];
+        }
+    } 
+    return $amount;
+}
+
 ?>

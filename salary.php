@@ -10,18 +10,13 @@ $refillers = get_employee_info("R");
 $date = date("Y-m-d");
 
 // sum up the qty ordered for the current day
-$qty_count = select_where(array("SUM(quantity) as 'qty_sold'"),"orders","date = '$date'");
-if (mysqli_num_rows($qty_count) > 0) {
-    while($count = mysqli_fetch_assoc($qty_count)) { 
-        $qty_sold = $count['qty_sold'];
-    }
-}
+$qty_count = sum_qty($date);
 
 // to change salary according to qty sold
-if ($qty_sold > 50 and $qty_sold < 100){
+if ($qty_count > 50 and $qty_count < 100){
     $deliverer_base_salary = 350;
 }
-else if ($qty_sold > 100){
+else if ($qty_count > 100){
     $deliverer_base_salary = 450;
     $others_salary = 500;
 }
@@ -30,6 +25,8 @@ else{
     $others_salary = 350;
 }
 
+// additional amount for deliverers per reg gallon delivered
+$additional_amount = get_additional();
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +49,10 @@ else{
             while($deliverer = mysqli_fetch_assoc($deliverers)) { 
                 // retrieving qty delivered per deliverer id
                 $id = $deliverer['id']; 
-                $qty_delivered = get_qty_delivered($id, $date);             
+                $qty_delivered = count_qty_delivered($id, $date);
+                // count reg gallon delivered per deliverer id to add to salary
+                $reg_gallon_delivered = count_reg_gallon($id, $date);
+                $salary = $deliverer_base_salary + ($reg_gallon_delivered * $additional_amount);
     ?>
                 <h3 id="emp_name" class="emp_name"><?php echo $deliverer['employee_name']; ?></h3>
                 <table class="emp_salary">
@@ -62,7 +62,7 @@ else{
                     </tr>   
                     <tr>
                         <td>Salary</td>
-                        <td></td>
+                        <td><?php echo $salary ?></td>
                     </tr>
                 </table>
         <?php }
@@ -81,7 +81,7 @@ else{
                 <table class="emp_salary">
                     <tr>
                         <td>Salary</td>
-                        <td></td>
+                        <td><?php echo $others_salary ?></td>
                     </tr>
                 </table>
         <?php }
@@ -100,7 +100,7 @@ else{
                     <table class="emp_salary">
                         <tr>
                             <td>Salary</td>
-                            <td></td>
+                            <td><?php echo $others_salary ?></td>
                         </tr>
                     </table>
             <?php }
