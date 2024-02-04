@@ -146,7 +146,16 @@ function delete_order($id){
     return $result;
 }
 
-// Add this function to get weekly revenue
+// function to get unpaid records
+function get_unpaid_records($date) {
+    global $conn;
+    $query = "SELECT * FROM orders WHERE date = '$date' AND status = 'DELIVERED' AND payment_status = 'UNPAID'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+
+// function to get weekly revenue
 function get_weekly_revenue($start_date, $end_date) {
     global $conn;
     $query = "SELECT SUM(price) as weekly_revenue FROM orders WHERE date BETWEEN '$start_date' AND '$end_date' AND payment_status = 'PAID'";
@@ -154,7 +163,7 @@ function get_weekly_revenue($start_date, $end_date) {
     return $result;
 }
 
-// Add this function to get monthly revenue
+// function to get monthly revenue
 function get_monthly_revenue($month, $year) {
     global $conn;
     $query = "SELECT SUM(price) as monthly_revenue FROM orders WHERE MONTH(date) = $month AND YEAR(date) = $year AND payment_status = 'PAID'";
