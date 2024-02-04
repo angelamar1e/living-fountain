@@ -146,4 +146,12 @@ function delete_order($id){
     return $result;
 }
 
+// Add this function to get weekly revenue
+function get_weekly_revenue($start_date, $end_date) {
+    global $conn;
+    $query = "SELECT SUM(price) as weekly_revenue FROM orders WHERE date BETWEEN '$start_date' AND '$end_date' AND payment_status = 'PAID'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 ?>
