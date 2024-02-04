@@ -146,4 +146,28 @@ function delete_order($id){
     return $result;
 }
 
+// gets employee information
+function get_employee_info($code){
+    global $conn;
+    $query = "SELECT e.id, employee_name, emp_type_desc as 'employee_type'
+            FROM employees e
+            JOIN employee_types et ON e.emp_type_code = et.code
+            WHERE emp_type_code = '$code'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function get_qty_delivered($id, $date){
+    global $conn;
+    $query = "SELECT COUNT(*) as 'qty'
+            FROM orders
+            WHERE deliverer_id = '$id' AND date = '$date'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($qty = mysqli_fetch_assoc($result)) {
+            $qty_delivered = $qty['qty'];
+        }
+    } 
+    return $qty_delivered;
+}
 ?>
