@@ -146,4 +146,51 @@ function delete_order($id){
     return $result;
 }
 
+// get unique customers orders
+function getUniqueOrders($conn) {
+    $query = "WITH ranked_orders AS (
+        SELECT
+            o.id,
+            o.block,
+            o.lot,
+            o.phase,
+            o.date,
+            o.product_code,
+            o.quantity,
+            o.price,
+            o.deliverer_id,
+            p.product_desc,
+            e.employee_name,
+            ROW_NUMBER() OVER (PARTITION BY o.block, o.lot, o.phase ORDER BY o.date DESC) AS rn
+        FROM
+            orders o
+        JOIN
+            products p ON o.product_code = p.code
+        LEFT JOIN
+            employees e ON o.deliverer_id = e.id
+    )
+    SELECT
+        block,
+        lot,
+        phase,
+        MAX(date) AS last_order,
+        product_desc AS product,
+        quantity,
+        price,
+        employee_name AS deliverer
+    FROM
+        ranked_orders
+    WHERE
+        rn = 1
+    GROUP BY
+        block, lot, phase;";
+
+    $result = $conn->query($query);
+
+    if ($result === false) {
+        die("Error: " . $conn->error);
+    }
+
+    return $result;
+}
 ?>

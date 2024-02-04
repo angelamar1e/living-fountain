@@ -5,7 +5,6 @@
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,45 +32,7 @@
  global $conn;
  
  //query to display recent orders of unique customers descending 
- $query = "WITH ranked_orders AS (
-    SELECT
-        o.id,
-        o.block,
-        o.lot,
-        o.phase,
-        o.date,
-        o.product_code,
-        o.quantity,
-        o.price,
-        o.deliverer_id,
-        p.product_desc,
-        e.employee_name,
-        ROW_NUMBER() OVER (PARTITION BY o.block, o.lot, o.phase ORDER BY o.date DESC) AS rn
-    FROM
-        orders o
-    JOIN
-        products p ON o.product_code = p.code
-    LEFT JOIN
-        employees e ON o.deliverer_id = e.id
-)
-SELECT
-    block,
-    lot,
-    phase,
-    MAX(date) AS last_order,
-    product_desc AS product,
-    quantity,
-    price,
-    employee_name AS deliverer
-FROM
-    ranked_orders
-WHERE
-    rn = 1
-GROUP BY
-    block, lot, phase;
-";
-
-$all_records = $conn->query($query);
+ $all_records = getUniqueOrders($conn);
 
 if ($all_records->num_rows > 0) {
     while ($record = $all_records->fetch_assoc()) {
@@ -94,21 +55,25 @@ if ($all_records->num_rows > 0) {
     echo '<tr><td colspan="6">No records found</td></tr>';
 }
 
+
 // display the total amount of order of specific customers from the search bar
-if (isset($_POST['block']) and isset($_POST['lot']) and isset($_POST['phase'])) {
+if (isset($_POST['block']) && isset($_POST['lot']) && isset($_POST['phase'])) {
     $block = $_POST['block'];
     $lot = $_POST['lot'];
     $phase = $_POST['phase'];
 
-}
+    $amount = select_where(array("SUM(price) as total_amount"), "orders", 
+    "block = '$block' AND lot = '$lot' AND phase = '$phase'");
 
-$amount = select_where(array("SUM(price) as total_amount"), "orders", 
-"block = '$block' AND lot = '$lot' AND phase = '$phase'");
-
-if(mysqli_num_rows($amount) > 0){
-    while($records = mysqli_fetch_assoc($amount)){
-        $total_amount = $records['total_amount'];
+    // Check if $amount is set before using it
+    if($amount && mysqli_num_rows($amount) > 0){
+        while($records = mysqli_fetch_assoc($amount)){
+            $total_amount = $records['total_amount'];
+        }
     }
+} else {
+    // If not set from search bar
+    $total_amount = "";
 }
 
 // Close the database connection
