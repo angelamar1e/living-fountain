@@ -1,12 +1,7 @@
 <?php
-<<<<<<< HEAD
  include('alerts.php');
  include('connection.php');
  include('queries.php');
-=======
- include('alert.php');
- include('connection.php');
->>>>>>> 360b986f1bffc9ba79a6b546733f78448f604741
 
 ?>
 
@@ -22,16 +17,11 @@
 <body>
 <table >
         <tr>
-<<<<<<< HEAD
             
-=======
-            <th>ID</th>
->>>>>>> 360b986f1bffc9ba79a6b546733f78448f604741
             <th>Block</th>
             <th>Lot</th>
             <th>Phase</th>
             <th>Date</th>
-<<<<<<< HEAD
             <th>product</th>
             <th>quantity</th>
             <th>price</th>
@@ -80,24 +70,12 @@ WHERE
 GROUP BY
     block, lot, phase;
 ";
-=======
-            
-        </tr>
-<?php
- global $conn;
- 
- $query = "SELECT id,block, lot, phase, MAX(date) AS last_order
-            FROM orders
-            GROUP BY id,block, lot, phase
-            ORDER BY last_order DESC;";
->>>>>>> 360b986f1bffc9ba79a6b546733f78448f604741
 
 $all_records = $conn->query($query);
 
 if ($all_records->num_rows > 0) {
     while ($record = $all_records->fetch_assoc()) {
 ?>
-<<<<<<< HEAD
 <!-- dispaly the query -->
     <tr>
         <td><?php echo $record['block']; ?></td>
@@ -109,15 +87,6 @@ if ($all_records->num_rows > 0) {
         <td><?php echo $record['price']; ?></td>
         <td><?php echo $record['deliverer']; ?></td>
         
-=======
-    <tr>
-        <td><?php echo $record['id']; ?></td>
-        <td><?php echo $record['block']; ?></td>
-        <td><?php echo $record['lot']; ?></td>
-        <td><?php echo $record['phase']; ?></td>
-        <td><?php echo $record['date']; ?></td>
-        <td><?php echo $record['last_order']; ?></td>
->>>>>>> 360b986f1bffc9ba79a6b546733f78448f604741
     </tr>
 <?php
     }
@@ -125,7 +94,6 @@ if ($all_records->num_rows > 0) {
     echo '<tr><td colspan="6">No records found</td></tr>';
 }
 
-<<<<<<< HEAD
 // display the total amount of order of specific customers from the search bar
 if (isset($_POST['block']) and isset($_POST['lot']) and isset($_POST['phase'])) {
     $block = $_POST['block'];
@@ -143,15 +111,12 @@ if(mysqli_num_rows($amount) > 0){
     }
 }
 
-=======
->>>>>>> 360b986f1bffc9ba79a6b546733f78448f604741
 // Close the database connection
 $conn->close();
 
 ?>
 
 </table>
-<<<<<<< HEAD
 
 <!-- display total amount of orders of specific customer -->
 <div class="total_amount_section" id="total_amount_section">
@@ -160,8 +125,6 @@ $conn->close();
 
 
 </div>
-=======
->>>>>>> 360b986f1bffc9ba79a6b546733f78448f604741
 </body>
 </html>
 
