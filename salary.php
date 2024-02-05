@@ -2,7 +2,6 @@
 
 include('connection.php');
 include('queries.php');
-include('navbar.html');
 
 $deliverers = get_employee_info("D");
 $washers = get_employee_info("W");
@@ -36,23 +35,48 @@ $additional_amount = get_additional();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary</title>
+    <link rel="stylesheet" href="salary.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
     <style>
         td, table {
-            width: 10%;
+            width: 0.25%;
             border-collapse: collapse;
-            border: 1px solid black;
+            border: 3px solid black;
         }
         td {
-            padding: 5%;
+            padding: 1%;
         }
-    </style>
-</head>
+    </style>  
 <body>
-    <h1 id="sales_page_label">Salary</h1>
-    <!-- displaying current date -->
-    <h2>Date: <?php echo $date; ?></h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 vh-100">
+                <?php include('navbar.html'); ?>
+            </div>
+
+        
+        <div class="col-10">
+            <h1>Salary</h1>
+        
+   
+
+    <div class="row mb-3">
+        <div class="col-6 text-left">
+            <!-- Displaying current date -->
+            <h2>Date: <?php echo $date; ?></h2>
+            <div class="row">
+                <div class="col-6 d-flex align-items-baseline">
+                    <form id="dateForm" method="get" action="salary.php">
+                        <!-- Your form content goes here -->
+                    </form>
+                </div>
+            </div>
+        </div>   
+
     
-    <!-- label for employee type Deliverer -->
+<div class="row border rounded border-dark p-3 mb-5">
+    <!-- Label for employee type Deliverer -->
     <h2 id="deliverer_type" class="emp_type">Deliverers</h2>
     
     <!-- table to display salary information for deliverers -->
@@ -66,6 +90,7 @@ $additional_amount = get_additional();
                 $reg_gallon_delivered = count_reg_gallon($id, $date);
                 $salary = $deliverer_base_salary + ($reg_gallon_delivered * $additional_amount);
     ?>
+            
                 <h3 id="emp_name" class="emp_name"><?php echo $deliverer['employee_name']; ?></h3>
                 <table class="emp_salary">
                     <tr>
@@ -77,10 +102,13 @@ $additional_amount = get_additional();
                         <td><?php echo $salary ?></td>
                     </tr>
                 </table>
+            </div>
         <?php }
         }
     ?>
+</div>
 
+<div class="row border rounded border-dark p-3 mb-5">
     <!-- label for employee type Refiller -->
     <h2 id="deliverer_type" class="emp_type">Refillers</h2>
 
@@ -96,10 +124,12 @@ $additional_amount = get_additional();
                         <td><?php echo $others_salary ?></td>
                     </tr>
                 </table>
+</div>
         <?php }
         }
     ?>
 
+    <div class="row border rounded border-dark p-3 mb-5">
         <!-- label for employee type Washers -->
         <h2 id="deliverer_type" class="emp_type">Washers</h2>
 
@@ -115,6 +145,10 @@ $additional_amount = get_additional();
                             <td><?php echo $others_salary ?></td>
                         </tr>
                     </table>
+    </div>
+</div>
+        </div>
+        </div>
             <?php }
             }
         ?>
