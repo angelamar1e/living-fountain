@@ -216,4 +216,26 @@ function compute_total($block, $lot, $phase){
     return $amount;
 }
 
+// to search for customers based on block, lot, or phase
+function search_customers($conditions) {
+    global $conn;
+    $query = "SELECT * FROM customers WHERE ";
+    $query .= count($conditions) > 1 ? implode("AND ", $conditions) : implode($conditions);
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// to retrieve orders of a particular customer
+function customer_orders($block, $lot, $phase){
+    global $conn;
+    $query = "SELECT date, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE block = $block AND lot = $lot AND phase = $phase";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 ?>
