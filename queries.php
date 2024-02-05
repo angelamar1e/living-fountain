@@ -146,9 +146,6 @@ function delete_order($id){
     return $result;
 }
 
-?>
-<?php
-
 include('connection.php');
 
 // Function to search for customers based on block, lot, and phase
@@ -166,7 +163,7 @@ function searchCustomers($blk, $lot, $ph) {
     return $result;
 }
 
-// Function to get customer transactions based on block, lot, and phase
+// Function to get all transactions for a specific customer based on block, lot, and phase
 function getCustomerTransactions($block, $lot, $phase) {
     global $conn;
 
@@ -175,21 +172,17 @@ function getCustomerTransactions($block, $lot, $phase) {
     $lot = mysqli_real_escape_string($conn, $lot);
     $phase = mysqli_real_escape_string($conn, $phase);
 
-    // Get the customer ID based on block, lot, and phase
-    $customerQuery = "SELECT id FROM customers WHERE block = '$block' AND lot = '$lot' AND phase = '$phase'";
-    $customerResult = mysqli_query($conn, $customerQuery);
+    // Perform the transactions query using JOIN
+    $query = "SELECT orders.*, products.product_desc as product, employees.employee_name as deliverer, order_status.code as status
+              FROM orders
+              LEFT JOIN products ON orders.product_code = products.code
+              LEFT JOIN employees ON orders.deliverer_id = employees.id
+              LEFT JOIN order_status ON orders.status = order_status.code
+              WHERE orders.block = '$block' AND orders.lot = '$lot' AND orders.phase = '$phase'";
 
-    if ($customerResult && $customer = mysqli_fetch_assoc($customerResult)) {
-        $customerId = $customer['id'];
-
-        // Perform the transactions query
-        $transactionsQuery = "SELECT * FROM transactions WHERE customer_id = $customerId";
-        $transactionsResult = mysqli_query($conn, $transactionsQuery);
-        
-        return $transactionsResult;
-    } else {
-        // Handle customer not found
-        return false;
-    }
+    $result = mysqli_query($conn, $query);
+    return $result;
 }
+
+
 
