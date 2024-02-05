@@ -48,8 +48,9 @@ $additional_amount = get_additional();
     </style>
 </head>
 <body>
+    <h1 id="sales_page_label">Salary</h1>
     <!-- displaying current date -->
-    <h1>Date: <?php echo $date; ?></h1>
+    <h2>Date: <?php echo $date; ?></h2>
     
     <!-- label for employee type Deliverer -->
     <h2 id="deliverer_type" class="emp_type">Deliverers</h2>

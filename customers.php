@@ -31,6 +31,7 @@
 
     <input type="submit" value="Search">
     </form>
+    <br>
 </body>
 </html>
 <?php

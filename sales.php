@@ -1,6 +1,5 @@
 <?php
     include('navbar.html');
-    include("order_form.php");
     include('alerts.php');
 ?>
 
@@ -13,7 +12,10 @@
     <script src="helper_functions.js"></script>
 </head>
 <body>
-    <br>
+    <h1 id="sales_page_label">Sales</h1>
+    <?php 
+        include("order_form.php");
+    ?>
     <h2 id="order_records_label">Order Records</h2>
     <!-- form to filter orders to be displayed by date -->
     <form id="dateForm" method="get" action="sales.php">

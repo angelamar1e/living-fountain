@@ -28,6 +28,7 @@ $monthly_revenue = get_monthly_revenue();
     </style>
 </head>
 <body>
+    <h1 id="revenue_page_label">Revenue</h1>
     <!-- Tabs for Weekly and Monthly Revenue -->
     <ul>
         <li><a href="?weekly">Weekly Revenue</a></li>
