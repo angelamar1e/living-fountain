@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="{% static 'css\bootstrap-4.3.1-dist\css\bootstrap.css'%}">
 </head>
 <body>
-    <ul>
-        <a href="sales.php">
-            <li>Sales</li>
-        </a>
-        <a href="customers.php">
-            <li>Customer</li>
-        </a>
-        <a href="credits.php">
-            <li>Credits</li>
-        </a>
-        <a href="salary.php">
-            <li>Salary</li>
-        </a>
-        <a href="revenue.php?weekly">
-            <li>Revenue</li>
-        </a>
-    </ul>
+    <div class="nav_container">
+        <div class="img_div"><img src="images/logo.png" alt="logo"></div>
+        <div class="navbar">
+            <ul>
+                <li><a id="sales_link" href="sales.php">Sales</a></li>
+                <li><a id="customers_link" href="customers.php">Customer</a></li>
+                <li><a id="credits_link" href="credits.php">Credits</a></li>
+                <li><a id="salary_link" href="salary.php">Salary</a></li>
+                <li><a id="revenue_link" href="revenue.php?weekly">Revenue</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src='helper_functions.js'></script>
 </body>
 </html>
