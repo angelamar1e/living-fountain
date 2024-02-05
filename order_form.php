@@ -12,6 +12,7 @@
     <head>
     </head>
     <body>
+        <h2 id="add_order_label">Add New Order</h2>
         <!-- form proceeds to add_order.php after submission -->
         <form action="add_order.php" method="post">
             <!-- customer info -->

@@ -2,6 +2,7 @@
 include('connection.php');
 include('queries.php');
 include('alerts.php');
+include('navbar.html');
 
 // gets the id of the transaction to be edited from the url
 $id = $_REQUEST['id'];

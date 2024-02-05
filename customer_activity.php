@@ -1,6 +1,7 @@
 <?php
     include('connection.php');
     include('queries.php');
+    include('navbar.html');
 
     // display the total amount of order of specific customers from the search bar
     if (isset($_GET['block']) and isset($_GET['lot']) and isset($_GET['phase'])) {

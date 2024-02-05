@@ -2,6 +2,7 @@
 
 include('connection.php');
 include('queries.php');
+include('navbar.html');
 
 $deliverers = get_employee_info("D");
 $washers = get_employee_info("W");

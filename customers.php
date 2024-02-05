@@ -2,6 +2,7 @@
  include('alerts.php');
  include('connection.php');
  include('queries.php');
+ include('navbar.html');
 
  $all_customers = select(array("*"),"customers");
 ?>
