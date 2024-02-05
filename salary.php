@@ -38,16 +38,29 @@ $additional_amount = get_additional();
     <link rel="stylesheet" href="salary.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-    <style>
+<style>
+    .emp_type {
+            font-size: 20px; /* Adjust the font size for employee types */
+            padding: 5px; /* Add padding for employee types */
+            margin-bottom: 5px; /* Adjust the margin between employee types */
+        }
+
+        .emp_info {
+            margin-bottom: 10px; /* Adjust the margin between employee information */
+        }
+
         td, table {
-            width: 0.25%;
+            width: 50%;
             border-collapse: collapse;
-            border: 3px solid black;
+            border: 2px solid black;
         }
+
         td {
-            padding: 1%;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #dee2e6;
         }
-    </style>  
+</style>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -75,10 +88,11 @@ $additional_amount = get_additional();
         </div>   
 
     
-<div class="row border rounded border-dark p-3 mb-5">
+
     <!-- Label for employee type Deliverer -->
     <h2 id="deliverer_type" class="emp_type">Deliverers</h2>
     
+    <div class="row border rounded border-dark">
     <!-- table to display salary information for deliverers -->
     <?php 
         if (mysqli_num_rows($deliverers) > 0) {
@@ -92,6 +106,10 @@ $additional_amount = get_additional();
     ?>
             
                 <h3 id="emp_name" class="emp_name"><?php echo $deliverer['employee_name']; ?></h3>
+
+
+
+                <!-- table to display salary information for deliverers -->
                 <table class="emp_salary">
                     <tr>
                         <td>Qty. Delivered</td>
@@ -108,10 +126,11 @@ $additional_amount = get_additional();
     ?>
 </div>
 
-<div class="row border rounded border-dark p-3 mb-5">
+
     <!-- label for employee type Refiller -->
     <h2 id="deliverer_type" class="emp_type">Refillers</h2>
 
+    <div class="row border rounded border-dark mb-3">
     <!-- table to display salary information for refillers -->
     <?php 
         if (mysqli_num_rows($refillers) > 0) {
@@ -129,10 +148,10 @@ $additional_amount = get_additional();
         }
     ?>
 
-    <div class="row border rounded border-dark p-3 mb-5">
         <!-- label for employee type Washers -->
         <h2 id="deliverer_type" class="emp_type">Washers</h2>
 
+        <div class="row border rounded border-dark mb-3">
         <!-- table to display salary information for washers -->
         <?php 
             if (mysqli_num_rows($washers) > 0) {
