@@ -6,15 +6,7 @@ include('connection.php');
 function select($cols, $table){
     global $conn;
     $select = "SELECT ";
-    $col_count = 0;
-    // fetching column names from array passed
-    foreach ($cols as $col) {
-        $col_count += 1;
-        if ($col_count > 1){
-            $select .= ", ";
-        }
-        $select .= $col;
-    }
+    $select .= count($cols) > 1 ? implode(", ",$cols) : implode($cols);
     $query = "$select
     FROM $table";
     $result = mysqli_query($conn, $query);
@@ -25,15 +17,7 @@ function select($cols, $table){
 function select_where($cols, $table, $condition){
     global $conn;
     $select = "SELECT ";
-    $col_count = 0;
-    // fetching column names from array passed
-    foreach ($cols as $col) {
-        $col_count += 1;
-        if ($col_count > 1){
-            $select .= ", ";
-        }
-        $select .= $col;
-    }
+    $select .= count($cols) > 1 ? implode(", ",$cols) : implode($cols);
     $query = "$select
     FROM $table
     WHERE $condition";
