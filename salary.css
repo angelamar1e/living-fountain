@@ -1,8 +1,83 @@
-.container{
-    float: right;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    padding: 2%;
+/* Global styling for the entire page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Set a background color */
 }
-    
+
+/* Styling for the main page label */
+#revenue_page_label {
+    margin-top: 20px;
+    color: #343a40; /* Set text color */
+}
+
+/* Styling for the navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #007bff; /* Set a navigation bar background color */
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #ffffff; /* Set link color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Hover effect for navigation bar links */
+li a:hover {
+    background-color: #0056b3; /* Set link hover background color */
+}
+
+/* Styling for rows with a border */
+.row.border {
+    margin-top: 20px;
+    border: 1px solid #dee2e6; /* Set border color for rows */
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px;
+}
+
+/* Styling for date and month display */
+.date_display, .month_display {
+    margin-bottom: 10px;
+    color: #007bff; /* Set text color for date display */
+    font-size: 16px; /* Adjust font size for date display */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Styling for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Styling for table cells */
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dee2e6; /* Set border color for table cells */
+}
+
+/* Styling for employee type (e.g., Deliverers, Refillers, Washers) */
+.emp_type {
+    font-size: 18px; /* Set font size for employee type */
+    color: #fff; /* Set text color for employee type */
+    background-color: #007bff; /* Set background color for employee type */
+    padding: 5px 10px; /* Add padding for better appearance */
+    border-radius: 5px; /* Add rounded corners */
+    margin-bottom: 5px; /* Add space below employee type */
+}
+
+/* Styling for employee names */
+.emp_name {
+    font-size: 16px; /* Set font size for employee names */
+    color: #333; /* Set color for employee names */
+}
