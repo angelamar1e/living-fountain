@@ -86,12 +86,14 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
                         </div>
                             <?php
                         }
-                } else {
-                    // No records found
-                    echo "<tr><td colspan='8'>No credit records found</td></tr>";
                 }
             }
         }
+        else { ?>
+            <tr>
+                <td colspan="8">No credits recorded.</td>
+            </tr>
+        <?php }
     ?>
     <!-- Call to script, triggers automatic form submission -->
     <script src="helper_functions.js"></script>
