@@ -156,11 +156,6 @@ function searchCustomers($blk, $lot, $ph) {
     $blk = mysqli_real_escape_string($conn, $blk);
     $lot = mysqli_real_escape_string($conn, $lot);
     $ph = mysqli_real_escape_string($conn, $ph);
-
-    // Perform the search query
-    $query = "SELECT * FROM customers WHERE block = '$blk' AND lot = '$lot' AND phase = '$ph'";
-    $result = mysqli_query($conn, $query);
-    return $result;
 }
 
 // Function to get all transactions for a specific customer based on block, lot, and phase
@@ -173,7 +168,10 @@ function getCustomerTransactions($block, $lot, $phase) {
     $phase = mysqli_real_escape_string($conn, $phase);
 
     // Perform the transactions query using JOIN
-    $query = "SELECT orders.*, products.product_desc as product, employees.employee_name as deliverer, order_status.code as status
+    $query = "SELECT orders.*, 
+                     products.product_desc,
+                     employees.employee_name as deliverer,
+                     order_status.code as status
               FROM orders
               LEFT JOIN products ON orders.product_code = products.code
               LEFT JOIN employees ON orders.deliverer_id = employees.id
@@ -183,6 +181,5 @@ function getCustomerTransactions($block, $lot, $phase) {
     $result = mysqli_query($conn, $query);
     return $result;
 }
-
 
 

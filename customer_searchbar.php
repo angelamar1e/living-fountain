@@ -61,7 +61,6 @@ $customer_transactions = getCustomerTransactions($block, $lot, $phase);
     <input type="submit" value="Search">
 </form>
 
-
     <!-- Display search results -->
     <?php
     if (isset($search_results)) {
