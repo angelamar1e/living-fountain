@@ -2,6 +2,7 @@
 include("connection.php");
 include("queries.php");
 include("alerts.php");
+include('navbar.html');
 
 // to retrieve updated status
 if(isset($_REQUEST['order_id']) and isset($_REQUEST['status'])){

@@ -36,6 +36,16 @@ $additional_amount = get_additional();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary</title>
+    <style>
+        td, table {
+            width: 10%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        td {
+            padding: 5%;
+        }
+    </style>
 </head>
 <body>
     <!-- displaying current date -->
