@@ -1,6 +1,4 @@
 .container{
-    height: 95%;
-    width: 75%;
     float: right;
     display: flex;
     flex-direction: column;
