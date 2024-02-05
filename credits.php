@@ -21,10 +21,12 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./credits.css" />
     <title>Credits</title>
     <script src="helper_functions.js"></script>
 </head>
 <body>
+    <img class="bg-image" alt="" src="./public/bg-image.png"/>
     <h1 id="credits_page_label">Credits</h1>
      <?php
         if (mysqli_num_rows($dates_with_credit) > 0) {

@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Document</title>
-    <link rel="stylesheet" href="navbar1.css">
 </head>
 <body>
-    <div class="nav_container">
-        <div class="img_div"><img src="images/logo.png" alt="logo"></div>
-        <div class="navbar">
-            <ul>
-                <li><a id="sales_link" href="sales.php">Sales</a></li>
-                <li><a id="customers_link" href="customers.php">Customer</a></li>
-                <li><a id="credits_link" href="credits.php">Credits</a></li>
-                <li><a id="salary_link" href="salary.php">Salary</a></li>
-                <li><a id="revenue_link" href="revenue.php?weekly">Revenue</a></li>
-            </ul>
-        </div>
-    </div>
-    <script src='helper_functions.js'></script>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <img src="./public/logo.png" alt="Logo" class="logo">
+        <label class="logo">LIVING FOUNTAIN</label>
+        <ul>
+          <li><a class="active" href="sales.php">SALES</a></li>
+          <li><a href="customers.php">CUSTOMER</a></li>
+          <li><a href="credits.php">CREDITS</a></li>
+          <li><a href="salary.php">SALARY</a></li>
+          <li><a href="revenue.php?weekly.php">REVENUE</a></li>
+  
+        </ul>
+      </nav>
 </body>
 </html>

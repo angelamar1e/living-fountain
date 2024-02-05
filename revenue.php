@@ -14,20 +14,12 @@ $monthly_revenue = get_monthly_revenue();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./revenue.css" />
     <title>Revenue</title>
     <script src="helper_functions.js"></script>
-    <style>
-        td, table {
-            width: 10%;
-            border-collapse: collapse;
-            border: 1px solid black;
-        }
-        td {
-            padding: 5%;
-        }
-    </style>
 </head>
 <body>
+    <img class="bg-image" alt="" src="./public/bg-image.png"/>
     <h1 id="revenue_page_label">Revenue</h1>
     <!-- Tabs for Weekly and Monthly Revenue -->
     <ul>

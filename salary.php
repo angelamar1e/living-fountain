@@ -35,19 +35,11 @@ $additional_amount = get_additional();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    link rel="stylesheet" href="./salary.css" />
     <title>Salary</title>
-    <style>
-        td, table {
-            width: 10%;
-            border-collapse: collapse;
-            border: 1px solid black;
-        }
-        td {
-            padding: 5%;
-        }
-    </style>
 </head>
 <body>
+    <img class="bg-image" alt="" src="./public/bg-image.png"/>
     <h1 id="sales_page_label">Salary</h1>
     <!-- displaying current date -->
     <h2>Date: <?php echo $date; ?></h2>
