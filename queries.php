@@ -238,4 +238,40 @@ function customer_orders($block, $lot, $phase){
     return $result;
 }
 
+// function to get unpaid records
+function get_unpaid_records($date) {
+    global $conn;
+    $query = "SELECT o.id, block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE date = '$date' AND o.status = 'D'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// function to get weekly revenue
+function get_weekly_revenue($start_date, $end_date) {
+    global $conn;
+    $query = "SELECT YEAR(date) AS year, MIN(date) AS start_date, MAX(date) AS end_date,  SUM(price) AS weekly_revenue
+    FROM orders
+    GROUP BY YEAR(date), WEEK(date)
+    ORDER BY YEAR(date), WEEK(date);";
+    
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// function to get monthly revenue
+function get_monthly_revenue($month, $year) {
+    global $conn;
+    $query = "SELECT MONTHNAME(date) as 'month', SUM(price) as 'monthly_revenue'
+    FROM orders
+    GROUP BY MONTH(date)";
+
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 ?>
