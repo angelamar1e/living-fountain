@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="row text-center">
-                    <h2 class="display-6" id="add_order_label">Add New Order</h2>
+                    <h2 class="display-6 text-primary" id="add_order_label">Add New Order</h2>
                 </div>
                 <div class="row border rounded border-dark p-3 justify-content-center">
                         <div style="padding-right:5%;" class="col-4">
@@ -24,7 +24,7 @@
                             <form action="add_order.php" method="post">
                             <!-- customer info -->
                             <div class="row">
-                                <h3>Customer</h3>
+                                <h3 class="text-primary" >Customer</h3>
                             </div>
                             <div class="row">
                                 <div class="col-4 text-center"><label for="blk">Block</label></div>
@@ -41,7 +41,7 @@
                         <!-- order info -->
                         <div class="col-6 p-0">
                             <div class="row">
-                                <h3>Order</h3>
+                                <h3 class="text-primary" >Order</h3>
                             </div>
                             <div class="row">
                                 <div class="col-5 text-center"><label for="type">Type</label></div>
@@ -92,7 +92,7 @@
                         
                         <div class="col-2 d-flex justify-content-center align-items-center">
                             <!-- submit button -->
-                            <input class="h-50" type="submit" id="submit" name="submit">
+                            <input class="h-50 bg-primary text-white" type="submit" id="submit" name="submit">
                         </div>
                         </form>
                 </div>

@@ -35,7 +35,7 @@
 <body class="custom-font">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
+                <div class="col-2 vh-100"><?php include('navigation.html'); ?></div>
                 <div class="col-10 vh-100 mt-5 d-flex flex-column align-items-center">
                     <?php
                     if (mysqli_num_rows($orders) > 0) { ?>

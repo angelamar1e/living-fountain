@@ -15,6 +15,16 @@
     <script src="helper_functions.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="customers.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    .label-customer-page {
+    color: #275385; 
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    }
+</style>
+<body>
     <style>
         @font-face {
         font-family: 'CustomFont';
@@ -31,7 +41,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="col-10 vh-100 overflow-scroll">
                 <div class="row mt-3 d-flex justify-content-center align-items-center">
@@ -51,18 +61,21 @@
                         </div>
                         <div class="row d-flex justify-content-end align-items-center">
                             <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center">
-                                    <form class="w-100" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                   <input class="w-100" type="text" id="blk" name="blk"></div>
-                                    <div class="col-2 p-0 m-1 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="lot" name="lot"></div>
-                                    <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="ph" name="ph"></div>
+                                <form class="w-100" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <input class="w-100" type="text" id="blk" name="blk">
                                 </div>
+                                <div class="col-2 p-0 m-1 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="lot" name="lot"></div>
+                                <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="ph" name="ph"></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-end">
+                        <div class="row">
+                            <div class="col"> <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-magnifying-glass"></i> Search </button>
                             </div>
-                            <div class="col-2">
-                                <div class="row">
-                                    <div class="col"><input type="submit" value="Search"></div>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
+                    </div>
                 </div>
                 
                 
@@ -127,7 +140,7 @@
                                                     <th>Block</th>
                                                     <th>Lot</th>
                                                     <th>Phase</th>
-                                                    <th>Last Ordered Date</th>
+                                                    <th>Last Ordered Date <i class="far fa-calendar"></i></th>
                                                 </tr>
                                             <?php
                                                 if ($all_customers->num_rows > 0) {
@@ -159,7 +172,7 @@
                                                 } ?>
                                             </table>
                                 <?php }
-                                } ?>
+                            } ?>
                     </div>
                 </div>
             </div>

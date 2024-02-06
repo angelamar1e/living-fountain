@@ -1,0 +1,61 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Set a background color */
+}
+
+#revenue_page_label {
+    margin-top: 20px;
+    color: #343a40; /* Set text color */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #007bff; /* Set a navigation bar background color */
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #ffffff; /* Set link color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #0056b3; /* Set link hover background color */
+}
+
+.row.border {
+    margin-top: 20px;
+    border: 1px solid #dee2e6; /* Set border color for rows */
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px;
+}
+
+.date_display, .month_display {
+    margin-bottom: 10px;
+    color: #007bff; /* Set text color for date display */
+    font-size: 16px; /* Adjust font size for date display */
+    font-weight: bold; /* Make the text bold */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dee2e6; /* Set border color for table cells */
+}
+
+

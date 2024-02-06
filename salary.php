@@ -52,7 +52,7 @@ $additional_amount = get_additional();
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="col-10 vh-100">
                 <div class="row mt-3">
