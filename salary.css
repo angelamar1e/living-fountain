@@ -10,14 +10,6 @@ body {
     color: #343a40; /* Set text color */
 }
 
-/* Styling for the navigation bar */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #007bff; /* Set a navigation bar background color */
-}
 
 li {
     float: left;
@@ -29,11 +21,6 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-
-/* Hover effect for navigation bar links */
-li a:hover {
-    background-color: #0056b3; /* Set link hover background color */
 }
 
 /* Styling for rows with a border */
