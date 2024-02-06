@@ -10,6 +10,7 @@ label {
     color: #343a40; /* Set label color */
     display: block;
     margin-bottom: 4px;
+    font-weight: bold;
 }
 
 .input-container {
@@ -22,6 +23,7 @@ label {
 input[type="text"] {
     width: 100%;
     margin: 4px 0;
+    color: #000 !important;
     box-sizing: border-box;
     border: 1px solid #ced4da !important; /* Set input border color */
     border-radius: 4px; /* Set input border radius */
@@ -70,4 +72,8 @@ input[type="text"] {
 /* Hover effect for rows with customer data */
 .table tr:hover td {
     background-color: #d3dde6; /* Set hover background color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
 }
