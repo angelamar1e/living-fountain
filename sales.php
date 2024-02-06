@@ -19,7 +19,7 @@
                 <?php include('navbar.html'); ?>
             </div>
             
-            <div class="col-10">
+            <div class="mt-3 col-10">
                 <h1 id="sales_page_label">Sales</h1>
             <?php
                 include("order_form.php");
