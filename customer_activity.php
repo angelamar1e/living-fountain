@@ -20,8 +20,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <title>Block <?php echo $block," Lot ", $lot," Phase ", $phase ?></title>
-    </head>
-    <body>
+        <style>
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+        }
+
+        /* Define font stack */
+        .custom-font {
+        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+    </style>
+</head>
+<body class="custom-font">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>

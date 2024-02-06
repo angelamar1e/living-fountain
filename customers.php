@@ -15,6 +15,7 @@
     <script src="helper_functions.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="customers.css">
+<<<<<<< HEAD
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <style>
@@ -25,6 +26,21 @@
     }
 </style>
 <body>
+=======
+    <style>
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+        }
+
+        /* Define font stack */
+        .custom-font {
+        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+    </style>
+</head>
+<body class="custom-font">
+>>>>>>> f7f7228255cfdb0627b163863bdb1c0849ce2f95
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
@@ -35,7 +51,7 @@
                     <div class="col-5">
                         <div class="row p-0 h-50">
                             <div class="p-0 d-flex justify-content-center align-items-center">
-                                <h1 class="display-5 h-50" id="label_customer_page">Customer Activity</h1>
+                                <h1 class="display-6 h-50" id="label_customer_page">Customer Activity</h1>
                             </div>
                         </div>
                     </div>
