@@ -36,7 +36,8 @@ $additional_amount = get_additional();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="salary.css">
+    <link rel="stylesheet" type="text/css" href="salary.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @font-face {
         font-family: 'CustomFont';
@@ -62,7 +63,7 @@ $additional_amount = get_additional();
                     </div>
                     <!-- displaying current date -->
                     <div class="col d-flex justify-content-end align-items-end">
-                        <span style="padding-right:5%" class="h2"><?php echo $date; ?></span>
+                        <span style="padding-right:5%; color: #007bff; font-weight: bold; font-size: 1.5rem;" class="h2"><i class="fa-regular fa-calendar"></i> <?php echo $date; ?></span>
                     </div>
                 </div>
             
@@ -70,7 +71,7 @@ $additional_amount = get_additional();
                     <div class="col">
                         <!-- label for employee type Deliverer -->
                         <div class="row">
-                            <h2 id="deliverer_type" class="emp_type">Deliverers</h2>
+                            <h2 id="deliverer_type" class="emp_type"><i class="fas fa-peso-sign"></i> Deliverers</h2>
                         </div>
                         <!-- table to display salary information for deliverers -->
                         <div class="row">
@@ -91,7 +92,8 @@ $additional_amount = get_additional();
                                             <table class="w-75 text-center emp_salary">
                                                 <tr class="border bordered">
                                                     <td class="p-1">Qty. Delivered</td>
-                                                    <td class="p-1"><?php echo $qty_delivered?></td>
+                                                    <td class="p-1"><i class="fas fa-peso-sign"></i>
+                                                    <?php echo $qty_delivered?></td>
                                                 </tr>
                                                 <tr class="border bordered">
                                                     <td class="p-1">Salary</td>
@@ -108,8 +110,9 @@ $additional_amount = get_additional();
                         <div class="row">
                             <!-- label for employee type Refiller -->
                             <div class="row">
-                                <h2 id="deliverer_type" class="emp_type">Refillers</h2>
+                                <h2 id="deliverer_type" class="emp_type"><i class="fas fa-peso-sign"></i> Refillers </h2>
                             </div>
+
                             <!-- table to display salary information for refillers -->
                             <div class="row">
                                 <?php
@@ -117,7 +120,8 @@ $additional_amount = get_additional();
                                         while($refiller = mysqli_fetch_assoc($refillers)) {
                                 ?>
                                             <div class="row d-flex justify-content-center">
-                                                <h3 id="emp_name" class="emp_name w-50 text-center"><?php echo $refiller['employee_name']; ?></h3>
+                                                <h3 id="emp_name" class="emp_name w-50 text-center">
+                                                <?php echo $refiller['employee_name']; ?></h3>
                                             </div>
                                             <div class="row d-flex justify-content-center">
                                                 <table class="w-75 text-center emp_salary">
@@ -135,7 +139,7 @@ $additional_amount = get_additional();
                         <div class="row">
                             <!-- label for employee type Washers -->
                             <div class="row mt-5">
-                                <h2 id="deliverer_type" class="emp_type">Washers</h2>
+                                <h2 id="deliverer_type" class="emp_type"><i class="fas fa-peso-sign"></i> Washers</h2>
                             </div>
                             <!-- table to display salary information for washers -->
                             <div class="row">
