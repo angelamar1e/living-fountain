@@ -7,7 +7,6 @@ include('navbar.html');
 $deliverers = get_employee_info("D");
 $washers = get_employee_info("W");
 $refillers = get_employee_info("R");
-<h1>hi</h1>
 $date = date("Y-m-d");
 
 // sum up the qty ordered for the current day
