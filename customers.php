@@ -92,7 +92,7 @@
                                             $block = $record['block'];
                                             $lot = $record['lot'];
                                             $phase = $record['phase']; ?>
-                                            <tr class="text-center" onmouseover="this.style.backgroundColor='red'" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
+                                            <tr class="text-center" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
                                                 <td><?php echo $block; ?> </td>
                                                 <td><?php echo $lot; ?> </td>
                                                 <td><?php echo $phase; ?> </td>
@@ -124,7 +124,7 @@
                                                         $block = $record['block'];
                                                         $lot = $record['lot'];
                                                         $phase = $record['phase'];?>
-                                                    <tr class="text-center" style="cursor:pointer;" onmouseover="this.parentElement.style.backgroundColor='red';" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
+                                                    <tr class="text-center" style="cursor:pointer;" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
                                                         <td><?php echo $block; ?></td>
                                                         <td><?php echo $lot; ?></td>
                                                         <td><?php echo $phase; ?></td>
