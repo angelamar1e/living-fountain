@@ -23,8 +23,8 @@
                     <h2 class="display-6" id="add_order_label">Add New Order</h2>
 >>>>>>> 7a55874cb2d8cd1e11995c7ba49b380d46493f43
                 </div>
-                <div class="row border rounded border-dark p-3">
-                        <div class="col-4">
+                <div class="row border rounded border-dark p-3 justify-content-center">
+                        <div style="padding-right:5%;" class="col-4">
                             <!-- form proceeds to add_order.php after submission -->
                             <form action="add_order.php" method="post">
                             <!-- customer info -->
@@ -43,9 +43,8 @@
                                 <div class="col-4"><input class="w-100" type="text" id="ph" name="ph" required></div>
                             </div>
                         </div>
-                        <div class="col-1 p-0"></div>
                         <!-- order info -->
-                        <div class="col-5 p-0 align-items-center">
+                        <div class="col-6 p-0">
                             <div class="row">
                                 <h3 class="text-primary">Order</h3>
                             </div>
