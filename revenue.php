@@ -34,7 +34,7 @@ $monthly_revenue = get_monthly_revenue();
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
         
         <div class="col-10">
