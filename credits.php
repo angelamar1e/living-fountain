@@ -23,14 +23,25 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
     <title>Credits</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="helper_functions.js"></script>
+    <style>
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+        }
+
+        /* Define font stack */
+        .custom-font {
+        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+    </style>
 </head>
-<body>
+<body class="custom-font">
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
             <div class="col-10 vh-100">
                 <div class="row mt-3">
-                    <h1 class="display-2" id="credits_page_label">Credits</h1>
+                    <h1 class="display-4" id="credits_page_label">Credits</h1>
                 </div>
                  <div class="row d-flex justify-content-center">
                      <?php

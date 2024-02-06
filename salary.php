@@ -36,8 +36,19 @@ $additional_amount = get_additional();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+        }
+
+        /* Define font stack */
+        .custom-font {
+        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+    </style>
 </head>
-<body>
+<body class="custom-font">
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
@@ -46,11 +57,11 @@ $additional_amount = get_additional();
             <div class="col-10 vh-100">
                 <div class="row mt-3">
                     <div class="m-1 col-6 d-flex align-items-end">
-                        <h1 class="display-1 m-0" id="sales_page_label">Salary</h1>
+                        <h1 class="display-4 m-0" id="sales_page_label">Salary</h1>
                     </div>
                     <!-- displaying current date -->
-                    <div class="col d-flex justify-content-center align-items-end">
-                        <h3 class="display-6 m-0">Date: <span class="h2"><?php echo $date; ?></span></h2>
+                    <div class="col d-flex justify-content-end align-items-end">
+                        <span style="padding-right:5%" class="h2"><?php echo $date; ?></span>
                     </div>
                 </div>
             
