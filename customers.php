@@ -14,6 +14,7 @@
     <title>Customer Activity</title>
     <script src="helper_functions.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="customers.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -39,19 +40,18 @@
                         </div>
                         <div class="row d-flex justify-content-end align-items-center">
                             <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center">
-                                <form class="w-100" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                    <input class="w-100" type="text" id="blk" name="blk">
+                                    <form class="w-100" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                   <input class="w-100" type="text" id="blk" name="blk"></div>
+                                    <div class="col-2 p-0 m-1 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="lot" name="lot"></div>
+                                    <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="ph" name="ph"></div>
                                 </div>
-                                <div class="col-2 p-0 m-1 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="lot" name="lot"></div>
-                                <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="ph" name="ph"></div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="row">
-                            <div class="col"><input type="submit" value="Search"></div>
-                        </div>
-                    </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="row">
+                                    <div class="col"><input type="submit" value="Search"></div>
+                                </div>
+                            </div>
+                        </form>
                 </div>
                 
                 
@@ -92,7 +92,7 @@
                                             $block = $record['block'];
                                             $lot = $record['lot'];
                                             $phase = $record['phase']; ?>
-                                            <tr class="text-center" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
+                                            <tr class="text-center" onmouseover="this.style.backgroundColor='red'" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
                                                 <td><?php echo $block; ?> </td>
                                                 <td><?php echo $lot; ?> </td>
                                                 <td><?php echo $phase; ?> </td>
@@ -103,7 +103,9 @@
                                 </div>
                                 <?php }
                                         else { ?>
-                                        <h4>No customers found. </h4>
+                                        <div class="row mt-5 text-center">
+                                            <h4>No customers found. </h4>
+                                        </div>
                                 <?php }   
                                 } 
                                 else { ?>
@@ -122,7 +124,7 @@
                                                         $block = $record['block'];
                                                         $lot = $record['lot'];
                                                         $phase = $record['phase'];?>
-                                                    <tr class="text-center" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
+                                                    <tr class="text-center" style="cursor:pointer;" onmouseover="this.parentElement.style.backgroundColor='red';" onclick="location.href='customer_activity.php?block=<?php echo $block; ?>&lot=<?php echo $lot; ?>&phase=<?php echo $phase; ?>'">
                                                         <td><?php echo $block; ?></td>
                                                         <td><?php echo $lot; ?></td>
                                                         <td><?php echo $phase; ?></td>
@@ -138,16 +140,19 @@
                                                         }
                                                     }
                                                 }
-                                                else {
-                                                    echo '<tr><td colspan="6">No records found</td></tr>';
+                                                else { ?>
+                                                    <div class="row mt-5 text-center">
+                                                        <h4>No customers found. </h4>
+                                                    </div>
+                                                <?
                                                 } ?>
                                             </table>
+                                <?php }
+                                } ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-                <?php 
-                } ?>
 </body>
 </html>
