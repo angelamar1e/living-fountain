@@ -26,8 +26,8 @@
                 <div class="row mt-3 d-flex justify-content-center align-items-center">
                     <div class="col-5">
                         <div class="row p-0 h-50">
-                            <div class="col p-0 d-flex justify-content-center align-items-center">
-                                <h1 class="h-50" id="label_customer_page">Customer Activity</h1>
+                            <div class="p-0 d-flex justify-content-center align-items-center">
+                                <h1 class="display-5 h-50" id="label_customer_page">Customer Activity</h1>
                             </div>
                         </div>
                     </div>

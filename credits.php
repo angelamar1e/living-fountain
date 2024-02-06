@@ -30,7 +30,7 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
             <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
             <div class="col-10 vh-100">
                 <div class="row mt-3">
-                    <h1 id="credits_page_label">Credits</h1>
+                    <h1 class="display-2" id="credits_page_label">Credits</h1>
                 </div>
                  <div class="row d-flex justify-content-center">
                      <?php
