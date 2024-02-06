@@ -80,7 +80,7 @@
 
                         // displaying matching records
                             if (mysqli_num_rows($search_results) > 0) { ?>
-                                <div class="row">
+                                <div class="row w-75">
                                     <table class="mt-4 table table-bordered">
                                         <tr class="text-center">
                                             <th>Block</th>
