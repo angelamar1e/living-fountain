@@ -41,7 +41,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="col-10 vh-100 overflow-scroll">
                 <div class="row mt-3 d-flex justify-content-center align-items-center">
