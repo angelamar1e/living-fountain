@@ -56,7 +56,19 @@ input[type="text"] {
 .table th {
     background-color: #007bff; /* Set header background color */
     color: #fff; /* Set header text color */
+    position: relative; /* Set position to relative */
+    padding-left: 40px; /* Add padding to the left for the icon */
 }
+
+/* Style for the calendar icon */
+.table th .fa-calendar {
+    position: absolute; /* Set position to absolute */
+    left: 10px; /* Adjust the distance from the left edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+
 
 /* Style for the table cells */
 .table td {

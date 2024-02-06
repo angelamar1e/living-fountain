@@ -15,6 +15,7 @@
     <script src="helper_functions.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="customers.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <style>
     .label-customer-page {
@@ -57,7 +58,9 @@
                     </div>
                     <div class="col d-flex align-items-end">
                         <div class="row">
-                            <div class="col"><input type="submit" class="btn btn-primary" value="Search"></div>
+                            <div class="col"> <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-magnifying-glass"></i> Search </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,7 +127,7 @@
                                                     <th>Block</th>
                                                     <th>Lot</th>
                                                     <th>Phase</th>
-                                                    <th>Last Ordered Date</th>
+                                                    <th>Last Ordered Date <i class="far fa-calendar"></i></th>
                                                 </tr>
                                             <?php
                                                 if ($all_customers->num_rows > 0) {
