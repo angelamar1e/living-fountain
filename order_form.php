@@ -17,7 +17,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="row text-center">
+<<<<<<< HEAD
                     <h2 class="text-white" id="add_order_label"><span class="bg-primary p-0 rounded-1"> Add New Order </h2>
+=======
+                    <h2 class="display-6" id="add_order_label">Add New Order</h2>
+>>>>>>> 7a55874cb2d8cd1e11995c7ba49b380d46493f43
                 </div>
                 <div class="row border rounded border-dark p-3">
                         <div class="col-4">
