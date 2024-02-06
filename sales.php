@@ -29,7 +29,7 @@
                 <?php include('navbar.html'); ?>
             </div>
             <div class="mt-3 col-10">
-                <h1 class="display-3 m-0" id="sales_page_label">Sales</h1><br>
+                <h1 class="display-3 m-0 text-primary" id="sales_page_label">Sales</h1><br>
             <?php 
                 include("order_form.php");
                 // if the dateForm is changed, records for the date is queried -->
@@ -45,14 +45,14 @@
             ?>
             <div class="row mt-4">
                 <div class="col-7">
-                    <h2 class="display-6 bg-primary p-1 rounded-3 text-white" id="order_records_label">Order Records <span class="h3 bg-primary p-1 rounded-3 text-white">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
+                    <h2 class="display-6 text-primary" id="order_records_label">Order Records <span class="h3 bg-light p-1 rounded-3 text-primary">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
                 </div>
                 <!-- form to filter orders to be displayed by date -->
                 <div class="col-5 d-flex align-items-end">
                     <div class="row d-flex justify-content-end">
                         <div class="col-6 d-flex justify-content-end p-0 h-50">
                             <form id="dateForm" method="get" action="sales.php">
-                                <p class="h5 bg-primary p-1 rounded-3 text-white"><label for="date">Filter by date:</label></h5>
+                                <p class="h5 bg-light p-1 rounded-3 text-primary"><label for="date">Filter by date:</label></h5>
                         </div>
                             <div class="col-6"><input type="date" id="date" name="date"></div>
                                 <!-- hidden submit button to trigger form submission using js -->
@@ -89,10 +89,10 @@
                     if (mysqli_num_rows($all_records) > 0) { ?>
                     <div id="revenue_section" class="row w-100 d-flex text-center">
                                 <div style="width:18%;" class="col-3 d-flex p-0 align-items-center">
-                                    <h3 id="revenue_label" class="h3 revenue_label">Revenue: </h3>
+                                    <h3 id="revenue_label" class="h3 revenue_label text-primary">Revenue: </h3>
                                 </div>
                                 <div class="col-3 p-0 d-flex align-items-center ">
-                                    <h3 id="revenue_amt" class="revenue_amt m-0">₱<?php echo $current_revenue;?></h3>
+                                    <h3 id="revenue_amt" class="revenue_amt m-0 text-primary">₱<?php echo $current_revenue;?></h3>
                                 </div>
                             </div>
                         <div class="row h-25" id="table_container">
