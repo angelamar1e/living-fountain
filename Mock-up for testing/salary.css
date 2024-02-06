@@ -1,0 +1,63 @@
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 70%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+td, table {
+    width: 10%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5%;
+}
+
+.emp_type {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.emp_name {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+}
+
+.emp_salary {
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.emp_salary td {
+    padding: 10px;
+    text-align: center;
+}
+
+.emp_salary tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.emp_salary {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 45%;
+}
+
+.emp_salary tr:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-10 {
+    width: 83.33333%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+#label_customer_page {
+    font-size: 32px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#search_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#search_bar .row {
+    margin-bottom: 10px;
+}
+
+#search_bar label {
+    font-weight: bold;
+}
+
+#search_bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search_bar input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0082e6;
+    color: #fff;
+    cursor: pointer;
+}
+
+.customer-table {
+    margin: 0 auto; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #c1d7e7;
+    font-family: inherit;
+    width: 50%;
+    align-items: center;
+    position: relative; 
+}
+
+.customer-table th,
+.customer-table td {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.customer-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.customer-table th {
+    background-color: #e6e6e6;
+}
+
+.no-records-found {
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+    .col-2, .col-10 {
+        width: 100%;
+    }
+}

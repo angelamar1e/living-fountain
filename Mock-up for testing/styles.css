@@ -1,0 +1,209 @@
+.bg-image {
+    position: absolute; /* Set position to absolute */
+    top: 0;
+    left: 0;
+    opacity: 70%;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set a lower z-index */
+}
+body {
+    font-family: sans-serif;
+    color: #333;
+}
+
+body, form label {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+#sales_page_label, #order_records_label {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#dateForm {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the form horizontally */
+    margin-bottom: 20px;
+}
+
+#dateForm label {
+    margin-right: 10px;
+}
+
+#dateForm #date {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+#dateForm input[type="submit"] {
+    display: none;
+}
+span h3 {
+    margin-left: 25%;
+}
+
+#order_records_label {
+    font-size: 25px; /* Match the font size */
+    text-align: center;
+    margin-bottom: 20px; /* Add some bottom margin */
+}
+
+#table_container {
+    margin: 0 auto; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #c1d7e7;
+    font-family: inherit;
+    width: 50%;
+    align-items: center;
+    position: relative; 
+}
+
+#table_container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+#table_container th,
+#table_container td {
+    background-color: #f8f8f8; 
+    color: #365486; 
+    padding: 10px;
+    border-bottom: 1px solid #ccc; 
+    text-align: center; /* Center the content horizontally */
+    border: 1px solid #ccc;
+}
+
+
+.revenue_section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.revenue_label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.revenue_amt {
+    color: #365486;
+    text-align: center;
+}
+
+td[colspan="8"] {
+    text-align: center;
+}
+form {
+    margin: 0 auto; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #c1d7e7;
+    font-family: inherit;
+    width: 50%;
+    align-items: center;
+    position: relative; 
+}
+
+form h3 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+form input[type="text"], form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 7%;
+    margin-bottom: 10px;
+}
+
+form select {
+    width: 20%;
+}
+form input[type="submit"] {
+    background-color: #0082e6;
+    margin-left: 45%;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button{
+    background-color: #fff;
+    color: #0082e6;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#edit {
+    background-color: #0082e6;
+    color: #fff;
+}
+button#delete {
+    background-color: #0082e6;
+    color: #fff;
+}
+
+label[for="blk"] {
+    margin-left: 15%;
+}
+
+label[for="lot"] {
+    margin-left: 29%;
+}
+
+label[for="ph"] {
+    margin-left: 29%;
+}
+
+label[for="type"] {
+    margin-left: 15%;
+}
+
+label[for="qty"] {
+    margin-left: 27.3%;
+}
+
+label[for="deliverer"] {
+    margin-left: 26%;
+}
+
+input#qty {
+    margin-left: 12%;
+}
+
+select#deliverer {
+    margin-left: 12%;
+}
+input#lot {
+    margin-left: 12%;
+}
+
+input#ph {
+    margin-left: 12%;
+}
+
+select#status {
+    width: fit-content(100%);
+}

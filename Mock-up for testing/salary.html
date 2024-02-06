@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./salary.css" />
+    <title>Salary</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('navbar').innerHTML = data);
+        });
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <img class="bg-image" alt="" src="./public/bg-image.png"/>
+    <h1 id="sales_page_label">Salary</h1>
+    <!-- displaying current date -->
+    <h2>Date: <?php echo $date; ?></h2>
+    
+    <!-- label for employee type Deliverer -->
+    <h2 id="deliverer_type" class="emp_type">Deliverers</h2>
+    
+    <!-- table to display salary information for deliverers -->
+    <?php 
+        if (mysqli_num_rows($deliverers) > 0) {
+            while($deliverer = mysqli_fetch_assoc($deliverers)) { 
+                // retrieving qty delivered per deliverer id
+                $id = $deliverer['id']; 
+                $qty_delivered = count_qty_delivered($id, $date);
+                // count reg gallon delivered per deliverer id to add to salary
+                $reg_gallon_delivered = count_reg_gallon($id, $date);
+                $salary = $deliverer_base_salary + ($reg_gallon_delivered * $additional_amount);
+    ?>
+                <h3 id="emp_name" class="emp_name"><?php echo $deliverer['employee_name']; ?></h3>
+                <table class="emp_salary">
+                    <tr>
+                        <td>Qty. Delivered</td>
+                        <td><?php echo $qty_delivered?></td>
+                    </tr>   
+                    <tr>
+                        <td>Salary</td>
+                        <td><?php echo $salary ?></td>
+                    </tr>
+                </table>
+        <?php }
+        }
+    ?>
+
+    <!-- label for employee type Refiller -->
+    <h2 id="deliverer_type" class="emp_type">Refillers</h2>
+
+    <!-- table to display salary information for refillers -->
+    <?php 
+        if (mysqli_num_rows($refillers) > 0) {
+            while($refiller = mysqli_fetch_assoc($refillers)) {          
+    ?>
+                <h3 id="emp_name" class="emp_name"><?php echo $refiller['employee_name']; ?></h3>
+                <table class="emp_salary">
+                    <tr>
+                        <td>Salary</td>
+                        <td><?php echo $others_salary ?></td>
+                    </tr>
+                </table>
+        <?php }
+        }
+    ?>
+
+        <!-- label for employee type Washers -->
+        <h2 id="deliverer_type" class="emp_type">Washers</h2>
+
+        <!-- table to display salary information for washers -->
+        <?php 
+            if (mysqli_num_rows($washers) > 0) {
+                while($washer = mysqli_fetch_assoc($washers)) {          
+        ?>
+                    <h3 id="emp_name" class="emp_name"><?php echo $washer['employee_name']; ?></h3>
+                    <table class="emp_salary">
+                        <tr>
+                            <td>Salary</td>
+                            <td><?php echo $others_salary ?></td>
+                        </tr>
+                    </table>
+            <?php }
+            }
+        ?>
+</body>
+</html>

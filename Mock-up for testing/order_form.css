@@ -1,0 +1,88 @@
+form {
+    margin: 0 auto; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #c1d7e7;
+    font-family: inherit;
+    width: 50%;
+    align-items: center;
+    position: relative; 
+}
+
+form h3 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+form input[type="text"], form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 7%;
+    margin-bottom: 10px;
+}
+
+form select {
+    width: 20%;
+}
+form input[type="submit"] {
+    background-color: #0082e6;
+    margin-left: 45%;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button{
+    background-color: #fff;
+    color: #0082e6;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+label[for="blk"] {
+    margin-left: 15%;
+}
+
+label[for="lot"] {
+    margin-left: 29%;
+}
+
+label[for="ph"] {
+    margin-left: 29%;
+}
+
+label[for="type"] {
+    margin-left: 15%;
+}
+
+label[for="qty"] {
+    margin-left: 27.3%;
+}
+
+label[for="deliverer"] {
+    margin-left: 26%;
+}
+
+input#qty {
+    margin-left: 12%;
+}
+
+select#deliverer {
+    margin-left: 12%;
+}
+input#lot {
+    margin-left: 12%;
+}
+
+input#ph {
+    margin-left: 12%;
+}
