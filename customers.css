@@ -1,5 +1,7 @@
 /* customers.css */
 
+
+
 .label-customer-page {
     color: #275385; 
     font-family: Arial, sans-serif;
@@ -89,3 +91,5 @@ input[type="text"] {
 .btn-primary:hover {
     background-color: #0056b3; /* Darker shade of primary color */
 }
+
+
