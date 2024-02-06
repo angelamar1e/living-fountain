@@ -29,8 +29,8 @@
                 <?php include('navbar.html'); ?>
             </div>
             <div class="mt-3 col-10">
-                <h1 class="display-3 m-0" id="sales_page_label">Sales</h1>
-            <?php
+                <h1 class="display-3 m-0" id="sales_page_label">Sales</h1><br>
+            <?php 
                 include("order_form.php");
                 // if the dateForm is changed, records for the date is queried -->
                 if(isset($_REQUEST['date'])){
@@ -45,14 +45,14 @@
             ?>
             <div class="row mt-4">
                 <div class="col-7">
-                    <h2 class="display-6" id="order_records_label">Order Records <span class="h3">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
+                    <h2 class="display-6 bg-primary p-1 rounded-3 text-white" id="order_records_label">Order Records <span class="h3 bg-primary p-1 rounded-3 text-white">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
                 </div>
                 <!-- form to filter orders to be displayed by date -->
                 <div class="col-5 d-flex align-items-end">
                     <div class="row d-flex justify-content-end">
                         <div class="col-6 d-flex justify-content-end p-0 h-50">
                             <form id="dateForm" method="get" action="sales.php">
-                                <p class="h5"><label for="date">Filter by date:</label></h5>
+                                <p class="h5 bg-primary p-1 rounded-3 text-white"><label for="date">Filter by date:</label></h5>
                         </div>
                             <div class="col-6"><input type="date" id="date" name="date"></div>
                                 <!-- hidden submit button to trigger form submission using js -->
@@ -96,16 +96,16 @@
                                 </div>
                             </div>
                         <div class="row h-25" id="table_container">
-                            <table class="table table-bordered" id=all_records>
+                            <table class="table table-bordered text-white bg-primary" id=all_records>
                                 <tr class="text-center">
-                                    <th>Block</th>
-                                    <th>Lot</th>
-                                    <th>Phase</th>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Deliverer</th>
-                                    <th>Status</th>
+                                    <th class = "text-white bg-primary">Block</th>
+                                    <th class = "text-white bg-primary">Lot</th>
+                                    <th class = "text-white bg-primary">Phase</th>
+                                    <th class = "text-white bg-primary">Product</th>
+                                    <th class = "text-white bg-primary">Quantity</th>
+                                    <th class = "text-white bg-primary">Price</th>
+                                    <th class = "text-white bg-primary">Deliverer</th>
+                                    <th class = "text-white bg-primary">Status</th>
                                 </tr>
                                 <?php
                                 while($record = mysqli_fetch_assoc($all_records)) { ?>
