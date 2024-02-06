@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="sales.css">
 </head>
 <body>
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
@@ -20,20 +22,21 @@
             </div>
             
             <div class="col-10">
-                <h1 id="sales_page_label">Sales</h1>
+                <br>
+                <h1 id="sales_page_label" class="text-primary">Sales</h1>
             <?php
                 include("order_form.php");
             ?>
-            <div class="row mt-4">
-                <div class="col">
-                    <h2 id="order_records_label">Order Records • <small class="font-weight-italic"><?php echo date("M-d-Y");?></small></h2>
+            <div class="row mt-4 ">
+                <div class="col ">
+                    <h2  class="text-white" id="order_records_label"> <span class="bg-primary p-1 rounded-3">Order Records • <small class="font-weight-italic"><?php echo date("M-d-Y");?></small></h2>
                 </div>
                 <!-- form to filter orders to be displayed by date -->
                 <div class="col">
-                    <div class="row">
+                    <div class="row ">
                         <div class="col-6 d-flex align-items-baseline">
                             <form id="dateForm" method="get" action="sales.php">
-                                <h5><label class="text-right" for="date">Filter orders by date:</label></h5>
+                                <h5><label  class="text-white" class="text-right" for="date"><span class="bg-primary p-2 rounded-3">Filter orders by date:</label></h5><br>
                         </div>
                             <div class="col-6"><input type="date" id="date" name="date"></div>
                                 <!-- hidden submit button to trigger form submission using js -->
@@ -146,7 +149,7 @@
                     }
                     else { ?>
                         <tr>
-                            <td colspan="8">No sales recorded. </td>
+                            <td colspan = "8">No sales recorded.</td>
                         </tr>
                     <?php
                     }
