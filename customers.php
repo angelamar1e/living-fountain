@@ -55,9 +55,9 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col d-flex align-items-end">
                         <div class="row">
-                            <div class="col"><input type="submit" value="Search"></div>
+                            <div class="col"><input type="submit" class="btn btn-primary" value="Search"></div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                                                 } ?>
                                             </table>
                                 <?php }
-                                } ?>
+                            } ?>
                     </div>
                 </div>
             </div>
