@@ -13,10 +13,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <br>
         <div class="container-fluid">
             <div class="row">
                 <div class="row text-center">
-                    <h2 id="add_order_label">Add New Order</h2>
+                    <h2 class="text-white" id="add_order_label"><span class="bg-primary p-0 rounded-1"> Add New Order </h2>
                 </div>
                 <div class="row border rounded border-dark p-3">
                         <div class="col-4">
@@ -24,7 +25,7 @@
                             <form action="add_order.php" method="post">
                             <!-- customer info -->
                             <div class="row">
-                                <h3>Customer</h3>
+                                <h3 class="text-primary">Customer</h3>
                             </div>
                             <div class="row">
                                 <div class="col-4 text-center"><label for="blk">Block</label></div>
@@ -42,7 +43,7 @@
                         <!-- order info -->
                         <div class="col-5 p-0 align-items-center">
                             <div class="row">
-                                <h3>Order</h3>
+                                <h3 class="text-primary">Order</h3>
                             </div>
                             <div class="row">
                                 <div class="col-5 text-center"><label for="type">Type</label></div>
@@ -93,7 +94,7 @@
                         
                         <div class="col-2 d-flex justify-content-center align-items-center">
                             <!-- submit button -->
-                            <input class="h-50" type="submit" id="submit" name="submit">
+                            <input class="h-50" type="submit" id="submit" name="submit" style="color: blue;">
                         </div>
                         </form>
                 </div>
