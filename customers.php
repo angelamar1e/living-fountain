@@ -18,7 +18,7 @@
 </head>
 <style>
     .label-customer-page {
-    color: #007bff; 
+    color: #275385; 
     font-family: Arial, sans-serif;
     font-weight: bold;
     }
