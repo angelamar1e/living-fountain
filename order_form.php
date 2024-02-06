@@ -24,7 +24,7 @@
                             <form action="add_order.php" method="post">
                             <!-- customer info -->
                             <div class="row">
-                                <h3>Customer</h3>
+                                <h3 class="text-primary" >Customer</h3>
                             </div>
                             <div class="row">
                                 <div class="col-4 text-center"><label for="blk">Block</label></div>
@@ -41,7 +41,7 @@
                         <!-- order info -->
                         <div class="col-6 p-0">
                             <div class="row">
-                                <h3>Order</h3>
+                                <h3 class="text-primary" >Order</h3>
                             </div>
                             <div class="row">
                                 <div class="col-5 text-center"><label for="type">Type</label></div>
