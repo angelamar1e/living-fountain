@@ -144,8 +144,8 @@
                                         <div class="row">
                                             <td style="width:30%;">
                                                 <!-- edit button leads to a url with the id of the specific order -->
-                                                <button id="edit" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
-                                                <button id="delete"  onclick="confirm_delete_order(<?php echo $record['id']; ?>)">Delete</button>
+                                                <button id="edit" class= "bg-primary text-white" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
+                                                <button id="delete" class= "bg-primary text-white"  onclick="confirm_delete_order(<?php echo $record['id']; ?>)">Delete</button>
                                             </td
                                         </div>
                                     </tr>
