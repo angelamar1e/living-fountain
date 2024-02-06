@@ -92,7 +92,7 @@
                         
                         <div class="col-2 d-flex justify-content-center align-items-center">
                             <!-- submit button -->
-                            <input class="h-50" type="submit" id="submit" name="submit">
+                            <input class="h-50 bg-primary text-white" type="submit" id="submit" name="submit">
                         </div>
                         </form>
                 </div>
