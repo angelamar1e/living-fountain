@@ -30,16 +30,16 @@
                     if (mysqli_num_rows($orders) > 0) { ?>
                         <div class="row w-75">
                             <div class="col">
-                                <h2 id="order_history_label">Order History</h2>
+                                <h2 class="display-5" id="order_history_label">Order History</h2>
                             </div>
                             <div class="col d-flex justify-content-center">
-                                <div class="col d-flex justify-content-center align-items-center">
+                                <div class="col d-flex justify-content-center align-items-end">
                                     <h5 class="h-50 address_label">Block <span class="addr_label"><?php echo $block ?></span></h4>
                                 </div>
-                                <div class="col d-flex justify-content-center align-items-center">
+                                <div class="col d-flex justify-content-center align-items-end">
                                     <h5 class="h-50 address_label">Lot <?php echo $lot ?></h4>
                                 </div>
-                                <div class="col d-flex justify-content-center align-items-center">
+                                <div class="col d-flex justify-content-center align-items-end">
                                     <h5 class="h-50 address_label">Phase <?php echo $phase ?></h4>
                                 </div>
                             </div>

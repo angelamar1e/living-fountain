@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="row text-center">
-                    <h2 id="add_order_label">Add New Order</h2>
+                    <h2 class="display-6" id="add_order_label">Add New Order</h2>
                 </div>
                 <div class="row border rounded border-dark p-3">
                         <div class="col-4">
