@@ -20,30 +20,10 @@
             </div>
             
             <div class="mt-3 col-10">
-                <h1 id="sales_page_label">Sales</h1>
+                <h1 class="display-1 m-0" id="sales_page_label">Sales</h1>
             <?php
                 include("order_form.php");
-            ?>
-            <div class="row mt-4">
-                <div class="col">
-                    <h2 id="order_records_label">Order Records • <small class="font-weight-italic"><?php echo date("M-d-Y");?></small></h2>
-                </div>
-                <!-- form to filter orders to be displayed by date -->
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6 d-flex align-items-baseline">
-                            <form id="dateForm" method="get" action="sales.php">
-                                <h5><label class="text-right" for="date">Filter orders by date:</label></h5>
-                        </div>
-                            <div class="col-6"><input type="date" id="date" name="date"></div>
-                                <!-- hidden submit button to trigger form submission using js -->
-                                <input type="submit" style="display:none">
-                            </form>
-                    </div>
-                </div>
-            </div>
-            <!-- if the dateForm is changed, records for the date is queried -->
-            <?php
+                // if the dateForm is changed, records for the date is queried -->
                 if(isset($_REQUEST['date'])){
                     $date = $_REQUEST['date'];
                     $all_records = all_orders($date);
@@ -53,6 +33,26 @@
                     $date = date("Y-m-d");
                     $all_records = all_orders($date);
                 }
+            ?>
+            <div class="row mt-4">
+                <div class="col-7">
+                    <h2 class="display-6" id="order_records_label">Order Records • <span class="h2"><?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
+                </div>
+                <!-- form to filter orders to be displayed by date -->
+                <div class="col-5 d-flex align-items-end">
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-6 d-flex justify-content-end p-0 h-50">
+                            <form id="dateForm" method="get" action="sales.php">
+                                <p class="h5"><label for="date">Filter by date:</label></h5>
+                        </div>
+                            <div class="col-6"><input type="date" id="date" name="date"></div>
+                                <!-- hidden submit button to trigger form submission using js -->
+                                <input type="submit" style="display:none">
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <?php
                 // to retrieve updated status
                 if(isset($_REQUEST['order_id']) and isset($_REQUEST['status'])){
                     $status = $_REQUEST['status'];
@@ -74,11 +74,19 @@
                 }
             ?>
             
-            <div class="row border rounded border-dark p-3">
+            <div class="row h-auto border rounded border-dark p-3 justify-content-center overflow-scroll" style="max-height: 60vh;">
                 <?php
                     // loops through the query result to display into a table
                     if (mysqli_num_rows($all_records) > 0) { ?>
-                        <div class="row" id="table_container">
+                    <div id="revenue_section" class="row w-100 d-flex text-center">
+                                <div style="width:20%;" class="col-3 d-flex p-0 align-items-center">
+                                    <h3 id="revenue_label" class="display-6 revenue_label">Revenue: </h3>
+                                </div>
+                                <div class="col-3 p-0 d-flex align-items-center ">
+                                    <h2 id="revenue_amt" class="revenue_amt m-0">₱<?php echo $current_revenue;?></h3>
+                                </div>
+                            </div>
+                        <div class="row h-25" id="table_container">
                             <table class="table table-bordered" id=all_records>
                                 <tr class="text-center">
                                     <th>Block</th>
@@ -133,14 +141,6 @@
                                 <?php
                                 } ?>
                             </table>
-                            <div id="revenue_section" class="row d-flex align-self-right">
-                                <div class="col-2">
-                                    <h3 id="revenue_label" class="revenue_label">Revenue: </h3>
-                                </div>
-                                <div class="col-3">
-                                    <h3 id="revenue_amt" class="revenue_amt">₱<?php echo $current_revenue;?></h3>
-                                </div>
-                            </div>
                         </div>
                     <?php
                     }
