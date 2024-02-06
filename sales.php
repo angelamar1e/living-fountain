@@ -26,7 +26,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="mt-3 col-10">
                 <h1 class="display-3 m-0 text-primary" id="sales_page_label">Sales</h1><br>
