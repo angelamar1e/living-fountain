@@ -38,7 +38,7 @@ $monthly_revenue = get_monthly_revenue();
             </div>
         
         <div class="col-10">
-            <h1 id="revenue_page_label">Revenue</h1>
+            <h1 id="revenue_page_label" class = "text-primary">Revenue</h1>
     
     <div class="row mt-2">
     <!-- Tabs for Weekly and Monthly Revenue -->
