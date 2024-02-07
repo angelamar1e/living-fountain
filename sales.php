@@ -18,7 +18,10 @@
 
         /* Define font stack */
         .custom-font {
-        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+            font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+        #edit:hover, #delete:hover {
+        background-color: #0056b3 !important; 
         }
     </style>
 </head>
@@ -26,10 +29,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="mt-3 col-10">
-                <h1 class="display-3 m-0 text-primary" id="sales_page_label">Sales</h1><br>
+                <h1 class="display-3 m-0" id="sales_page_label" style="color: #353a41;">Sales</h1><br>
             <?php 
                 include("order_form.php");
                 // if the dateForm is changed, records for the date is queried -->
@@ -45,16 +48,16 @@
             ?>
             <div class="row mt-4">
                 <div class="col-7">
-                    <h2 class="display-6 text-primary" id="order_records_label">Order Records <span class="h3 bg-light p-1 rounded-3 text-primary">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
+                    <h2 class="display-6 text-primary" id="order_records_label" style="color: #353a41";>Order Records <span class="h3 bg-light p-1 rounded-3 text-primary">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
                 </div>
                 <!-- form to filter orders to be displayed by date -->
                 <div class="col-5 d-flex align-items-end">
                     <div class="row d-flex justify-content-end">
                         <div class="col-6 d-flex justify-content-end p-0 h-50">
                             <form id="dateForm" method="get" action="sales.php">
-                                <p class="h5 bg-light p-1 rounded-3 text-primary"><label for="date">Filter by date:</label></h5>
+                                <p class="h4 bg-light p-1 rounded-3 text-primary"><label for="date">Filter by date:</label></h5>
                         </div>
-                            <div class="col-6"><input type="date" id="date" name="date"></div>
+                            <div class="col-6 mt-2"><input type="date" id="date" name="date"></div>
                                 <!-- hidden submit button to trigger form submission using js -->
                                 <input type="submit" style="display:none">
                             </form>
