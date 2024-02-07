@@ -22,6 +22,12 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credits</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Hover effect for table rows */
+        table tr:hover {
+            background-color: #d3dde6;
+        }
+    </style>
     <script src="helper_functions.js"></script>
 </head>
 <body>
@@ -40,22 +46,22 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
                                 $date = date_format($date,"M-d-Y"); ?>
                                 <!-- displaying each date -->
                                 <div class="row p-2 text-center">
-                                    <h3 id="date_display" class="p-0 date_display"><?php echo $date; ?></h2>
+                                     <h3 id="date_display" class="p-0 date_display"><?php echo $date; ?></h3>
                                 </div>
                                 <!-- displaying a table for credits per date -->
                                 <div class="row justify-content-center">
                                     <div class="row p-3 border rounded border-dark">
-                                        <table class="table table-bordered text-center m-0" id="credit_records">
-                                            <tr>
-                                                <th>Block</th>
-                                                <th>Lot</th>
-                                                <th>Phase</th>
-                                                <th>Product</th>
-                                                <th>Quantity</th>
-                                                <th>Price</th>
-                                                <th>Deliverer</th>
-                                                <th>Action</th>
-                                            </tr>
+                                    <table class="table table-bordered text-center m-0" id="credit_records">
+                                        <tr>
+                                            <th>Block</th>
+                                            <th>Lot</th>
+                                            <th>Phase</th>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Deliverer</th>
+                                            <th>Action</th>
+                                        </tr>
                                         <?php
                                         // Get delivered but unpaid records for the dates retrieved
                                         $date = $record['date'];
@@ -63,7 +69,7 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
                                         if (mysqli_num_rows($unpaid_records) > 0) {
                                         // Records found
                                             while ($record = mysqli_fetch_assoc($unpaid_records)) { ?>
-                                                <tr>
+                                                <tr class="hoverable">
                                                     <td><?php echo $record['block']; ?></td>
                                                     <td><?php echo $record['lot']; ?></td>
                                                     <td><?php echo $record['phase']; ?></td>

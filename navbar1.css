@@ -1,0 +1,60 @@
+@font-face {
+    font-family: SFPro;
+    src: url(fonts/FontsFree-Net-SFProText-Medium-1.ttf);
+}
+
+.nav_container {
+    float: left;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    height: 67%;
+    background-color: rgb(32, 175, 241);
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding:0;
+    text-align: center;
+    height: 60%;
+    width: 100%;
+}
+
+.navbar li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.navbar a {
+    font-size: larger;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.img_div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin-top: 10%;
+    width: 70%;
+}
+
+.navbar li:hover {
+    background-color: #ffffffa4;
+    font-size: x-large;
+    a {
+        color:rgb(32, 175, 241);
+    }
+}

@@ -6,15 +6,7 @@ include('connection.php');
 function select($cols, $table){
     global $conn;
     $select = "SELECT ";
-    $col_count = 0;
-    // fetching column names from array passed
-    foreach ($cols as $col) {
-        $col_count += 1;
-        if ($col_count > 1){
-            $select .= ", ";
-        }
-        $select .= $col;
-    }
+    $select .= count($cols) > 1 ? implode(", ",$cols) : implode($cols);
     $query = "$select
     FROM $table";
     $result = mysqli_query($conn, $query);
@@ -25,15 +17,7 @@ function select($cols, $table){
 function select_where($cols, $table, $condition){
     global $conn;
     $select = "SELECT ";
-    $col_count = 0;
-    // fetching column names from array passed
-    foreach ($cols as $col) {
-        $col_count += 1;
-        if ($col_count > 1){
-            $select .= ", ";
-        }
-        $select .= $col;
-    }
+    $select .= count($cols) > 1 ? implode(", ",$cols) : implode($cols);
     $query = "$select
     FROM $table
     WHERE $condition";
@@ -177,9 +161,149 @@ function getCustomerTransactions($block, $lot, $phase) {
               LEFT JOIN employees ON orders.deliverer_id = employees.id
               LEFT JOIN order_status ON orders.status = order_status.code
               WHERE orders.block = '$block' AND orders.lot = '$lot' AND orders.phase = '$phase'";
-
+}
+// gets employee information
+function get_employee_info($code){
+    global $conn;
+    $query = "SELECT e.id, employee_name, emp_type_desc as 'employee_type'
+            FROM employees e
+            JOIN employee_types et ON e.emp_type_code = et.code
+            WHERE emp_type_code = '$code'";
     $result = mysqli_query($conn, $query);
     return $result;
 }
 
 
+// to sum up the qty ordered for the current day 
+function sum_qty($date){
+    global $conn;
+    $query = "SELECT SUM(quantity) as 'qty'
+            FROM orders
+            WHERE date = '$date'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($qty = mysqli_fetch_assoc($result)) {
+            $qty_sum = $qty['qty'];
+        }
+    } 
+    return $qty_sum;
+}
+
+// to count qty delivered by each deliverer 
+function count_qty_delivered($id, $date){
+    global $conn;
+    $query = "SELECT COUNT(*) as 'qty'
+            FROM orders
+            WHERE deliverer_id = '$id' AND date = '$date'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($qty = mysqli_fetch_assoc($result)) {
+            $qty_delivered = $qty['qty'];
+        }
+    } 
+    return $qty_delivered;
+}
+
+// to count regular gallons delivered by each deliverer
+function count_reg_gallon($id, $date){
+    global $conn;
+    $query = "SELECT SUM(quantity) as 'qty'
+            FROM orders
+            WHERE deliverer_id = '$id' AND date = '$date' AND product_code = 'R'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($qty = mysqli_fetch_assoc($result)) {
+            $qty_delivered = $qty['qty'];
+        }
+    } 
+    return $qty_delivered;
+}
+
+// get the amount additional for every reg gallon delivered
+function get_additional(){
+    global $conn;
+    $query = "SELECT amount
+            FROM salary_types
+            WHERE id = 4";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($additional = mysqli_fetch_assoc($result)) {
+            $amount = $additional['amount'];
+        }
+    } 
+    return $amount;
+}
+
+// get the total amount of orders from a given customer
+function compute_total($block, $lot, $phase){
+    global $conn;
+    $query = "SELECT SUM(price) as 'amount'
+            FROM orders
+            WHERE block = $block AND lot = $lot AND phase = $phase";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        while($total = mysqli_fetch_assoc($result)) {
+            $amount = $total['amount'];
+        }
+    } 
+    return $amount;
+}
+
+// to search for customers based on block, lot, or phase
+function search_customers($conditions) {
+    global $conn;
+    $query = "SELECT * FROM customers WHERE ";
+    $query .= count($conditions) > 1 ? implode("AND ", $conditions) : implode($conditions);
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// to retrieve orders of a particular customer
+function customer_orders($block, $lot, $phase){
+    global $conn;
+    $query = "SELECT date, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE block = $block AND lot = $lot AND phase = $phase";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// function to get unpaid records
+function get_unpaid_records($date) {
+    global $conn;
+    $query = "SELECT o.id, block, lot, phase, product_desc as 'product', quantity, o.price, employee_name as 'deliverer', s.code as 'code', s.status_desc as 'status'
+                FROM orders o
+                LEFT JOIN products p ON o.product_code = p.code
+                LEFT JOIN employees e ON o.deliverer_id = e.id
+                LEFT JOIN order_status s ON o.status = s.code
+                WHERE date = '$date' AND o.status = 'D'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// function to get weekly revenue
+function get_weekly_revenue() {
+    global $conn;
+    $query = "SELECT YEAR(date) AS year, MIN(date) AS start_date, MAX(date) AS end_date,  SUM(price) AS weekly_revenue
+    FROM orders
+    GROUP BY YEAR(date), WEEK(date)
+    ORDER BY YEAR(date), WEEK(date);";
+    
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+// function to get monthly revenue
+function get_monthly_revenue() {
+    global $conn;
+    $query = "SELECT MONTHNAME(date) as 'month', YEAR(date) as 'year', SUM(price) as 'monthly_revenue'
+    FROM orders
+    GROUP BY MONTH(date), YEAR(date)";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+?>

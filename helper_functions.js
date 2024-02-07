@@ -14,11 +14,12 @@ function sendData() {
 }
 
 // for the dateForm
-document.getElementById('date').addEventListener('change', function() {
-    // Trigger form submission when input value changes
-    document.getElementById('dateForm').submit();
-});
-
+if(document.getElementById('date')){
+    document.getElementById('date').addEventListener('change', function() {
+        // Trigger form submission when input value changes
+        document.getElementById('dateForm').submit();
+    });
+}
 
 // for real-time status update
 // Select all select elements with the class "status"

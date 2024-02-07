@@ -30,6 +30,26 @@ $customer_transactions = getCustomerTransactions($block, $lot, $phase);
     <title>Customer Transactions</title>
     <style>
         /* Add your CSS styles here */
+        body {
+            background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pxfuel.com%2Fen%2Fdesktop-wallpaper-xdfau&psig=AOvVaw30Ne1u0OpEb-Wi-KENjKdg&ust=1707293184072000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPCc7vCgloQDFQAAAAAdAAAAABAQ') center center fixed; /* Set background image */
+            background-size: cover; /* Cover the entire viewport */
+            color: white; /* Set the text color to white for better visibility on the background image */
+            font-family: 'cursive', sans-serif; /* Use a cursive font with a fallback to a generic sans-serif font */
+            margin: 0; /* Remove default margin to fill the entire viewport */
+            padding: 0; /* Remove default padding to fill the entire viewport */
+            height: 100vh; /* Set height to 100% of the viewport height */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Arrange content vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+
+        #header {
+            font-size: 24px; /* Set font size for the header */
+            font-weight: bold; /* Set font weight for the header */
+            margin-bottom: 20px; /* Add margin at the bottom for spacing */
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -45,21 +65,29 @@ $customer_transactions = getCustomerTransactions($block, $lot, $phase);
             background-color: #f2f2f2;
         }
     </style>
+
+
 </head>
 <body>
-    <!-- Search bar for customer details -->
-<form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label for="blk">Block</label>
-    <input type="text" id="blk" name="block"> <!-- Change name to 'block' -->
-    
-    <label for="lot">Lot</label>
-    <input type="text" id="lot" name="lot">
-    
-    <label for="ph">Phase</label>
-    <input type="text" id="ph" name="phase"> <!-- Change name to 'phase' -->
+    <!-- Header -->
+    <div id="header">
+        LIVING FOUNTAIN
+    </div>
 
-    <input type="submit" value="Search">
-</form>
+    <!-- Search bar for customer details -->
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="blk">Block</label>
+        <input type="text" id="blk" name="block"> <!-- Change name to 'block' -->
+        
+        <label for="lot">Lot</label>
+        <input type="text" id="lot" name="lot">
+        
+        <label for="ph">Phase</label>
+        <input type="text" id="ph" name="phase"> <!-- Change name to 'phase' -->
+
+        <input type="submit" value="Search">
+    </form>
+
 
     <!-- Display search results -->
     <?php

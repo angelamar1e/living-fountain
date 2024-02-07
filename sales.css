@@ -1,0 +1,16 @@
+@font-face {
+    font-family: SFPro;
+    src: url(fonts/FontsFree-Net-SFProText-Medium-1.ttf);
+}
+
+body {
+    font-family: SFPro;
+}
+
+.container{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    padding: 2%;
+}
