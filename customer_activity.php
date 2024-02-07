@@ -19,6 +19,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="customer_activity.css">
         <title>Block <?php echo $block," Lot ", $lot," Phase ", $phase ?></title>
         <style>
         @font-face {
@@ -33,7 +34,7 @@
     </style>
 </head>
 <body class="custom-font">
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row">
                 <div class="col-2 vh-100"><?php include('navigation.html'); ?></div>
                 <div class="col-10 vh-100 mt-5 d-flex flex-column align-items-center">
@@ -41,7 +42,7 @@
                     if (mysqli_num_rows($orders) > 0) { ?>
                         <div class="row w-75">
                             <div class="col">
-                                <h2 class="display-5" id="order_history_label">Order History</h2>
+                                <h2 class="display-6 text-primary" id="order_history_label">Order History</h2>
                             </div>
                             <div class="col d-flex justify-content-center">
                                 <div class="col d-flex justify-content-center align-items-end">
@@ -92,7 +93,7 @@
                     else { ?>
                         <div class="row w-75">
                             <div class="col">
-                                <h2 id="order_history_label">Order History</h2>
+                                <h2 id="order_history_label" style="color: #353a41;">Order History</h2>
                             </div>
                             <div class="col d-flex justify-content-center">
                                 <div class="col d-flex justify-content-center align-items-center">

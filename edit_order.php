@@ -64,53 +64,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .custom-font {
         font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
         }
+        
+        .edit-text{
+        font-weight: bold;
+        color: #353a41 !important;
+        }
+
+        #submit:hover {
+        background-color: #0056b3 !important;
+    }
+
     </style>
 </head>
 <body class="custom-font">
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="col-10 vh-100">
-                <div class="row mt-3">
-                    <h2>Editing Order #<?php echo $id?></h2>
+                <br>
+                <br>
+                <div class="row mt-2">
+                        <h2 class="edit-text"><strong>Editing Order #<?php echo $id?></strong></h2>
                 </div>
                 <!-- form is processed in the same page -->
                 <form action="<?php echo $_SERVER['PHP_SELF']?>?id=<?php echo $id ?>" method="post">
                     <!-- customer info -->
                     <div class="row d-flex justify-content-center">
                         <div class="row mt-3 text-center">
-                            <h4>Customer Information</h3>
+                            <h4 class="text-primary"><strong>Customer Information</strong></h3>
                         </div>
                         <div class="row d-flex justify-content-center border rounded border-dark p-3 w-50">
                             <div class="row text-center justify-content-center">
-                                <div class="col-2"><label for="blk">Block</label></div>
-                                <div class="col-2"><label for="lot"> Lot</label></div>
-                                <div class="col-2"><label for="ph"> Phase</label><br></div>
+                                <div class="col-2 text-primary"><label for="blk">Block</label></div>
+                                <div class="col-2 text-primary"><label for="lot"> Lot</label></div>
+                                <div class="col-2 text-primary"><label for="ph"> Phase</label><br></div>
                             </div>
                             <!-- inputs for block, lot, phase -->
                             <div class="row justify-content-center">
-                                <div class="col-2"><input type="text" class="w-100" id="blk" name="blk" value="<?php echo $order_info['block'];?>" required></div>
-                                <div class="col-2"><input type="text" class="w-100" id="lot" name="lot" value="<?php echo $order_info['lot'];?>" required></div>
-                                <div class="col-2"><input type="text" class="w-100" id="ph" name="ph" value="<?php echo $order_info['phase'];?>" required></div>
+                                <div class="col-2"><input type="text" class="w-100 text-center" id="blk" name="blk" value="<?php echo $order_info['block'];?>" required></div>
+                                <div class="col-2"><input type="text" class="w-100 text-center" id="lot" name="lot" value="<?php echo $order_info['lot'];?>" required></div>
+                                <div class="col-2"><input type="text" class="w-100 text-center" id="ph" name="ph" value="<?php echo $order_info['phase'];?>" required></div>
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <!-- order info -->
                     <div class="row d-flex justify-content-center">
                         <div class="row mt-4 text-center">
-                            <h4>Order Information</h4>
+                            <h4 class="text-primary"><strong>Order Information</strong></h4>
                         </div>
                         <div class="row d-flex justify-content-center border rounded border-dark p-3 w-75">
                             <div class="row p-0 text-center justify-content-center">
-                                <div class="col-5"><label for="type">Type</label></div>
-                                <div class="col-3"><label for="qty"> Quantity</label></div>
-                                <div class="col-4"><label for="deliverer"> Deliverer</label><br></div>
+                                <div class="col-4 text-primary"><label for="type">Type</label></div>
+                                <div class="col-3 text-primary"><label for="qty"> Quantity</label></div>
+                                <div class="col-4 text-primary"><label for="deliverer"> Deliverer</label><br></div>
                             </div>
                             <div class="row p-0 justify-content-center">
                                 <!-- dropdown for product type -->
-                                <div class="col-5 d-flex justify-content-center p-0">
+                                <div class="col-4 d-flex justify-content-center p-0">
                                     <select id="prod_type" name="prod_type" required>
                                         <!-- default option, reflects the selection before editing -->
                                         <option value="<?php echo $order_info['prod_code']?>" selected hidden><?php echo $order_info['product']?></option>
@@ -127,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </select>
                                 </div>
                                 <!-- input for quantity -->
-                                <div class="col-3 d-flex justify-content-center"><input class="w-50" type="text" id="qty" name="qty" value="<?php echo $order_info['quantity']?>"required></div>
+                                <div class="col-3 d-flex justify-content-center"><input class="w-50 text-center" type="text" id="qty" name="qty" value="<?php echo $order_info['quantity']?>"required></div>
                                 <!-- dropdown for deliverer -->
                                 <div class="col-4 d-flex justify-content-center">
                                     <select id="deliverer" name="deliverer" required>
@@ -149,7 +163,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <!-- submit button -->
-                    <div class="row d-flex justify-content-center mt-3"><input style="width:10%;" type="submit" id="submit" name="submit"></div>
+                    <br>
+                    <div class="row d-flex justify-content-center mt-3"><input style="width:10%" class= "bg-primary text-white" type="submit" id="submit" name="submit"></div>
                 </form>
             </div>
         </div>

@@ -15,7 +15,10 @@ $monthly_revenue = get_monthly_revenue();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revenue</title>
     <script src="helper_functions.js"></script>
+
+    <link rel="stylesheet" href="revenue.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @font-face {
         font-family: 'CustomFont';
@@ -29,6 +32,7 @@ $monthly_revenue = get_monthly_revenue();
 
         div a {
             font-size: larger;
+            font-weight: bold;
             text-decoration: none;
             color: aliceblue;
         }
@@ -36,7 +40,7 @@ $monthly_revenue = get_monthly_revenue();
         div .tab:hover {
             background-color: #ffffffa4;
             font-size: x-large;
-            div a {
+            div .tab:hover a {
                 color:rgb(32, 175, 241);
             }
         }
@@ -44,26 +48,26 @@ $monthly_revenue = get_monthly_revenue();
     </style>
 </head>
 <body class="custom-font">
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
+            <div class="col-2 vh-100"><?php include('navigation.html'); ?></div>
             <div class="col-10 vh-100">
                 <div class="row mt-3">
-                    <h1 class="display-4" id="revenue_page_label">Revenue</h1>
+                    <h1 class="display-4 text-primary" id="revenue_page_label">Revenue</h1>
                 </div>
                 <!-- Tabs for Weekly and Monthly Revenue -->
                 <div class="row d-flex justify-content-center ">
                         <div style="background-color:rgb(32, 175, 241);" class="col-4 m-2 text-center d-flex justify-content-center align-items-center border rounded tab">
-                            <a href="?weekly">Weekly Revenue</a>
+                            <a href="?weekly"><i class="fa-solid fa-coins"></i> Weekly Revenue</a>
                         </div>
                         <div style="background-color:rgb(32, 175, 241);" class="col-4 m-2 text-center d-flex justify-content-center align-items-center border rounded tab">
-                            <a href="?monthly">Monthly Revenue</a>
+                            <a href="?monthly"><i class="fa-solid fa-coins"></i> Monthly Revenue</a>
                         </div>
                 </div>
                 <!-- Display Weekly Revenue -->
                 <?php
                 if (isset($_GET['weekly'])){ ?>
-                    <div class="row mt-2 text-center">
+                    <div class="row mt-2 text-center weekly-revenue-title">
                         <h2>Weekly Revenue</h2>
                     </div>
                     <div style="max-height:60vh;" class="row p-1 d-flex flex-row overflow-scroll justify-content-center">
@@ -97,7 +101,7 @@ $monthly_revenue = get_monthly_revenue();
                 <!-- Display Monthly Revenue -->
                 <?php
                 if (isset($_GET['monthly'])){ ?>
-                    <div class="row mt-2 text-center">
+                    <div class="row mt-2 text-center monthly-revenue-title">
                         <h2>Monthly Revenue</h2>
                     </div>
                 <div style="max-height:60vh;" class="row p-1 d-flex flex-row overflow-scroll justify-content-center">
