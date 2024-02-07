@@ -130,6 +130,38 @@ function delete_order($id){
     return $result;
 }
 
+include('connection.php');
+
+// Function to search for customers based on block, lot, and phase
+function searchCustomers($blk, $lot, $ph) {
+    global $conn;
+
+    // Validate input values
+    $blk = mysqli_real_escape_string($conn, $blk);
+    $lot = mysqli_real_escape_string($conn, $lot);
+    $ph = mysqli_real_escape_string($conn, $ph);
+}
+
+// Function to get all transactions for a specific customer based on block, lot, and phase
+function getCustomerTransactions($block, $lot, $phase) {
+    global $conn;
+
+    // Validate input values
+    $block = mysqli_real_escape_string($conn, $block);
+    $lot = mysqli_real_escape_string($conn, $lot);
+    $phase = mysqli_real_escape_string($conn, $phase);
+
+    // Perform the transactions query using JOIN
+    $query = "SELECT orders.*, 
+                     products.product_desc,
+                     employees.employee_name as deliverer,
+                     order_status.code as status
+              FROM orders
+              LEFT JOIN products ON orders.product_code = products.code
+              LEFT JOIN employees ON orders.deliverer_id = employees.id
+              LEFT JOIN order_status ON orders.status = order_status.code
+              WHERE orders.block = '$block' AND orders.lot = '$lot' AND orders.phase = '$phase'";
+}
 // gets employee information
 function get_employee_info($code){
     global $conn;
@@ -140,6 +172,7 @@ function get_employee_info($code){
     $result = mysqli_query($conn, $query);
     return $result;
 }
+
 
 // to sum up the qty ordered for the current day 
 function sum_qty($date){
