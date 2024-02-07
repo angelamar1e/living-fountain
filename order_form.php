@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-2 p-0 d-flex justify-content-center">
                                     <!-- input for quantity -->
-                                    <input class="w-50" type="text" id="qty" name="qty" required>
+                                    <input class="w-50 text-center" type="text" id="qty" name="qty" required>
                                 </div>
                                 <!-- dropdown for deliverer -->
                                 <div class="col-5 d-flex justify-content-center" style="width:41%; padding-left:9%">
