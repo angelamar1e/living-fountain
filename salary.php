@@ -92,7 +92,7 @@ $additional_amount = get_additional();
                                             <table class="w-75 text-center emp_salary">
                                                 <tr class="border bordered">
                                                     <td class="p-1">Qty. Delivered</td>
-                                                    <td class="p-1"><i class="fas fa-peso-sign"></i>
+                                                    <td class="p-1">
                                                     <?php echo $qty_delivered?></td>
                                                 </tr>
                                                 <tr class="border bordered">
