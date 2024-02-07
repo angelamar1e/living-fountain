@@ -66,16 +66,16 @@
                                 </div>
                                 <div class="col-2 p-0 m-1 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="lot" name="lot"></div>
                                 <div class="col-2 m-1 p-0 d-flex justify-content-center align-items-center"><input class="w-100" type="text" id="ph" name="ph"></div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col d-flex align-items-end">
-                        <div class="row">
-                            <div class="col"> <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-magnifying-glass"></i> Search </button>
                             </div>
                         </div>
-                    </div>
+                        <div class="col d-flex align-items-end">
+                            <div class="row">
+                                <div class="col"> <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-magnifying-glass"></i> Search </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 
                 
