@@ -19,27 +19,39 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="customer_activity.css">
         <title>Block <?php echo $block," Lot ", $lot," Phase ", $phase ?></title>
-    </head>
-    <body>
-        <div class="container-fluid">
+        <style>
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+        }
+
+        /* Define font stack */
+        .custom-font {
+        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+    </style>
+</head>
+<body class="custom-font">
+        <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
+                <div class="col-2 vh-100"><?php include('navigation.html'); ?></div>
                 <div class="col-10 vh-100 mt-5 d-flex flex-column align-items-center">
                     <?php
                     if (mysqli_num_rows($orders) > 0) { ?>
                         <div class="row w-75">
                             <div class="col">
-                                <h2 id="order_history_label">Order History</h2>
+                                <h2 class="display-6 text-primary" id="order_history_label">Order History</h2>
                             </div>
                             <div class="col d-flex justify-content-center">
-                                <div class="col d-flex justify-content-center align-items-center">
+                                <div class="col d-flex justify-content-center align-items-end">
                                     <h5 class="h-50 address_label">Block <span class="addr_label"><?php echo $block ?></span></h4>
                                 </div>
-                                <div class="col d-flex justify-content-center align-items-center">
+                                <div class="col d-flex justify-content-center align-items-end">
                                     <h5 class="h-50 address_label">Lot <?php echo $lot ?></h4>
                                 </div>
-                                <div class="col d-flex justify-content-center align-items-center">
+                                <div class="col d-flex justify-content-center align-items-end">
                                     <h5 class="h-50 address_label">Phase <?php echo $phase ?></h4>
                                 </div>
                             </div>
@@ -81,7 +93,7 @@
                     else { ?>
                         <div class="row w-75">
                             <div class="col">
-                                <h2 id="order_history_label">Order History</h2>
+                                <h2 id="order_history_label" style="color: #353a41;">Order History</h2>
                             </div>
                             <div class="col d-flex justify-content-center">
                                 <div class="col d-flex justify-content-center align-items-center">

@@ -1,0 +1,35 @@
+  label {
+    color: #343a40;
+    display: block; 
+    margin-bottom: 4px;
+    font-weight: bold;  
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px;
+  }
+  
+  .table {
+    margin-top: 20px;  
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+    position: relative;
+    text-align: center;
+  }
+
+  .table td {
+    text-align: center;
+  }
+
+  .total_labe {
+    color: #275385;
+  }
+  .total_amount {
+    font-weight: bold;
+    color: #007bff;
+  }

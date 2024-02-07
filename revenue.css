@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+}
+
+/* Define font stack */
+.custom-font {
+    font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+}
+
+
+#revenue_page_label {
+    margin-top: 20px;
+    color: #343a40; /* Set text color */
+
+}
+
+.weekly-revenue-title h2 {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.monthly-revenue-title h2 {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Styling for tabs */
+.tab {
+    background-color: rgb(32, 175, 241);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    background: rgb(32, 175, 241);
+    color:aliceblue;
+}
+
+table:hover {
+    transform: scale(1.1); /* Increase size by 10% */
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #485b6d; /* Set border color for table cells */
+}
+
+.table tr:hover td {
+    cursor: pointer !important;
+    background-color: #0056b3 !important; /* Set hover background color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
+}
+
+/* Styling for revenue tables */
+#weekly_revenue_table,
+#monthly_revenue_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+}
+
+#weekly_revenue_table tr,
+#monthly_revenue_table tr {
+    border-bottom: 1px solid #dee2e6; /* Add bottom border between table rows */
+}
+
+#weekly_revenue_table td,
+#monthly_revenue_table td {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Styling for revenue sections */
+.date_display,
+.month_display {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+/* Adjust font size for date and month display */
+.date_display h5,
+.month_display h3 {
+    font-size: 2 rem;
+    font-weight: bold;
+}
+
+/* Set max height and overflow for revenue sections */
+.overflow-scroll {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #ffffff; /* Set link color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #0056b3; /* Set link hover background color */
+}
+
+.row.border {
+    margin-top: 20px;
+    border: 50px solid blue; /* Set border color for rows */
+    border-radius: 20px; /* Add rounded corners */
+    padding: 5px;
+}
+
+
+.date_display, .month_display {
+    margin-bottom: 10px;
+    color: #0056b3; /* Set text color for date display */
+    font-size: 18px; /* Adjust font size for date display */
+    font-weight: bold; /* Make the text bold */
+}
+
+td, table {
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid rgb(248, 245, 245);
+        }
+        
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    }  

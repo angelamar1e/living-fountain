@@ -22,21 +22,39 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credits</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<<<<<<< HEAD
+=======
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="credits.css">
+>>>>>>> f267fd25f91b6e58ec561decf2b3526acb54d4df
     <style>
         /* Hover effect for table rows */
         table tr:hover {
             background-color: #d3dde6;
         }
+<<<<<<< HEAD
+=======
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('fonts/FontsFree-Net-SFProText-Medium-1.ttf');
+        }
+
+        /* Define font stack */
+        .custom-font {
+            font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+>>>>>>> f267fd25f91b6e58ec561decf2b3526acb54d4df
     </style>
     <script src="helper_functions.js"></script>
 </head>
-<body>
-    <div class="container-fluid">
+<body class="custom-font">
+    <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
+            <div class="col-2 vh-100"><?php include('navigation.html'); ?></div>
             <div class="col-10 vh-100">
-                <div class="row mt-3">
-                    <h1 id="credits_page_label">Credits</h1>
+            <div class="row mt-3">
+                <div class="m-1 col-6 d-flex align-items-end">
+                <h1 class="display-3 m-0 text-primary" id="credits_page_label">Credits</h1>
                 </div>
                  <div class="row d-flex justify-content-center">
                      <?php
@@ -45,9 +63,16 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
                                 $date = date_create($record['date']);
                                 $date = date_format($date,"M-d-Y"); ?>
                                 <!-- displaying each date -->
+<<<<<<< HEAD
                                 <div class="row p-2 text-center">
                                      <h3 id="date_display" class="p-0 date_display"><?php echo $date; ?></h3>
                                 </div>
+=======
+                                <div class="col d-flex mt-3 justify-content-end align-items-end">
+                        <span style="padding-right:2%; color: #007bff; font-weight: bold; font-size: 1.5rem;" class="h2"><i class="fa-regular fa-calendar"></i> <?php echo $date; ?></span>
+                    </div>
+                 </div>
+>>>>>>> f267fd25f91b6e58ec561decf2b3526acb54d4df
                                 <!-- displaying a table for credits per date -->
                                 <div class="row justify-content-center">
                                     <div class="row p-3 border rounded border-dark">
