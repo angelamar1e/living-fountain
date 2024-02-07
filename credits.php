@@ -63,16 +63,13 @@ $dates_with_credit = select_where(array("DISTINCT date"),"orders","status = 'D'"
                                 $date = date_create($record['date']);
                                 $date = date_format($date,"M-d-Y"); ?>
                                 <!-- displaying each date -->
-<<<<<<< HEAD
                                 <div class="row p-2 text-center">
                                      <h3 id="date_display" class="p-0 date_display"><?php echo $date; ?></h3>
                                 </div>
-=======
                                 <div class="col d-flex mt-3 justify-content-end align-items-end">
                         <span style="padding-right:2%; color: #007bff; font-weight: bold; font-size: 1.5rem;" class="h2"><i class="fa-regular fa-calendar"></i> <?php echo $date; ?></span>
                     </div>
                  </div>
->>>>>>> f267fd25f91b6e58ec561decf2b3526acb54d4df
                                 <!-- displaying a table for credits per date -->
                                 <div class="row justify-content-center">
                                     <div class="row p-3 border rounded border-dark">
