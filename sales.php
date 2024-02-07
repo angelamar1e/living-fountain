@@ -32,7 +32,7 @@
                 <?php include('navigation.html'); ?>
             </div>
             
-            <div class="mt-3 col-10 overflow-scroll">
+            <div class="mt-3 col-10 vh-100">
                 <h1 class="display-3 m-0 text-primary" id="sales_page_label" style="color: #353a41;">Sales</h1><br>
             <?php 
                 include("order_form.php");
@@ -87,7 +87,7 @@
                 }
             ?>
             
-            <div class="row m-1 h-auto border rounded border-dark p-3 justify-content-center overflow-scroll" style="max-height: 100vh;">
+            <div class="row m-2 h-auto border rounded border-dark p-3 justify-content-center overflow-scroll" style="max-height:70vh;">
                 <?php
                     // loops through the query result to display into a table
                     if (mysqli_num_rows($all_records) > 0) { ?>
@@ -99,7 +99,7 @@
                                     <h3 id="revenue_amt" class="revenue_amt m-0 text-primary">₱<?php echo $current_revenue;?></h3>
                                 </div>
                             </div>
-                        <div class="row h-100" id="table_container">
+                        <div class="row h-25" id="table_container">
                             <table class="table table-bordered text-white bg-primary" id=all_records>
                                 <tr class="text-center">
                                     <th class = "text-white bg-primary">Block</th>
