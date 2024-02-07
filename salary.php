@@ -51,15 +51,15 @@ $additional_amount = get_additional();
     </style>
 </head>
 <body class="custom-font">
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
             <div class="col-10 vh-100">
                 <div class="row mt-3">
                     <div class="m-1 col-6 d-flex align-items-end">
-                        <h1 class="display-4 m-0" id="sales_page_label">Salary</h1>
+                        <h1 class="display-4 m-0 text-primary" id="sales_page_label">Salary</h1>
                     </div>
                     <!-- displaying current date -->
                     <div class="col d-flex justify-content-end align-items-end">

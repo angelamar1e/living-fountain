@@ -48,12 +48,12 @@ $monthly_revenue = get_monthly_revenue();
     </style>
 </head>
 <body class="custom-font">
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-2 vh-100"><?php include('navbar.html'); ?></div>
+            <div class="col-2 vh-100"><?php include('navigation.html'); ?></div>
             <div class="col-10 vh-100">
                 <div class="row mt-3">
-                    <h1 class="display-4" id="revenue_page_label">Revenue</h1>
+                    <h1 class="display-4 text-primary" id="revenue_page_label">Revenue</h1>
                 </div>
                 <!-- Tabs for Weekly and Monthly Revenue -->
                 <div class="row d-flex justify-content-center ">

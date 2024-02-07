@@ -18,19 +18,23 @@
 
         /* Define font stack */
         .custom-font {
-        font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+            font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font with fallbacks */
+        }
+        #edit:hover, #delete:hover {
+        background-color: #0056b3 !important; 
         }
     </style>
 </head>
 <body class="custom-font">
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <div class="col-2 vh-100">
-                <?php include('navbar.html'); ?>
+                <?php include('navigation.html'); ?>
             </div>
-            <div class="mt-3 col-10">
-                <h1 class="display-3 m-0" id="sales_page_label">Sales</h1>
-            <?php
+            
+            <div class="mt-3 col-10 overflow-scroll">
+                <h1 class="display-3 m-0 text-primary" id="sales_page_label" style="color: #353a41;">Sales</h1><br>
+            <?php 
                 include("order_form.php");
                 // if the dateForm is changed, records for the date is queried -->
                 if(isset($_REQUEST['date'])){
@@ -45,16 +49,16 @@
             ?>
             <div class="row mt-4">
                 <div class="col-7">
-                    <h2 class="display-6" id="order_records_label">Order Records <span class="h3">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
+                    <h2 class="display-6 text-primary" id="order_records_label" style="color: #353a41";>Order Records <span class="h3 p-1 rounded-3 text-primary">• <?php ; echo date_format(date_create($date),"M-d-Y");?></span></h2>
                 </div>
                 <!-- form to filter orders to be displayed by date -->
                 <div class="col-5 d-flex align-items-end">
                     <div class="row d-flex justify-content-end">
                         <div class="col-6 d-flex justify-content-end p-0 h-50">
                             <form id="dateForm" method="get" action="sales.php">
-                                <p class="h5"><label for="date">Filter by date:</label></h5>
+                                <p class="h4 p-1 rounded-3 text-primary"><label for="date">Filter by date:</label></h5>
                         </div>
-                            <div class="col-6"><input type="date" id="date" name="date"></div>
+                            <div class="col-6 mt-2"><input type="date" id="date" name="date"></div>
                                 <!-- hidden submit button to trigger form submission using js -->
                                 <input type="submit" style="display:none">
                             </form>
@@ -83,29 +87,29 @@
                 }
             ?>
             
-            <div class="row h-auto border rounded border-dark p-3 justify-content-center overflow-scroll" style="max-height: 60vh;">
+            <div class="row m-1 h-auto border rounded border-dark p-3 justify-content-center overflow-scroll" style="max-height: 100vh;">
                 <?php
                     // loops through the query result to display into a table
                     if (mysqli_num_rows($all_records) > 0) { ?>
                     <div id="revenue_section" class="row w-100 d-flex text-center">
                                 <div style="width:18%;" class="col-3 d-flex p-0 align-items-center">
-                                    <h3 id="revenue_label" class="h3 revenue_label">Revenue: </h3>
+                                    <h3 id="revenue_label" class="h3 revenue_label text-primary">Revenue: </h3>
                                 </div>
                                 <div class="col-3 p-0 d-flex align-items-center ">
-                                    <h3 id="revenue_amt" class="revenue_amt m-0">₱<?php echo $current_revenue;?></h3>
+                                    <h3 id="revenue_amt" class="revenue_amt m-0 text-primary">₱<?php echo $current_revenue;?></h3>
                                 </div>
                             </div>
-                        <div class="row h-25" id="table_container">
-                            <table class="table table-bordered" id=all_records>
+                        <div class="row h-100" id="table_container">
+                            <table class="table table-bordered text-white bg-primary" id=all_records>
                                 <tr class="text-center">
-                                    <th>Block</th>
-                                    <th>Lot</th>
-                                    <th>Phase</th>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Deliverer</th>
-                                    <th>Status</th>
+                                    <th class = "text-white bg-primary">Block</th>
+                                    <th class = "text-white bg-primary">Lot</th>
+                                    <th class = "text-white bg-primary">Phase</th>
+                                    <th class = "text-white bg-primary">Product</th>
+                                    <th class = "text-white bg-primary">Quantity</th>
+                                    <th class = "text-white bg-primary">Price</th>
+                                    <th class = "text-white bg-primary">Deliverer</th>
+                                    <th class = "text-white bg-primary">Status</th>
                                 </tr>
                                 <?php
                                 while($record = mysqli_fetch_assoc($all_records)) { ?>
@@ -144,8 +148,8 @@
                                         <div class="row">
                                             <td style="width:30%;">
                                                 <!-- edit button leads to a url with the id of the specific order -->
-                                                <button id="edit" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
-                                                <button id="delete"  onclick="confirm_delete_order(<?php echo $record['id']; ?>)">Delete</button>
+                                                <button id="edit" class= "bg-primary text-white" onclick="window.location.href='edit_order.php?id=<?php echo $record['id']; ?>'">Edit</button>
+                                                <button id="delete" class= "bg-primary text-white"  onclick="confirm_delete_order(<?php echo $record['id']; ?>)">Delete</button>
                                             </td
                                         </div>
                                     </tr>
