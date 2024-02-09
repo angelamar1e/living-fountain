@@ -1,5 +1,7 @@
 /* customers.css */
 
+
+
 .label-customer-page {
     color: #275385; 
     font-family: Arial, sans-serif;
@@ -90,7 +92,11 @@ input[type="text"] {
     background-color: #0056b3; /* Darker shade of primary color */
 }
 
+<<<<<<< HEAD
+
+=======
 .edit-text {
     text-align: center;
     margin-right: 10px;
 }
+>>>>>>> fd8323af2152479232a620a341be4cf40aaa2594
