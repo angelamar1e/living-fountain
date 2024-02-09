@@ -80,7 +80,7 @@ $additional_amount = get_additional();
                                     while($deliverer = mysqli_fetch_assoc($deliverers)) {
                                         // retrieving qty delivered per deliverer id
                                         $id = $deliverer['id'];
-                                        $qty_delivered = count_qty_delivered($id, $date);
+                                        $qty_delivered = count_qty_delivered($id);
                                         // count reg gallon delivered per deliverer id to add to salary
                                         $reg_gallon_delivered = count_reg_gallon($id, $date);
                                         $salary = $deliverer_base_salary + ($reg_gallon_delivered * $additional_amount);
@@ -92,8 +92,7 @@ $additional_amount = get_additional();
                                             <table class="w-75 text-center emp_salary">
                                                 <tr class="border bordered">
                                                     <td class="p-1">Qty. Delivered</td>
-                                                    <td class="p-1">
-                                                    <?php echo $qty_delivered?></td>
+                                                    <td class="p-1"><?php echo $qty_delivered?></td>
                                                 </tr>
                                                 <tr class="border bordered">
                                                     <td class="p-1">Salary</td>

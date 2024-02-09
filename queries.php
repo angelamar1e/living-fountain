@@ -157,8 +157,9 @@ function sum_qty($date){
 }
 
 // to count qty delivered by each deliverer 
-function count_qty_delivered($id, $date){
+function count_qty_delivered($id){
     global $conn;
+    $date = date("Y-m-d");
     $query = "SELECT COUNT(*) as 'qty'
             FROM orders
             WHERE deliverer_id = '$id' AND date = '$date'";
